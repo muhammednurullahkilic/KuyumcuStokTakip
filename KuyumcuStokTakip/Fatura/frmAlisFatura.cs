@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace KuyumcuStokTakip
+namespace KuyumcuStokTakip.Fatura
 {
-    public partial class CariKayıt : Form
+    public partial class frmAlisFatura : Form
     {
-        public CariKayıt()
+        public frmAlisFatura()
         {
             InitializeComponent();
         }

@@ -41,7 +41,12 @@
     <Reference Include="DevExpress.Sparkline.v26.1.Core" />
     <Reference Include="DevExpress.XtraEditors.v26.1" />
     <Reference Include="DevExpress.Drawing.v26.1" />
-    <Reference Include="System" />
+    <Reference Include="DevExpress.XtraGrid.v26.1, Version=26.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v26.1, Version=26.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v26.1, Version=26.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -53,22 +58,100 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cari\CariKayıt.cs">
+    <Compile Include="Cari\frmCariKayit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cari\CariKayıt.Designer.cs">
-      <DependentUpon>CariKayıt.cs</DependentUpon>
+    <Compile Include="Cari\frmCariKayit.Designer.cs">
+      <DependentUpon>frmCariKayit.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMain.cs">
+    <Compile Include="Anasayfa\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMain.Designer.cs">
+    <Compile Include="Anasayfa\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cari\frmCariListe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cari\frmCariListe.Designer.cs">
+      <DependentUpon>frmCariListe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fatura\frmAlisFatura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fatura\frmAlisFatura.Designer.cs">
+      <DependentUpon>frmAlisFatura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fatura\frmSatisFatura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fatura\frmSatisFatura.Designer.cs">
+      <DependentUpon>frmSatisFatura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GirisEkrani\frmGirisYap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GirisEkrani\frmGirisYap.Designer.cs">
+      <DependentUpon>frmGirisYap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Profil\frmKullaniciBilgileri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Profil\frmKullaniciBilgileri.Designer.cs">
+      <DependentUpon>frmKullaniciBilgileri.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmMain.resx">
+    <Compile Include="Rapor\frmIslemGecmisiListele.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rapor\frmIslemGecmisiListele.Designer.cs">
+      <DependentUpon>frmIslemGecmisiListele.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rapor\frmSatisIstatistikler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rapor\frmSatisIstatistikler.Designer.cs">
+      <DependentUpon>frmSatisIstatistikler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stok\frmAyarKayit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stok\frmAyarKayit.Designer.cs">
+      <DependentUpon>frmAyarKayit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stok\frmParametreListele.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stok\frmParametreListele.Designer.cs">
+      <DependentUpon>frmParametreListele.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stok\frmStokListele.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stok\frmStokListele.Designer.cs">
+      <DependentUpon>frmStokListele.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stok\frmUrunGrupKayit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stok\frmUrunGrupKayit.Designer.cs">
+      <DependentUpon>frmUrunGrupKayit.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Anasayfa\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cari\frmCariKayit.resx">
+      <DependentUpon>frmCariKayit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cari\frmCariListe.resx">
+      <DependentUpon>frmCariListe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fatura\frmSatisFatura.resx">
+      <DependentUpon>frmSatisFatura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GirisEkrani\frmGirisYap.resx">
+      <DependentUpon>frmGirisYap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -79,6 +162,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Stok\frmAyarKayit.resx">
+      <DependentUpon>frmAyarKayit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stok\frmParametreListele.resx">
+      <DependentUpon>frmParametreListele.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stok\frmStokListele.resx">
+      <DependentUpon>frmStokListele.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stok\frmUrunGrupKayit.resx">
+      <DependentUpon>frmUrunGrupKayit.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="App.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -93,14 +188,7 @@
   <ItemGroup>
     <Analyzer Include="$(ProgramFiles)\DevExpress 26.1\Components\Offline Packages\devexpress.data\26.1.3\analyzers\dotnet\DevExpress.Generator.dll" Visible="false" Condition="Exists('$(ProgramFiles)\DevExpress 26.1\Components\Offline Packages\devexpress.data\26.1.3\analyzers\dotnet\DevExpress.Generator.dll')" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Anasayfa\" />
-    <Folder Include="Fatura\" />
-    <Folder Include="GirisEkrani\" />
-    <Folder Include="Profil\" />
-    <Folder Include="Rapor\" />
-    <Folder Include="Stok\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
