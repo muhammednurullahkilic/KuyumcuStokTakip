@@ -41,7 +41,8 @@
             this.txtNot = new System.Windows.Forms.TextBox();
             this.chkCariAktifMi = new System.Windows.Forms.CheckBox();
             this.btnCariKayit = new DevExpress.XtraEditors.SimpleButton();
-            this.lstHesapTipi = new System.Windows.Forms.ListBox();
+            this.gleCariTip = new DevExpress.XtraEditors.LookUpEdit();
+            ((System.ComponentModel.ISupportInitialize)(this.gleCariTip.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCariAd
@@ -64,9 +65,9 @@
             // 
             this.lblHesapTip.Location = new System.Drawing.Point(60, 123);
             this.lblHesapTip.Name = "lblHesapTip";
-            this.lblHesapTip.Size = new System.Drawing.Size(60, 16);
+            this.lblHesapTip.Size = new System.Drawing.Size(48, 16);
             this.lblHesapTip.TabIndex = 2;
-            this.lblHesapTip.Text = "Hesap Tipi";
+            this.lblHesapTip.Text = "Cari Tipi";
             // 
             // lblTelefonNo
             // 
@@ -144,26 +145,24 @@
             this.btnCariKayit.Size = new System.Drawing.Size(84, 34);
             this.btnCariKayit.TabIndex = 13;
             this.btnCariKayit.Text = "Kayıt";
+            this.btnCariKayit.Click += new System.EventHandler(this.btnCariKayit_Click);
             // 
-            // lstHesapTipi
+            // gleCariTip
             // 
-            this.lstHesapTipi.FormattingEnabled = true;
-            this.lstHesapTipi.ItemHeight = 16;
-            this.lstHesapTipi.Items.AddRange(new object[] {
-            "Müşteri",
-            "Toptancı"});
-            this.lstHesapTipi.Location = new System.Drawing.Point(175, 119);
-            this.lstHesapTipi.Name = "lstHesapTipi";
-            this.lstHesapTipi.Size = new System.Drawing.Size(135, 20);
-            this.lstHesapTipi.TabIndex = 14;
-            this.lstHesapTipi.Tag = "";
+            this.gleCariTip.Location = new System.Drawing.Point(178, 125);
+            this.gleCariTip.Name = "gleCariTip";
+            this.gleCariTip.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.gleCariTip.Properties.NullText = "";
+            this.gleCariTip.Size = new System.Drawing.Size(131, 22);
+            this.gleCariTip.TabIndex = 14;
             // 
             // frmCariKayit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(502, 450);
-            this.Controls.Add(this.lstHesapTipi);
+            this.Controls.Add(this.gleCariTip);
             this.Controls.Add(this.btnCariKayit);
             this.Controls.Add(this.chkCariAktifMi);
             this.Controls.Add(this.txtNot);
@@ -179,6 +178,7 @@
             this.Controls.Add(this.lblCariAd);
             this.Name = "frmCariKayit";
             this.Text = "Cari Kayıt";
+            ((System.ComponentModel.ISupportInitialize)(this.gleCariTip.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,6 +199,6 @@
         private System.Windows.Forms.TextBox txtNot;
         private System.Windows.Forms.CheckBox chkCariAktifMi;
         private DevExpress.XtraEditors.SimpleButton btnCariKayit;
-        private System.Windows.Forms.ListBox lstHesapTipi;
+        private DevExpress.XtraEditors.LookUpEdit gleCariTip;
     }
 }

@@ -84,6 +84,14 @@
     <Compile Include="Cari\frmCariListe.Designer.cs">
       <DependentUpon>frmCariListe.cs</DependentUpon>
     </Compile>
+    <Compile Include="Database\KuyumcuStokTakip.cs">
+      <DependentUpon>KuyumcuStokTakip.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Database\KuyumcuStokTakip.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KuyumcuStokTakip.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Fatura\frmAlisFatura.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +212,17 @@
       <DependentUpon>frmUrunGrupKayit.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
+    <None Include="Database\KuyumcuStokTakip.xsc">
+      <DependentUpon>KuyumcuStokTakip.xsd</DependentUpon>
+    </None>
+    <None Include="Database\KuyumcuStokTakip.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>KuyumcuStokTakip.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Database\KuyumcuStokTakip.xss">
+      <DependentUpon>KuyumcuStokTakip.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

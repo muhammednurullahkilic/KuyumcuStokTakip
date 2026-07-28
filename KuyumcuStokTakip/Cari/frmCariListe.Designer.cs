@@ -33,8 +33,7 @@
             this.gridControlCari = new DevExpress.XtraGrid.GridControl();
             this.gridCariListe = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridCariAdı = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridCariNo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridHesapTipi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridCariTipi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridTelefonNo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridAdres = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridNot = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -42,6 +41,7 @@
             this.gridCariListePersonel = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridCariListeCreatedDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridCariListeUpdatedDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnCariYeniKayit = new DevExpress.XtraBars.BarButtonItem();
@@ -53,6 +53,7 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlCari)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridCariListe)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,6 +63,8 @@
             this.gridControlCari.Location = new System.Drawing.Point(0, 30);
             this.gridControlCari.MainView = this.gridCariListe;
             this.gridControlCari.Name = "gridControlCari";
+            this.gridControlCari.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemLookUpEdit1});
             this.gridControlCari.Size = new System.Drawing.Size(1259, 641);
             this.gridControlCari.TabIndex = 0;
             this.gridControlCari.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -71,8 +74,7 @@
             // 
             this.gridCariListe.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridCariAdı,
-            this.gridCariNo,
-            this.gridHesapTipi,
+            this.gridCariTipi,
             this.gridTelefonNo,
             this.gridAdres,
             this.gridNot,
@@ -87,91 +89,98 @@
             // gridCariAdı
             // 
             this.gridCariAdı.Caption = "Cari Adı";
+            this.gridCariAdı.FieldName = "CariAd";
             this.gridCariAdı.MinWidth = 25;
             this.gridCariAdı.Name = "gridCariAdı";
             this.gridCariAdı.Visible = true;
             this.gridCariAdı.VisibleIndex = 0;
             // 
-            // gridCariNo
+            // gridCariTipi
             // 
-            this.gridCariNo.Caption = "Cari No";
-            this.gridCariNo.MinWidth = 25;
-            this.gridCariNo.Name = "gridCariNo";
-            this.gridCariNo.Visible = true;
-            this.gridCariNo.VisibleIndex = 1;
-            this.gridCariNo.Width = 57;
-            // 
-            // gridHesapTipi
-            // 
-            this.gridHesapTipi.Caption = "Hesap Tipi";
-            this.gridHesapTipi.MinWidth = 25;
-            this.gridHesapTipi.Name = "gridHesapTipi";
-            this.gridHesapTipi.Visible = true;
-            this.gridHesapTipi.VisibleIndex = 2;
-            this.gridHesapTipi.Width = 79;
+            this.gridCariTipi.Caption = "Cari Tipi";
+            this.gridCariTipi.FieldName = " CariTipAdi";
+            this.gridCariTipi.MinWidth = 25;
+            this.gridCariTipi.Name = "gridCariTipi";
+            this.gridCariTipi.Visible = true;
+            this.gridCariTipi.VisibleIndex = 1;
+            this.gridCariTipi.Width = 79;
             // 
             // gridTelefonNo
             // 
             this.gridTelefonNo.Caption = "Telefon No";
+            this.gridTelefonNo.FieldName = "CariTelefon";
             this.gridTelefonNo.MinWidth = 25;
             this.gridTelefonNo.Name = "gridTelefonNo";
             this.gridTelefonNo.Visible = true;
-            this.gridTelefonNo.VisibleIndex = 3;
+            this.gridTelefonNo.VisibleIndex = 2;
             this.gridTelefonNo.Width = 79;
             // 
             // gridAdres
             // 
             this.gridAdres.Caption = "Adres";
+            this.gridAdres.FieldName = "CariAdres";
             this.gridAdres.MinWidth = 25;
             this.gridAdres.Name = "gridAdres";
             this.gridAdres.Visible = true;
-            this.gridAdres.VisibleIndex = 4;
+            this.gridAdres.VisibleIndex = 3;
             this.gridAdres.Width = 79;
             // 
             // gridNot
             // 
             this.gridNot.Caption = "Not";
+            this.gridNot.FieldName = "CariNot";
             this.gridNot.MinWidth = 25;
             this.gridNot.Name = "gridNot";
             this.gridNot.Visible = true;
-            this.gridNot.VisibleIndex = 5;
+            this.gridNot.VisibleIndex = 4;
             this.gridNot.Width = 79;
             // 
             // gridAktifMi
             // 
             this.gridAktifMi.Caption = "Aktif mi";
+            this.gridAktifMi.FieldName = "IsActive";
             this.gridAktifMi.MinWidth = 25;
             this.gridAktifMi.Name = "gridAktifMi";
             this.gridAktifMi.Visible = true;
-            this.gridAktifMi.VisibleIndex = 6;
+            this.gridAktifMi.VisibleIndex = 5;
             this.gridAktifMi.Width = 79;
             // 
             // gridCariListePersonel
             // 
             this.gridCariListePersonel.Caption = "Personel";
+            this.gridCariListePersonel.FieldName = "CUser";
             this.gridCariListePersonel.MinWidth = 25;
             this.gridCariListePersonel.Name = "gridCariListePersonel";
             this.gridCariListePersonel.Visible = true;
-            this.gridCariListePersonel.VisibleIndex = 7;
+            this.gridCariListePersonel.VisibleIndex = 6;
             this.gridCariListePersonel.Width = 79;
             // 
             // gridCariListeCreatedDate
             // 
             this.gridCariListeCreatedDate.Caption = "Oluşturulma Tarihi";
+            this.gridCariListeCreatedDate.FieldName = "CDate";
             this.gridCariListeCreatedDate.MinWidth = 25;
             this.gridCariListeCreatedDate.Name = "gridCariListeCreatedDate";
             this.gridCariListeCreatedDate.Visible = true;
-            this.gridCariListeCreatedDate.VisibleIndex = 8;
+            this.gridCariListeCreatedDate.VisibleIndex = 7;
             this.gridCariListeCreatedDate.Width = 79;
             // 
             // gridCariListeUpdatedDate
             // 
             this.gridCariListeUpdatedDate.Caption = "Güncelleme Tarihi";
+            this.gridCariListeUpdatedDate.FieldName = "MDate";
             this.gridCariListeUpdatedDate.MinWidth = 25;
             this.gridCariListeUpdatedDate.Name = "gridCariListeUpdatedDate";
             this.gridCariListeUpdatedDate.Visible = true;
-            this.gridCariListeUpdatedDate.VisibleIndex = 9;
+            this.gridCariListeUpdatedDate.VisibleIndex = 8;
             this.gridCariListeUpdatedDate.Width = 85;
+            // 
+            // repositoryItemLookUpEdit1
+            // 
+            this.repositoryItemLookUpEdit1.AutoHeight = false;
+            this.repositoryItemLookUpEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemLookUpEdit1.Name = "repositoryItemLookUpEdit1";
             // 
             // barManager1
             // 
@@ -274,8 +283,10 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frmCariListe";
             this.Text = "Cari Liste";
+            this.Load += new System.EventHandler(this.frmCariListe_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlCari)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridCariListe)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -287,8 +298,7 @@
         private DevExpress.XtraGrid.GridControl gridControlCari;
         private DevExpress.XtraGrid.Views.Grid.GridView gridCariListe;
         private DevExpress.XtraGrid.Columns.GridColumn gridCariAdı;
-        private DevExpress.XtraGrid.Columns.GridColumn gridCariNo;
-        private DevExpress.XtraGrid.Columns.GridColumn gridHesapTipi;
+        private DevExpress.XtraGrid.Columns.GridColumn gridCariTipi;
         private DevExpress.XtraGrid.Columns.GridColumn gridTelefonNo;
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.Bar bar2;
@@ -305,5 +315,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridCariListePersonel;
         private DevExpress.XtraGrid.Columns.GridColumn gridCariListeCreatedDate;
         private DevExpress.XtraGrid.Columns.GridColumn gridCariListeUpdatedDate;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit1;
     }
 }

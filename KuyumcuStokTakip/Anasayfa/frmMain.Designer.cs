@@ -44,7 +44,6 @@
             this.btnSatisIstatistikler = new DevExpress.XtraBars.BarButtonItem();
             this.grpProfil = new DevExpress.XtraBars.BarSubItem();
             this.btnKullaniciBilgileri = new DevExpress.XtraBars.BarButtonItem();
-            this.btnSifreGuncelleme = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.rbnERP = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rbnCariIslemler = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -72,7 +71,6 @@
             this.grpRapor,
             this.grpProfil,
             this.btnKullaniciBilgileri,
-            this.btnSifreGuncelleme,
             this.btnAlisFatura,
             this.btnIslemGecmisi,
             this.barButtonItem1,
@@ -186,8 +184,7 @@
             this.grpProfil.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("grpProfil.ImageOptions.Image")));
             this.grpProfil.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("grpProfil.ImageOptions.LargeImage")));
             this.grpProfil.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnKullaniciBilgileri),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnSifreGuncelleme)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnKullaniciBilgileri)});
             this.grpProfil.Name = "grpProfil";
             // 
             // btnKullaniciBilgileri
@@ -196,12 +193,6 @@
             this.btnKullaniciBilgileri.Id = 14;
             this.btnKullaniciBilgileri.Name = "btnKullaniciBilgileri";
             this.btnKullaniciBilgileri.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKullaniciBilgileri_ItemClick);
-            // 
-            // btnSifreGuncelleme
-            // 
-            this.btnSifreGuncelleme.Caption = "Şifre Güncelleme";
-            this.btnSifreGuncelleme.Id = 15;
-            this.btnSifreGuncelleme.Name = "btnSifreGuncelleme";
             // 
             // barButtonItem1
             // 
@@ -291,7 +282,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rbnProfilIslemler;
         private DevExpress.XtraBars.BarSubItem grpProfil;
         private DevExpress.XtraBars.BarButtonItem btnKullaniciBilgileri;
-        private DevExpress.XtraBars.BarButtonItem btnSifreGuncelleme;
         private DevExpress.XtraBars.BarButtonItem btnAlisFatura;
         private DevExpress.XtraBars.BarButtonItem btnIslemGecmisi;
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
