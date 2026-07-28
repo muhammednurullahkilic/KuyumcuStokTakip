@@ -39,6 +39,8 @@
             this.txtAlisGramFiyat = new DevExpress.XtraEditors.TextEdit();
             this.txtAlisTutar = new DevExpress.XtraEditors.TextEdit();
             this.btnAlisFaturaOnayla = new DevExpress.XtraEditors.SimpleButton();
+            this.txtAlisFaturaNo = new System.Windows.Forms.TextBox();
+            this.lblFaturaNo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.lueMusteriAd.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueBarkodNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtAlisTarihi.Properties)).BeginInit();
@@ -148,11 +150,29 @@
             this.btnAlisFaturaOnayla.TabIndex = 14;
             this.btnAlisFaturaOnayla.Text = "Onayla";
             // 
+            // txtAlisFaturaNo
+            // 
+            this.txtAlisFaturaNo.Location = new System.Drawing.Point(136, 12);
+            this.txtAlisFaturaNo.Name = "txtAlisFaturaNo";
+            this.txtAlisFaturaNo.Size = new System.Drawing.Size(187, 22);
+            this.txtAlisFaturaNo.TabIndex = 15;
+            // 
+            // lblFaturaNo
+            // 
+            this.lblFaturaNo.AutoSize = true;
+            this.lblFaturaNo.Location = new System.Drawing.Point(29, 18);
+            this.lblFaturaNo.Name = "lblFaturaNo";
+            this.lblFaturaNo.Size = new System.Drawing.Size(83, 20);
+            this.lblFaturaNo.TabIndex = 16;
+            this.lblFaturaNo.Text = "Fatura No";
+            // 
             // frmAlisFatura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(443, 390);
+            this.Controls.Add(this.lblFaturaNo);
+            this.Controls.Add(this.txtAlisFaturaNo);
             this.Controls.Add(this.btnAlisFaturaOnayla);
             this.Controls.Add(this.txtAlisTutar);
             this.Controls.Add(this.txtAlisGramFiyat);
@@ -190,5 +210,7 @@
         private DevExpress.XtraEditors.TextEdit txtAlisGramFiyat;
         private DevExpress.XtraEditors.TextEdit txtAlisTutar;
         private DevExpress.XtraEditors.SimpleButton btnAlisFaturaOnayla;
+        private System.Windows.Forms.TextBox txtAlisFaturaNo;
+        private System.Windows.Forms.Label lblFaturaNo;
     }
 }

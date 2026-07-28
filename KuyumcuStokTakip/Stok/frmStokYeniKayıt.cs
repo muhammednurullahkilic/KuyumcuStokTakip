@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace KuyumcuStokTakip.Stok
 {
-    public partial class frmStokListele : Form
+    public partial class frmStokYeniKayıt : Form
     {
-        public frmStokListele()
+        public frmStokYeniKayıt()
         {
             InitializeComponent();
-        }
-
-        private void btnStokYeniKayıt_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            var frm = new frmStokYeniKayıt();
-            frm.ShowDialog();
         }
     }
 }

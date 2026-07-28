@@ -54,11 +54,18 @@
             this.gridAyarPersonel = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridAyarCreatedDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridAyarUpdatedDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlUrunGrubu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridUrunGrubuParametre)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlUrunAyar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridUrunAyarParametre)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).BeginInit();
+            this.splitContainerControl1.Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel2)).BeginInit();
+            this.splitContainerControl1.Panel2.SuspendLayout();
+            this.splitContainerControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // barManager1
@@ -94,12 +101,14 @@
             this.btnUrunGrupKayıt.Caption = "Ürün Grubu Kayıt";
             this.btnUrunGrupKayıt.Id = 0;
             this.btnUrunGrupKayıt.Name = "btnUrunGrupKayıt";
+            this.btnUrunGrupKayıt.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnUrunGrupKayıt_ItemClick);
             // 
             // btnUrunAyarKayıt
             // 
             this.btnUrunAyarKayıt.Caption = "Ayar Grubu Kayıt";
             this.btnUrunAyarKayıt.Id = 1;
             this.btnUrunAyarKayıt.Name = "btnUrunAyarKayıt";
+            this.btnUrunAyarKayıt.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnUrunAyarKayıt_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -135,11 +144,12 @@
             // 
             // gridControlUrunGrubu
             // 
-            this.gridControlUrunGrubu.Location = new System.Drawing.Point(0, 31);
+            this.gridControlUrunGrubu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlUrunGrubu.Location = new System.Drawing.Point(0, 0);
             this.gridControlUrunGrubu.MainView = this.gridUrunGrubuParametre;
             this.gridControlUrunGrubu.MenuManager = this.barManager1;
             this.gridControlUrunGrubu.Name = "gridControlUrunGrubu";
-            this.gridControlUrunGrubu.Size = new System.Drawing.Size(683, 620);
+            this.gridControlUrunGrubu.Size = new System.Drawing.Size(602, 630);
             this.gridControlUrunGrubu.TabIndex = 4;
             this.gridControlUrunGrubu.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridUrunGrubuParametre});
@@ -223,11 +233,12 @@
             // 
             // gridControlUrunAyar
             // 
-            this.gridControlUrunAyar.Location = new System.Drawing.Point(689, 31);
+            this.gridControlUrunAyar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlUrunAyar.Location = new System.Drawing.Point(0, 0);
             this.gridControlUrunAyar.MainView = this.gridUrunAyarParametre;
             this.gridControlUrunAyar.MenuManager = this.barManager1;
             this.gridControlUrunAyar.Name = "gridControlUrunAyar";
-            this.gridControlUrunAyar.Size = new System.Drawing.Size(539, 620);
+            this.gridControlUrunAyar.Size = new System.Drawing.Size(636, 630);
             this.gridControlUrunAyar.TabIndex = 5;
             this.gridControlUrunAyar.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridUrunAyarParametre});
@@ -299,13 +310,31 @@
             this.gridAyarUpdatedDate.VisibleIndex = 5;
             this.gridAyarUpdatedDate.Width = 94;
             // 
+            // splitContainerControl1
+            // 
+            this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerControl1.Location = new System.Drawing.Point(0, 25);
+            this.splitContainerControl1.Name = "splitContainerControl1";
+            // 
+            // splitContainerControl1.Panel1
+            // 
+            this.splitContainerControl1.Panel1.Controls.Add(this.gridControlUrunGrubu);
+            this.splitContainerControl1.Panel1.Text = "Panel1";
+            // 
+            // splitContainerControl1.Panel2
+            // 
+            this.splitContainerControl1.Panel2.Controls.Add(this.gridControlUrunAyar);
+            this.splitContainerControl1.Panel2.Text = "Panel2";
+            this.splitContainerControl1.Size = new System.Drawing.Size(1250, 630);
+            this.splitContainerControl1.SplitterPosition = 602;
+            this.splitContainerControl1.TabIndex = 10;
+            // 
             // frmParametreListele
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1250, 655);
-            this.Controls.Add(this.gridControlUrunAyar);
-            this.Controls.Add(this.gridControlUrunGrubu);
+            this.Controls.Add(this.splitContainerControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
@@ -317,6 +346,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridUrunGrubuParametre)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlUrunAyar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridUrunAyarParametre)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).EndInit();
+            this.splitContainerControl1.Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel2)).EndInit();
+            this.splitContainerControl1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
+            this.splitContainerControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -349,5 +384,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridUrunGrupPersonel;
         private DevExpress.XtraGrid.Columns.GridColumn gridCreatedDate;
         private DevExpress.XtraGrid.Columns.GridColumn gridUpdatedDate;
+        private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
     }
 }

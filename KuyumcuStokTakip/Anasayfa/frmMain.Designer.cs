@@ -35,14 +35,17 @@
             this.btnCariKayitListesi = new DevExpress.XtraBars.BarButtonItem();
             this.grpStok = new DevExpress.XtraBars.BarSubItem();
             this.btnStokKayitListesi = new DevExpress.XtraBars.BarButtonItem();
+            this.btnParametre = new DevExpress.XtraBars.BarButtonItem();
             this.grpFatura = new DevExpress.XtraBars.BarSubItem();
             this.btnSatisFatura = new DevExpress.XtraBars.BarButtonItem();
             this.btnAlisFatura = new DevExpress.XtraBars.BarButtonItem();
             this.grpRapor = new DevExpress.XtraBars.BarSubItem();
             this.btnIslemGecmisi = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSatisIstatistikler = new DevExpress.XtraBars.BarButtonItem();
             this.grpProfil = new DevExpress.XtraBars.BarSubItem();
             this.btnKullaniciBilgileri = new DevExpress.XtraBars.BarButtonItem();
             this.btnSifreGuncelleme = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.rbnERP = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rbnCariIslemler = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbnStokIslemler = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -50,9 +53,6 @@
             this.rbnRaporIslemler = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbnProfilIslemler = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.btnParametre = new DevExpress.XtraBars.BarButtonItem();
-            this.btnSatisIstatistikler = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.rbnKuyumcuStokTakip)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -120,6 +120,14 @@
             this.btnStokKayitListesi.Caption = "Stok Kayıt Listesi";
             this.btnStokKayitListesi.Id = 4;
             this.btnStokKayitListesi.Name = "btnStokKayitListesi";
+            this.btnStokKayitListesi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnStokKayitListesi_ItemClick);
+            // 
+            // btnParametre
+            // 
+            this.btnParametre.Caption = "Parametre";
+            this.btnParametre.Id = 21;
+            this.btnParametre.Name = "btnParametre";
+            this.btnParametre.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnParametre_ItemClick);
             // 
             // grpFatura
             // 
@@ -137,12 +145,14 @@
             this.btnSatisFatura.Caption = "Satış Fatura";
             this.btnSatisFatura.Id = 6;
             this.btnSatisFatura.Name = "btnSatisFatura";
+            this.btnSatisFatura.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSatisFatura_ItemClick);
             // 
             // btnAlisFatura
             // 
             this.btnAlisFatura.Caption = "Alış Fatura";
             this.btnAlisFatura.Id = 18;
             this.btnAlisFatura.Name = "btnAlisFatura";
+            this.btnAlisFatura.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAlisFatura_ItemClick);
             // 
             // grpRapor
             // 
@@ -160,6 +170,14 @@
             this.btnIslemGecmisi.Caption = "İşlem Geçmişi";
             this.btnIslemGecmisi.Id = 19;
             this.btnIslemGecmisi.Name = "btnIslemGecmisi";
+            this.btnIslemGecmisi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnIslemGecmisi_ItemClick);
+            // 
+            // btnSatisIstatistikler
+            // 
+            this.btnSatisIstatistikler.Caption = "Satış İstatistikleri";
+            this.btnSatisIstatistikler.Id = 22;
+            this.btnSatisIstatistikler.Name = "btnSatisIstatistikler";
+            this.btnSatisIstatistikler.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSatisIstatistikler_ItemClick);
             // 
             // grpProfil
             // 
@@ -177,12 +195,19 @@
             this.btnKullaniciBilgileri.Caption = "Kullanıcı Bilgileri";
             this.btnKullaniciBilgileri.Id = 14;
             this.btnKullaniciBilgileri.Name = "btnKullaniciBilgileri";
+            this.btnKullaniciBilgileri.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKullaniciBilgileri_ItemClick);
             // 
             // btnSifreGuncelleme
             // 
             this.btnSifreGuncelleme.Caption = "Şifre Güncelleme";
             this.btnSifreGuncelleme.Id = 15;
             this.btnSifreGuncelleme.Name = "btnSifreGuncelleme";
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "barButtonItem1";
+            this.barButtonItem1.Id = 20;
+            this.barButtonItem1.Name = "barButtonItem1";
             // 
             // rbnERP
             // 
@@ -228,24 +253,6 @@
             // xtraTabbedMdiManager1
             // 
             this.xtraTabbedMdiManager1.MdiParent = this;
-            // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "barButtonItem1";
-            this.barButtonItem1.Id = 20;
-            this.barButtonItem1.Name = "barButtonItem1";
-            // 
-            // btnParametre
-            // 
-            this.btnParametre.Caption = "Parametre";
-            this.btnParametre.Id = 21;
-            this.btnParametre.Name = "btnParametre";
-            // 
-            // btnSatisIstatistikler
-            // 
-            this.btnSatisIstatistikler.Caption = "Satış İstatistikleri";
-            this.btnSatisIstatistikler.Id = 22;
-            this.btnSatisIstatistikler.Name = "btnSatisIstatistikler";
             // 
             // frmMain
             // 

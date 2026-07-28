@@ -41,6 +41,8 @@
             this.txtIskonto = new DevExpress.XtraEditors.TextEdit();
             this.txtSatisTutar = new DevExpress.XtraEditors.TextEdit();
             this.btnSatisFaturaOnayla = new DevExpress.XtraEditors.SimpleButton();
+            this.lblFaturaNo = new System.Windows.Forms.Label();
+            this.txtSatisFaturaNo = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.lueMusteriAd.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueBarkodNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtSatisTarihi.Properties)).BeginInit();
@@ -169,11 +171,29 @@
             this.btnSatisFaturaOnayla.TabIndex = 14;
             this.btnSatisFaturaOnayla.Text = "Onayla";
             // 
+            // lblFaturaNo
+            // 
+            this.lblFaturaNo.AutoSize = true;
+            this.lblFaturaNo.Location = new System.Drawing.Point(29, 19);
+            this.lblFaturaNo.Name = "lblFaturaNo";
+            this.lblFaturaNo.Size = new System.Drawing.Size(66, 16);
+            this.lblFaturaNo.TabIndex = 15;
+            this.lblFaturaNo.Text = "Fatura No";
+            // 
+            // txtSatisFaturaNo
+            // 
+            this.txtSatisFaturaNo.Location = new System.Drawing.Point(136, 16);
+            this.txtSatisFaturaNo.Name = "txtSatisFaturaNo";
+            this.txtSatisFaturaNo.Size = new System.Drawing.Size(187, 22);
+            this.txtSatisFaturaNo.TabIndex = 16;
+            // 
             // frmSatisFatura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(413, 396);
+            this.Controls.Add(this.txtSatisFaturaNo);
+            this.Controls.Add(this.lblFaturaNo);
             this.Controls.Add(this.btnSatisFaturaOnayla);
             this.Controls.Add(this.txtSatisTutar);
             this.Controls.Add(this.txtIskonto);
@@ -216,5 +236,7 @@
         private DevExpress.XtraEditors.TextEdit txtIskonto;
         private DevExpress.XtraEditors.TextEdit txtSatisTutar;
         private DevExpress.XtraEditors.SimpleButton btnSatisFaturaOnayla;
+        private System.Windows.Forms.Label lblFaturaNo;
+        private System.Windows.Forms.TextBox txtSatisFaturaNo;
     }
 }

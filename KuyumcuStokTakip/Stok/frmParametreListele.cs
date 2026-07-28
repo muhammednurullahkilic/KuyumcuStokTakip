@@ -16,5 +16,17 @@ namespace KuyumcuStokTakip.Stok
         {
             InitializeComponent();
         }
+
+        private void btnUrunGrupKayıt_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var frm = new frmUrunGrupKayit();
+            frm.ShowDialog();
+        }
+
+        private void btnUrunAyarKayıt_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            var frm = new frmAyarKayit();
+            frm.ShowDialog();
+        }
     }
 }
