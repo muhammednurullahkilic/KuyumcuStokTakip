@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using KuyumcuStokTakip.Cari;
 
 namespace KuyumcuStokTakip.Cari
 {
@@ -30,7 +31,7 @@ namespace KuyumcuStokTakip.Cari
         {
             CariListeGetir();
         }
-        private void CariListeGetir()
+        public  void CariListeGetir()
         {
             gridControlCari.DataSource = _cariTableAdapter.GetData();
             
@@ -40,6 +41,7 @@ namespace KuyumcuStokTakip.Cari
         {
             var frm = new frmCariKayit();
             frm.ShowDialog();
+            CariListeGetir();
         }
 
         

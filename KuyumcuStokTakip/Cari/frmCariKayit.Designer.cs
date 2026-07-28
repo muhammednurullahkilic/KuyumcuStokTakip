@@ -49,49 +49,50 @@
             // 
             this.lblCariAd.Location = new System.Drawing.Point(60, 47);
             this.lblCariAd.Name = "lblCariAd";
-            this.lblCariAd.Size = new System.Drawing.Size(42, 16);
+            this.lblCariAd.Size = new System.Drawing.Size(55, 16);
             this.lblCariAd.TabIndex = 0;
-            this.lblCariAd.Text = "Cari Ad";
+            this.lblCariAd.Tag = "Cari Ad";
+            this.lblCariAd.Text = "*Cari Ad:";
             // 
             // lblCariKod
             // 
             this.lblCariKod.Location = new System.Drawing.Point(60, 83);
             this.lblCariKod.Name = "lblCariKod";
-            this.lblCariKod.Size = new System.Drawing.Size(48, 16);
+            this.lblCariKod.Size = new System.Drawing.Size(61, 16);
             this.lblCariKod.TabIndex = 1;
-            this.lblCariKod.Text = "Cari Kod";
+            this.lblCariKod.Text = "*Cari Kod:";
             // 
             // lblHesapTip
             // 
             this.lblHesapTip.Location = new System.Drawing.Point(60, 123);
             this.lblHesapTip.Name = "lblHesapTip";
-            this.lblHesapTip.Size = new System.Drawing.Size(48, 16);
+            this.lblHesapTip.Size = new System.Drawing.Size(61, 16);
             this.lblHesapTip.TabIndex = 2;
-            this.lblHesapTip.Text = "Cari Tipi";
+            this.lblHesapTip.Text = "*Cari Tipi:";
             // 
             // lblTelefonNo
             // 
             this.lblTelefonNo.Location = new System.Drawing.Point(60, 159);
             this.lblTelefonNo.Name = "lblTelefonNo";
-            this.lblTelefonNo.Size = new System.Drawing.Size(62, 16);
+            this.lblTelefonNo.Size = new System.Drawing.Size(67, 16);
             this.lblTelefonNo.TabIndex = 3;
-            this.lblTelefonNo.Text = "Telefon No";
+            this.lblTelefonNo.Text = "Telefon No:";
             // 
             // lblAdres
             // 
             this.lblAdres.Location = new System.Drawing.Point(60, 199);
             this.lblAdres.Name = "lblAdres";
-            this.lblAdres.Size = new System.Drawing.Size(33, 16);
+            this.lblAdres.Size = new System.Drawing.Size(38, 16);
             this.lblAdres.TabIndex = 4;
-            this.lblAdres.Text = "Adres";
+            this.lblAdres.Text = "Adres:";
             // 
             // lblNot
             // 
             this.lblNot.Location = new System.Drawing.Point(60, 235);
             this.lblNot.Name = "lblNot";
-            this.lblNot.Size = new System.Drawing.Size(19, 16);
+            this.lblNot.Size = new System.Drawing.Size(24, 16);
             this.lblNot.TabIndex = 5;
-            this.lblNot.Text = "Not";
+            this.lblNot.Text = "Not:";
             // 
             // txtCariAd
             // 
@@ -149,13 +150,14 @@
             // 
             // gleCariTip
             // 
-            this.gleCariTip.Location = new System.Drawing.Point(178, 125);
+            this.gleCariTip.Location = new System.Drawing.Point(175, 120);
             this.gleCariTip.Name = "gleCariTip";
             this.gleCariTip.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.gleCariTip.Properties.NullText = "";
             this.gleCariTip.Size = new System.Drawing.Size(131, 22);
             this.gleCariTip.TabIndex = 14;
+            this.gleCariTip.Tag = "Cari Tip";
             // 
             // frmCariKayit
             // 
