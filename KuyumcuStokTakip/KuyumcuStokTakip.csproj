@@ -147,6 +147,9 @@
     <EmbeddedResource Include="Cari\frmCariListe.resx">
       <DependentUpon>frmCariListe.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Fatura\frmAlisFatura.resx">
+      <DependentUpon>frmAlisFatura.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Fatura\frmSatisFatura.resx">
       <DependentUpon>frmSatisFatura.cs</DependentUpon>
     </EmbeddedResource>
