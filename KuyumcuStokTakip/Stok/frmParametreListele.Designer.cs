@@ -37,35 +37,37 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.gridControlUrunGrubu = new DevExpress.XtraGrid.GridControl();
-            this.gridUrunGrubuParametre = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridUrunID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
+            this.xtpUrunGrubu = new DevExpress.XtraTab.XtraTabPage();
+            this.xtpAyarGrup = new DevExpress.XtraTab.XtraTabPage();
+            this.gridControlUrunGrup = new DevExpress.XtraGrid.GridControl();
+            this.gridUrunGrup = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridControlAyarGrup = new DevExpress.XtraGrid.GridControl();
+            this.gridAyarGrup = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridUrunGrupGuncellemeTarih = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridUrunGrupGuncelleyenPersonel = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridUrunGrupOlusturmaTarih = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridUrunGrupOlusturanPersonel = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridUrunGrupAktifMi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridUrunKisaKod = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridUrunAd = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridUrunKısaKod = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridUrunAktifMi = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridUrunGrupPersonel = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridCreatedDate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridUpdatedDate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridControlUrunAyar = new DevExpress.XtraGrid.GridControl();
-            this.gridUrunAyarParametre = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridUrunID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridAyarID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridAyarAd = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridAyar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridAyarAktifMi = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridAyarPersonel = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridAyarCreatedDate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridAyarUpdatedDate = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
+            this.gridAyarOlusturanPersonel = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridOlusturmaTarihi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridAyarGüncelleyenPersonel = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridAyarGuncellemeTarihi = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlUrunGrubu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridUrunGrubuParametre)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlUrunAyar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridUrunAyarParametre)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).BeginInit();
-            this.splitContainerControl1.Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel2)).BeginInit();
-            this.splitContainerControl1.Panel2.SuspendLayout();
-            this.splitContainerControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
+            this.xtraTabControl1.SuspendLayout();
+            this.xtpUrunGrubu.SuspendLayout();
+            this.xtpAyarGrup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlUrunGrup)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridUrunGrup)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlAyarGrup)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridAyarGrup)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -116,242 +118,242 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1250, 25);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.barDockControlTop.Size = new System.Drawing.Size(938, 20);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 655);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 532);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1250, 0);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.barDockControlBottom.Size = new System.Drawing.Size(938, 0);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 25);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 20);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 630);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 512);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1250, 25);
+            this.barDockControlRight.Location = new System.Drawing.Point(938, 20);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 630);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 512);
             // 
-            // gridControlUrunGrubu
+            // xtraTabControl1
             // 
-            this.gridControlUrunGrubu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlUrunGrubu.Location = new System.Drawing.Point(0, 0);
-            this.gridControlUrunGrubu.MainView = this.gridUrunGrubuParametre;
-            this.gridControlUrunGrubu.MenuManager = this.barManager1;
-            this.gridControlUrunGrubu.Name = "gridControlUrunGrubu";
-            this.gridControlUrunGrubu.Size = new System.Drawing.Size(602, 630);
-            this.gridControlUrunGrubu.TabIndex = 4;
-            this.gridControlUrunGrubu.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridUrunGrubuParametre});
+            this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.xtraTabControl1.Location = new System.Drawing.Point(0, 20);
+            this.xtraTabControl1.Name = "xtraTabControl1";
+            this.xtraTabControl1.SelectedTabPage = this.xtpUrunGrubu;
+            this.xtraTabControl1.Size = new System.Drawing.Size(938, 512);
+            this.xtraTabControl1.TabIndex = 15;
+            this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.xtpUrunGrubu,
+            this.xtpAyarGrup});
             // 
-            // gridUrunGrubuParametre
+            // xtpUrunGrubu
             // 
-            this.gridUrunGrubuParametre.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.xtpUrunGrubu.Controls.Add(this.gridControlUrunGrup);
+            this.xtpUrunGrubu.Name = "xtpUrunGrubu";
+            this.xtpUrunGrubu.Size = new System.Drawing.Size(936, 487);
+            this.xtpUrunGrubu.Text = "Ürün Grubu Liste";
+            // 
+            // xtpAyarGrup
+            // 
+            this.xtpAyarGrup.Controls.Add(this.gridControlAyarGrup);
+            this.xtpAyarGrup.Name = "xtpAyarGrup";
+            this.xtpAyarGrup.Size = new System.Drawing.Size(936, 487);
+            this.xtpAyarGrup.Text = "Ayar Grubu Liste";
+            // 
+            // gridControlUrunGrup
+            // 
+            this.gridControlUrunGrup.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlUrunGrup.Location = new System.Drawing.Point(0, 0);
+            this.gridControlUrunGrup.MainView = this.gridUrunGrup;
+            this.gridControlUrunGrup.MenuManager = this.barManager1;
+            this.gridControlUrunGrup.Name = "gridControlUrunGrup";
+            this.gridControlUrunGrup.Size = new System.Drawing.Size(936, 487);
+            this.gridControlUrunGrup.TabIndex = 0;
+            this.gridControlUrunGrup.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridUrunGrup});
+            // 
+            // gridUrunGrup
+            // 
+            this.gridUrunGrup.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridUrunID,
             this.gridUrunAd,
-            this.gridUrunKısaKod,
-            this.gridUrunAktifMi,
-            this.gridUrunGrupPersonel,
-            this.gridCreatedDate,
-            this.gridUpdatedDate});
-            this.gridUrunGrubuParametre.GridControl = this.gridControlUrunGrubu;
-            this.gridUrunGrubuParametre.GroupPanelText = "Ürün Grubu Parametre Listesi";
-            this.gridUrunGrubuParametre.Name = "gridUrunGrubuParametre";
+            this.gridUrunKisaKod,
+            this.gridUrunGrupAktifMi,
+            this.gridUrunGrupOlusturanPersonel,
+            this.gridUrunGrupOlusturmaTarih,
+            this.gridUrunGrupGuncelleyenPersonel,
+            this.gridUrunGrupGuncellemeTarih});
+            this.gridUrunGrup.GridControl = this.gridControlUrunGrup;
+            this.gridUrunGrup.GroupPanelText = "Ürün Grupları Listesi";
+            this.gridUrunGrup.Name = "gridUrunGrup";
             // 
-            // gridUrunID
+            // gridControlAyarGrup
             // 
-            this.gridUrunID.Caption = "Ürün ID";
-            this.gridUrunID.MinWidth = 25;
-            this.gridUrunID.Name = "gridUrunID";
-            this.gridUrunID.Visible = true;
-            this.gridUrunID.VisibleIndex = 0;
-            this.gridUrunID.Width = 94;
+            this.gridControlAyarGrup.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlAyarGrup.Location = new System.Drawing.Point(0, 0);
+            this.gridControlAyarGrup.MainView = this.gridAyarGrup;
+            this.gridControlAyarGrup.MenuManager = this.barManager1;
+            this.gridControlAyarGrup.Name = "gridControlAyarGrup";
+            this.gridControlAyarGrup.Size = new System.Drawing.Size(936, 487);
+            this.gridControlAyarGrup.TabIndex = 0;
+            this.gridControlAyarGrup.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridAyarGrup});
+            // 
+            // gridAyarGrup
+            // 
+            this.gridAyarGrup.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridAyarID,
+            this.gridAyar,
+            this.gridAyarAktifMi,
+            this.gridAyarOlusturanPersonel,
+            this.gridOlusturmaTarihi,
+            this.gridAyarGüncelleyenPersonel,
+            this.gridAyarGuncellemeTarihi});
+            this.gridAyarGrup.GridControl = this.gridControlAyarGrup;
+            this.gridAyarGrup.GroupPanelText = "Ayar Gruplar Listesi";
+            this.gridAyarGrup.Name = "gridAyarGrup";
+            // 
+            // gridUrunGrupGuncellemeTarih
+            // 
+            this.gridUrunGrupGuncellemeTarih.Caption = "Güncelleme Tarih";
+            this.gridUrunGrupGuncellemeTarih.Name = "gridUrunGrupGuncellemeTarih";
+            this.gridUrunGrupGuncellemeTarih.Visible = true;
+            this.gridUrunGrupGuncellemeTarih.VisibleIndex = 7;
+            // 
+            // gridUrunGrupGuncelleyenPersonel
+            // 
+            this.gridUrunGrupGuncelleyenPersonel.Caption = "Güncelleyen Personel";
+            this.gridUrunGrupGuncelleyenPersonel.Name = "gridUrunGrupGuncelleyenPersonel";
+            this.gridUrunGrupGuncelleyenPersonel.Visible = true;
+            this.gridUrunGrupGuncelleyenPersonel.VisibleIndex = 6;
+            // 
+            // gridUrunGrupOlusturmaTarih
+            // 
+            this.gridUrunGrupOlusturmaTarih.Caption = "Oluşturulma Tarihi";
+            this.gridUrunGrupOlusturmaTarih.Name = "gridUrunGrupOlusturmaTarih";
+            this.gridUrunGrupOlusturmaTarih.Visible = true;
+            this.gridUrunGrupOlusturmaTarih.VisibleIndex = 5;
+            // 
+            // gridUrunGrupOlusturanPersonel
+            // 
+            this.gridUrunGrupOlusturanPersonel.Caption = "Oluşturan Personel";
+            this.gridUrunGrupOlusturanPersonel.Name = "gridUrunGrupOlusturanPersonel";
+            this.gridUrunGrupOlusturanPersonel.Visible = true;
+            this.gridUrunGrupOlusturanPersonel.VisibleIndex = 4;
+            // 
+            // gridUrunGrupAktifMi
+            // 
+            this.gridUrunGrupAktifMi.Caption = "Aktif Mi";
+            this.gridUrunGrupAktifMi.Name = "gridUrunGrupAktifMi";
+            this.gridUrunGrupAktifMi.Visible = true;
+            this.gridUrunGrupAktifMi.VisibleIndex = 3;
+            // 
+            // gridUrunKisaKod
+            // 
+            this.gridUrunKisaKod.Caption = "Ürün Kısa Kod";
+            this.gridUrunKisaKod.Name = "gridUrunKisaKod";
+            this.gridUrunKisaKod.Visible = true;
+            this.gridUrunKisaKod.VisibleIndex = 2;
             // 
             // gridUrunAd
             // 
             this.gridUrunAd.Caption = "Ürün Ad";
-            this.gridUrunAd.MinWidth = 25;
             this.gridUrunAd.Name = "gridUrunAd";
             this.gridUrunAd.Visible = true;
             this.gridUrunAd.VisibleIndex = 1;
-            this.gridUrunAd.Width = 94;
             // 
-            // gridUrunKısaKod
+            // gridUrunID
             // 
-            this.gridUrunKısaKod.Caption = "Ürün Kısa Kod";
-            this.gridUrunKısaKod.MinWidth = 25;
-            this.gridUrunKısaKod.Name = "gridUrunKısaKod";
-            this.gridUrunKısaKod.Visible = true;
-            this.gridUrunKısaKod.VisibleIndex = 2;
-            this.gridUrunKısaKod.Width = 94;
-            // 
-            // gridUrunAktifMi
-            // 
-            this.gridUrunAktifMi.Caption = "Aktif mi";
-            this.gridUrunAktifMi.MinWidth = 25;
-            this.gridUrunAktifMi.Name = "gridUrunAktifMi";
-            this.gridUrunAktifMi.Visible = true;
-            this.gridUrunAktifMi.VisibleIndex = 3;
-            this.gridUrunAktifMi.Width = 94;
-            // 
-            // gridUrunGrupPersonel
-            // 
-            this.gridUrunGrupPersonel.Caption = "Personel";
-            this.gridUrunGrupPersonel.MinWidth = 25;
-            this.gridUrunGrupPersonel.Name = "gridUrunGrupPersonel";
-            this.gridUrunGrupPersonel.Visible = true;
-            this.gridUrunGrupPersonel.VisibleIndex = 4;
-            this.gridUrunGrupPersonel.Width = 94;
-            // 
-            // gridCreatedDate
-            // 
-            this.gridCreatedDate.Caption = "Oluşturulma Tarihi";
-            this.gridCreatedDate.MinWidth = 25;
-            this.gridCreatedDate.Name = "gridCreatedDate";
-            this.gridCreatedDate.Visible = true;
-            this.gridCreatedDate.VisibleIndex = 5;
-            this.gridCreatedDate.Width = 94;
-            // 
-            // gridUpdatedDate
-            // 
-            this.gridUpdatedDate.Caption = "Güncellenme Tarihi";
-            this.gridUpdatedDate.MinWidth = 25;
-            this.gridUpdatedDate.Name = "gridUpdatedDate";
-            this.gridUpdatedDate.Visible = true;
-            this.gridUpdatedDate.VisibleIndex = 6;
-            this.gridUpdatedDate.Width = 94;
-            // 
-            // gridControlUrunAyar
-            // 
-            this.gridControlUrunAyar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlUrunAyar.Location = new System.Drawing.Point(0, 0);
-            this.gridControlUrunAyar.MainView = this.gridUrunAyarParametre;
-            this.gridControlUrunAyar.MenuManager = this.barManager1;
-            this.gridControlUrunAyar.Name = "gridControlUrunAyar";
-            this.gridControlUrunAyar.Size = new System.Drawing.Size(636, 630);
-            this.gridControlUrunAyar.TabIndex = 5;
-            this.gridControlUrunAyar.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridUrunAyarParametre});
-            // 
-            // gridUrunAyarParametre
-            // 
-            this.gridUrunAyarParametre.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridAyarID,
-            this.gridAyarAd,
-            this.gridAyarAktifMi,
-            this.gridAyarPersonel,
-            this.gridAyarCreatedDate,
-            this.gridAyarUpdatedDate});
-            this.gridUrunAyarParametre.GridControl = this.gridControlUrunAyar;
-            this.gridUrunAyarParametre.GroupPanelText = "Ürün Ayar Parametre Listesi";
-            this.gridUrunAyarParametre.Name = "gridUrunAyarParametre";
+            this.gridUrunID.Caption = "Ürün ID";
+            this.gridUrunID.Name = "gridUrunID";
+            this.gridUrunID.Visible = true;
+            this.gridUrunID.VisibleIndex = 0;
             // 
             // gridAyarID
             // 
             this.gridAyarID.Caption = "Ayar ID";
-            this.gridAyarID.MinWidth = 25;
             this.gridAyarID.Name = "gridAyarID";
             this.gridAyarID.Visible = true;
             this.gridAyarID.VisibleIndex = 0;
-            this.gridAyarID.Width = 94;
             // 
-            // gridAyarAd
+            // gridAyar
             // 
-            this.gridAyarAd.Caption = "Ayar Ad";
-            this.gridAyarAd.MinWidth = 25;
-            this.gridAyarAd.Name = "gridAyarAd";
-            this.gridAyarAd.Visible = true;
-            this.gridAyarAd.VisibleIndex = 1;
-            this.gridAyarAd.Width = 94;
+            this.gridAyar.Caption = "Ayar";
+            this.gridAyar.Name = "gridAyar";
+            this.gridAyar.Visible = true;
+            this.gridAyar.VisibleIndex = 1;
             // 
             // gridAyarAktifMi
             // 
-            this.gridAyarAktifMi.Caption = "Aktif mi";
-            this.gridAyarAktifMi.MinWidth = 25;
+            this.gridAyarAktifMi.Caption = "Aktif Mi";
             this.gridAyarAktifMi.Name = "gridAyarAktifMi";
             this.gridAyarAktifMi.Visible = true;
             this.gridAyarAktifMi.VisibleIndex = 2;
-            this.gridAyarAktifMi.Width = 94;
             // 
-            // gridAyarPersonel
+            // gridAyarOlusturanPersonel
             // 
-            this.gridAyarPersonel.Caption = "Personel";
-            this.gridAyarPersonel.MinWidth = 25;
-            this.gridAyarPersonel.Name = "gridAyarPersonel";
-            this.gridAyarPersonel.Visible = true;
-            this.gridAyarPersonel.VisibleIndex = 3;
-            this.gridAyarPersonel.Width = 94;
+            this.gridAyarOlusturanPersonel.Caption = "Oluşturan Personel";
+            this.gridAyarOlusturanPersonel.Name = "gridAyarOlusturanPersonel";
+            this.gridAyarOlusturanPersonel.Visible = true;
+            this.gridAyarOlusturanPersonel.VisibleIndex = 3;
             // 
-            // gridAyarCreatedDate
+            // gridOlusturmaTarihi
             // 
-            this.gridAyarCreatedDate.Caption = "Oluşturulma Tarihi";
-            this.gridAyarCreatedDate.MinWidth = 25;
-            this.gridAyarCreatedDate.Name = "gridAyarCreatedDate";
-            this.gridAyarCreatedDate.Visible = true;
-            this.gridAyarCreatedDate.VisibleIndex = 4;
-            this.gridAyarCreatedDate.Width = 94;
+            this.gridOlusturmaTarihi.Caption = "Oluşturma Tarihi";
+            this.gridOlusturmaTarihi.Name = "gridOlusturmaTarihi";
+            this.gridOlusturmaTarihi.Visible = true;
+            this.gridOlusturmaTarihi.VisibleIndex = 4;
             // 
-            // gridAyarUpdatedDate
+            // gridAyarGüncelleyenPersonel
             // 
-            this.gridAyarUpdatedDate.Caption = "Güncelleme Tarihi";
-            this.gridAyarUpdatedDate.MinWidth = 25;
-            this.gridAyarUpdatedDate.Name = "gridAyarUpdatedDate";
-            this.gridAyarUpdatedDate.Visible = true;
-            this.gridAyarUpdatedDate.VisibleIndex = 5;
-            this.gridAyarUpdatedDate.Width = 94;
+            this.gridAyarGüncelleyenPersonel.Caption = "Güncelleyen Personel";
+            this.gridAyarGüncelleyenPersonel.Name = "gridAyarGüncelleyenPersonel";
+            this.gridAyarGüncelleyenPersonel.Visible = true;
+            this.gridAyarGüncelleyenPersonel.VisibleIndex = 5;
             // 
-            // splitContainerControl1
+            // gridAyarGuncellemeTarihi
             // 
-            this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerControl1.Location = new System.Drawing.Point(0, 25);
-            this.splitContainerControl1.Name = "splitContainerControl1";
-            // 
-            // splitContainerControl1.Panel1
-            // 
-            this.splitContainerControl1.Panel1.Controls.Add(this.gridControlUrunGrubu);
-            this.splitContainerControl1.Panel1.Text = "Panel1";
-            // 
-            // splitContainerControl1.Panel2
-            // 
-            this.splitContainerControl1.Panel2.Controls.Add(this.gridControlUrunAyar);
-            this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1250, 630);
-            this.splitContainerControl1.SplitterPosition = 602;
-            this.splitContainerControl1.TabIndex = 10;
+            this.gridAyarGuncellemeTarihi.Caption = "Güncelleme Tarihi";
+            this.gridAyarGuncellemeTarihi.Name = "gridAyarGuncellemeTarihi";
+            this.gridAyarGuncellemeTarihi.Visible = true;
+            this.gridAyarGuncellemeTarihi.VisibleIndex = 6;
             // 
             // frmParametreListele
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1250, 655);
-            this.Controls.Add(this.splitContainerControl1);
+            this.ClientSize = new System.Drawing.Size(938, 532);
+            this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmParametreListele";
             this.Text = "Parametre Listesi";
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlUrunGrubu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridUrunGrubuParametre)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlUrunAyar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridUrunAyarParametre)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel1)).EndInit();
-            this.splitContainerControl1.Panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1.Panel2)).EndInit();
-            this.splitContainerControl1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
-            this.splitContainerControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
+            this.xtraTabControl1.ResumeLayout(false);
+            this.xtpUrunGrubu.ResumeLayout(false);
+            this.xtpAyarGrup.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlUrunGrup)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridUrunGrup)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlAyarGrup)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridAyarGrup)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -367,23 +369,27 @@
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraBars.BarButtonItem btnUrunGrupKayıt;
         private DevExpress.XtraBars.BarButtonItem btnUrunAyarKayıt;
-        private DevExpress.XtraGrid.GridControl gridControlUrunAyar;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridUrunAyarParametre;
-        private DevExpress.XtraGrid.GridControl gridControlUrunGrubu;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridUrunGrubuParametre;
-        private DevExpress.XtraGrid.Columns.GridColumn gridAyarID;
-        private DevExpress.XtraGrid.Columns.GridColumn gridAyarAd;
-        private DevExpress.XtraGrid.Columns.GridColumn gridAyarAktifMi;
-        private DevExpress.XtraGrid.Columns.GridColumn gridAyarPersonel;
-        private DevExpress.XtraGrid.Columns.GridColumn gridAyarCreatedDate;
-        private DevExpress.XtraGrid.Columns.GridColumn gridAyarUpdatedDate;
+        private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
+        private DevExpress.XtraTab.XtraTabPage xtpUrunGrubu;
+        private DevExpress.XtraGrid.GridControl gridControlUrunGrup;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridUrunGrup;
+        private DevExpress.XtraTab.XtraTabPage xtpAyarGrup;
+        private DevExpress.XtraGrid.GridControl gridControlAyarGrup;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridAyarGrup;
         private DevExpress.XtraGrid.Columns.GridColumn gridUrunID;
         private DevExpress.XtraGrid.Columns.GridColumn gridUrunAd;
-        private DevExpress.XtraGrid.Columns.GridColumn gridUrunKısaKod;
-        private DevExpress.XtraGrid.Columns.GridColumn gridUrunAktifMi;
-        private DevExpress.XtraGrid.Columns.GridColumn gridUrunGrupPersonel;
-        private DevExpress.XtraGrid.Columns.GridColumn gridCreatedDate;
-        private DevExpress.XtraGrid.Columns.GridColumn gridUpdatedDate;
-        private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridUrunKisaKod;
+        private DevExpress.XtraGrid.Columns.GridColumn gridUrunGrupAktifMi;
+        private DevExpress.XtraGrid.Columns.GridColumn gridUrunGrupOlusturanPersonel;
+        private DevExpress.XtraGrid.Columns.GridColumn gridUrunGrupOlusturmaTarih;
+        private DevExpress.XtraGrid.Columns.GridColumn gridUrunGrupGuncelleyenPersonel;
+        private DevExpress.XtraGrid.Columns.GridColumn gridUrunGrupGuncellemeTarih;
+        private DevExpress.XtraGrid.Columns.GridColumn gridAyarID;
+        private DevExpress.XtraGrid.Columns.GridColumn gridAyar;
+        private DevExpress.XtraGrid.Columns.GridColumn gridAyarAktifMi;
+        private DevExpress.XtraGrid.Columns.GridColumn gridAyarOlusturanPersonel;
+        private DevExpress.XtraGrid.Columns.GridColumn gridOlusturmaTarihi;
+        private DevExpress.XtraGrid.Columns.GridColumn gridAyarGüncelleyenPersonel;
+        private DevExpress.XtraGrid.Columns.GridColumn gridAyarGuncellemeTarihi;
     }
 }

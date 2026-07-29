@@ -40,11 +40,11 @@
             this.btnSatisFatura = new DevExpress.XtraBars.BarButtonItem();
             this.btnAlisFatura = new DevExpress.XtraBars.BarButtonItem();
             this.grpRapor = new DevExpress.XtraBars.BarSubItem();
-            this.btnIslemGecmisi = new DevExpress.XtraBars.BarButtonItem();
-            this.btnSatisIstatistikler = new DevExpress.XtraBars.BarButtonItem();
+            this.btnRaporIstatistik = new DevExpress.XtraBars.BarButtonItem();
             this.grpProfil = new DevExpress.XtraBars.BarSubItem();
             this.btnKullaniciBilgileri = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSatisIstatistikler = new DevExpress.XtraBars.BarButtonItem();
             this.rbnERP = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rbnCariIslemler = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbnStokIslemler = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -52,13 +52,14 @@
             this.rbnRaporIslemler = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbnProfilIslemler = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.btnSatisIstatistik = new DevExpress.XtraBars.BarButtonItem();
+            this.btnIslemGecmisi = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.rbnKuyumcuStokTakip)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // rbnKuyumcuStokTakip
             // 
-            this.rbnKuyumcuStokTakip.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(35, 37, 35, 37);
             this.rbnKuyumcuStokTakip.ExpandCollapseItem.Id = 0;
             this.rbnKuyumcuStokTakip.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.rbnKuyumcuStokTakip.ExpandCollapseItem,
@@ -72,18 +73,18 @@
             this.grpProfil,
             this.btnKullaniciBilgileri,
             this.btnAlisFatura,
-            this.btnIslemGecmisi,
+            this.btnRaporIstatistik,
             this.barButtonItem1,
             this.btnParametre,
-            this.btnSatisIstatistikler});
+            this.btnSatisIstatistikler,
+            this.btnSatisIstatistik,
+            this.btnIslemGecmisi});
             this.rbnKuyumcuStokTakip.Location = new System.Drawing.Point(0, 0);
-            this.rbnKuyumcuStokTakip.Margin = new System.Windows.Forms.Padding(4);
-            this.rbnKuyumcuStokTakip.MaxItemId = 23;
+            this.rbnKuyumcuStokTakip.MaxItemId = 25;
             this.rbnKuyumcuStokTakip.Name = "rbnKuyumcuStokTakip";
-            this.rbnKuyumcuStokTakip.OptionsMenuMinWidth = 385;
             this.rbnKuyumcuStokTakip.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rbnERP});
-            this.rbnKuyumcuStokTakip.Size = new System.Drawing.Size(884, 193);
+            this.rbnKuyumcuStokTakip.Size = new System.Drawing.Size(758, 158);
             // 
             // grpCari
             // 
@@ -159,23 +160,17 @@
             this.grpRapor.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("grpRapor.ImageOptions.Image")));
             this.grpRapor.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("grpRapor.ImageOptions.LargeImage")));
             this.grpRapor.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnIslemGecmisi),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnSatisIstatistikler)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnRaporIstatistik),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnSatisIstatistik),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnIslemGecmisi)});
             this.grpRapor.Name = "grpRapor";
             // 
-            // btnIslemGecmisi
+            // btnRaporIstatistik
             // 
-            this.btnIslemGecmisi.Caption = "İşlem Geçmişi";
-            this.btnIslemGecmisi.Id = 19;
-            this.btnIslemGecmisi.Name = "btnIslemGecmisi";
-            this.btnIslemGecmisi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnIslemGecmisi_ItemClick);
-            // 
-            // btnSatisIstatistikler
-            // 
-            this.btnSatisIstatistikler.Caption = "Satış İstatistikleri";
-            this.btnSatisIstatistikler.Id = 22;
-            this.btnSatisIstatistikler.Name = "btnSatisIstatistikler";
-            this.btnSatisIstatistikler.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSatisIstatistikler_ItemClick);
+            this.btnRaporIstatistik.Caption = "Rapor İstatistik";
+            this.btnRaporIstatistik.Id = 19;
+            this.btnRaporIstatistik.Name = "btnRaporIstatistik";
+            this.btnRaporIstatistik.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRaporIstatistik_ItemClick);
             // 
             // grpProfil
             // 
@@ -199,6 +194,12 @@
             this.barButtonItem1.Caption = "barButtonItem1";
             this.barButtonItem1.Id = 20;
             this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // btnSatisIstatistikler
+            // 
+            this.btnSatisIstatistikler.Caption = "Satış İstatistikleri";
+            this.btnSatisIstatistikler.Id = 22;
+            this.btnSatisIstatistikler.Name = "btnSatisIstatistikler";
             // 
             // rbnERP
             // 
@@ -245,14 +246,27 @@
             // 
             this.xtraTabbedMdiManager1.MdiParent = this;
             // 
+            // btnSatisIstatistik
+            // 
+            this.btnSatisIstatistik.Caption = "Satış İstatistik";
+            this.btnSatisIstatistik.Id = 23;
+            this.btnSatisIstatistik.Name = "btnSatisIstatistik";
+            this.btnSatisIstatistik.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSatisIstatistik_ItemClick);
+            // 
+            // btnIslemGecmisi
+            // 
+            this.btnIslemGecmisi.Caption = "İşlem Geçmişi";
+            this.btnIslemGecmisi.Id = 24;
+            this.btnIslemGecmisi.Name = "btnIslemGecmisi";
+            this.btnIslemGecmisi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnIslemGecmisi_ItemClick);
+            // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 443);
+            this.ClientSize = new System.Drawing.Size(758, 360);
             this.Controls.Add(this.rbnKuyumcuStokTakip);
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmMain";
             this.Ribbon = this.rbnKuyumcuStokTakip;
             this.Text = "Kuyumcu Stok Takip";
@@ -283,11 +297,13 @@
         private DevExpress.XtraBars.BarSubItem grpProfil;
         private DevExpress.XtraBars.BarButtonItem btnKullaniciBilgileri;
         private DevExpress.XtraBars.BarButtonItem btnAlisFatura;
-        private DevExpress.XtraBars.BarButtonItem btnIslemGecmisi;
+        private DevExpress.XtraBars.BarButtonItem btnRaporIstatistik;
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
         private DevExpress.XtraBars.BarButtonItem btnParametre;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarButtonItem btnSatisIstatistikler;
+        private DevExpress.XtraBars.BarButtonItem btnSatisIstatistik;
+        private DevExpress.XtraBars.BarButtonItem btnIslemGecmisi;
     }
 }
 

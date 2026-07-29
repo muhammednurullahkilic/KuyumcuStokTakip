@@ -55,143 +55,160 @@
             // lblMusteriAd
             // 
             this.lblMusteriAd.AutoSize = true;
-            this.lblMusteriAd.Location = new System.Drawing.Point(29, 57);
+            this.lblMusteriAd.Location = new System.Drawing.Point(64, 92);
+            this.lblMusteriAd.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMusteriAd.Name = "lblMusteriAd";
-            this.lblMusteriAd.Size = new System.Drawing.Size(78, 16);
+            this.lblMusteriAd.Size = new System.Drawing.Size(64, 13);
             this.lblMusteriAd.TabIndex = 0;
             this.lblMusteriAd.Text = "*Müşteri Ad:";
             // 
             // lblSatisTarih
             // 
             this.lblSatisTarih.AutoSize = true;
-            this.lblSatisTarih.Location = new System.Drawing.Point(29, 107);
+            this.lblSatisTarih.Location = new System.Drawing.Point(64, 133);
+            this.lblSatisTarih.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSatisTarih.Name = "lblSatisTarih";
-            this.lblSatisTarih.Size = new System.Drawing.Size(38, 16);
+            this.lblSatisTarih.Size = new System.Drawing.Size(38, 13);
             this.lblSatisTarih.TabIndex = 1;
-            this.lblSatisTarih.Text = "Tarih";
+            this.lblSatisTarih.Text = "*Tarih:";
             // 
             // lblBarkodNo
             // 
             this.lblBarkodNo.AutoSize = true;
-            this.lblBarkodNo.Location = new System.Drawing.Point(29, 155);
+            this.lblBarkodNo.Location = new System.Drawing.Point(64, 172);
+            this.lblBarkodNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBarkodNo.Name = "lblBarkodNo";
-            this.lblBarkodNo.Size = new System.Drawing.Size(80, 16);
+            this.lblBarkodNo.Size = new System.Drawing.Size(65, 13);
             this.lblBarkodNo.TabIndex = 3;
             this.lblBarkodNo.Text = "*Barkod No:";
             // 
             // lblGramFiyat
             // 
             this.lblGramFiyat.AutoSize = true;
-            this.lblGramFiyat.Location = new System.Drawing.Point(29, 201);
+            this.lblGramFiyat.Location = new System.Drawing.Point(64, 209);
+            this.lblGramFiyat.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGramFiyat.Name = "lblGramFiyat";
-            this.lblGramFiyat.Size = new System.Drawing.Size(72, 16);
+            this.lblGramFiyat.Size = new System.Drawing.Size(64, 13);
             this.lblGramFiyat.TabIndex = 2;
-            this.lblGramFiyat.Text = "Gram Fiyat";
+            this.lblGramFiyat.Text = "*Gram Fiyat:";
             // 
             // lblIskonto
             // 
             this.lblIskonto.AutoSize = true;
-            this.lblIskonto.Location = new System.Drawing.Point(29, 241);
+            this.lblIskonto.Location = new System.Drawing.Point(64, 242);
+            this.lblIskonto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblIskonto.Name = "lblIskonto";
-            this.lblIskonto.Size = new System.Drawing.Size(50, 16);
+            this.lblIskonto.Size = new System.Drawing.Size(49, 13);
             this.lblIskonto.TabIndex = 5;
-            this.lblIskonto.Text = "İskonto";
+            this.lblIskonto.Text = "*İskonto:";
             // 
             // lblTutar
             // 
             this.lblTutar.AutoSize = true;
-            this.lblTutar.Location = new System.Drawing.Point(29, 286);
+            this.lblTutar.Location = new System.Drawing.Point(64, 278);
+            this.lblTutar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTutar.Name = "lblTutar";
-            this.lblTutar.Size = new System.Drawing.Size(38, 16);
+            this.lblTutar.Size = new System.Drawing.Size(39, 13);
             this.lblTutar.TabIndex = 4;
-            this.lblTutar.Text = "Tutar";
+            this.lblTutar.Text = "*Tutar:";
             // 
             // lueMusteriAd
             // 
-            this.lueMusteriAd.Location = new System.Drawing.Point(136, 51);
+            this.lueMusteriAd.Location = new System.Drawing.Point(144, 87);
+            this.lueMusteriAd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lueMusteriAd.Name = "lueMusteriAd";
             this.lueMusteriAd.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueMusteriAd.Size = new System.Drawing.Size(187, 22);
+            this.lueMusteriAd.Properties.NullText = "";
+            this.lueMusteriAd.Size = new System.Drawing.Size(140, 20);
             this.lueMusteriAd.TabIndex = 7;
             // 
             // lueBarkodNo
             // 
-            this.lueBarkodNo.Location = new System.Drawing.Point(136, 152);
+            this.lueBarkodNo.Location = new System.Drawing.Point(144, 170);
+            this.lueBarkodNo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lueBarkodNo.Name = "lueBarkodNo";
             this.lueBarkodNo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lueBarkodNo.Size = new System.Drawing.Size(187, 22);
+            this.lueBarkodNo.Properties.NullText = "";
+            this.lueBarkodNo.Size = new System.Drawing.Size(140, 20);
             this.lueBarkodNo.TabIndex = 8;
             // 
             // dtSatisTarihi
             // 
             this.dtSatisTarihi.EditValue = null;
-            this.dtSatisTarihi.Location = new System.Drawing.Point(136, 101);
+            this.dtSatisTarihi.Location = new System.Drawing.Point(144, 128);
+            this.dtSatisTarihi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtSatisTarihi.Name = "dtSatisTarihi";
             this.dtSatisTarihi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtSatisTarihi.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtSatisTarihi.Size = new System.Drawing.Size(187, 22);
+            this.dtSatisTarihi.Size = new System.Drawing.Size(140, 20);
             this.dtSatisTarihi.TabIndex = 9;
             // 
             // txtSatisGramFiyat
             // 
-            this.txtSatisGramFiyat.Location = new System.Drawing.Point(136, 195);
+            this.txtSatisGramFiyat.Location = new System.Drawing.Point(144, 204);
+            this.txtSatisGramFiyat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtSatisGramFiyat.Name = "txtSatisGramFiyat";
             this.txtSatisGramFiyat.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.txtSatisGramFiyat.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
-            this.txtSatisGramFiyat.Size = new System.Drawing.Size(187, 22);
+            this.txtSatisGramFiyat.Size = new System.Drawing.Size(140, 20);
             this.txtSatisGramFiyat.TabIndex = 10;
             // 
             // txtIskonto
             // 
-            this.txtIskonto.Location = new System.Drawing.Point(136, 235);
+            this.txtIskonto.Location = new System.Drawing.Point(144, 237);
+            this.txtIskonto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtIskonto.Name = "txtIskonto";
             this.txtIskonto.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.txtIskonto.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
-            this.txtIskonto.Size = new System.Drawing.Size(187, 22);
+            this.txtIskonto.Size = new System.Drawing.Size(140, 20);
             this.txtIskonto.TabIndex = 11;
             // 
             // txtSatisTutar
             // 
-            this.txtSatisTutar.Location = new System.Drawing.Point(136, 280);
+            this.txtSatisTutar.Location = new System.Drawing.Point(144, 274);
+            this.txtSatisTutar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtSatisTutar.Name = "txtSatisTutar";
             this.txtSatisTutar.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.txtSatisTutar.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
-            this.txtSatisTutar.Size = new System.Drawing.Size(187, 22);
+            this.txtSatisTutar.Size = new System.Drawing.Size(140, 20);
             this.txtSatisTutar.TabIndex = 12;
             // 
             // btnSatisFaturaOnayla
             // 
-            this.btnSatisFaturaOnayla.Location = new System.Drawing.Point(149, 325);
+            this.btnSatisFaturaOnayla.Location = new System.Drawing.Point(154, 310);
+            this.btnSatisFaturaOnayla.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSatisFaturaOnayla.Name = "btnSatisFaturaOnayla";
-            this.btnSatisFaturaOnayla.Size = new System.Drawing.Size(162, 39);
+            this.btnSatisFaturaOnayla.Size = new System.Drawing.Size(122, 32);
             this.btnSatisFaturaOnayla.TabIndex = 14;
             this.btnSatisFaturaOnayla.Text = "Onayla";
             // 
             // lblFaturaNo
             // 
             this.lblFaturaNo.AutoSize = true;
-            this.lblFaturaNo.Location = new System.Drawing.Point(29, 19);
+            this.lblFaturaNo.Location = new System.Drawing.Point(64, 61);
+            this.lblFaturaNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFaturaNo.Name = "lblFaturaNo";
-            this.lblFaturaNo.Size = new System.Drawing.Size(66, 16);
+            this.lblFaturaNo.Size = new System.Drawing.Size(61, 13);
             this.lblFaturaNo.TabIndex = 15;
-            this.lblFaturaNo.Text = "Fatura No";
+            this.lblFaturaNo.Text = "*Fatura No:";
             // 
             // txtSatisFaturaNo
             // 
-            this.txtSatisFaturaNo.Location = new System.Drawing.Point(136, 16);
+            this.txtSatisFaturaNo.Location = new System.Drawing.Point(144, 59);
+            this.txtSatisFaturaNo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtSatisFaturaNo.Name = "txtSatisFaturaNo";
-            this.txtSatisFaturaNo.Size = new System.Drawing.Size(187, 22);
+            this.txtSatisFaturaNo.Size = new System.Drawing.Size(141, 20);
             this.txtSatisFaturaNo.TabIndex = 16;
             // 
             // frmSatisFatura
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(413, 396);
+            this.ClientSize = new System.Drawing.Size(429, 415);
             this.Controls.Add(this.txtSatisFaturaNo);
             this.Controls.Add(this.lblFaturaNo);
             this.Controls.Add(this.btnSatisFaturaOnayla);
@@ -207,6 +224,7 @@
             this.Controls.Add(this.lblGramFiyat);
             this.Controls.Add(this.lblSatisTarih);
             this.Controls.Add(this.lblMusteriAd);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmSatisFatura";
             this.Text = "Satış Fatura";
             ((System.ComponentModel.ISupportInitialize)(this.lueMusteriAd.Properties)).EndInit();

@@ -98,7 +98,7 @@
             // gridCariTipi
             // 
             this.gridCariTipi.Caption = "Cari Tipi";
-            this.gridCariTipi.FieldName = " CariTipAdi";
+            this.gridCariTipi.FieldName = "CariTipAdi";
             this.gridCariTipi.MinWidth = 25;
             this.gridCariTipi.Name = "gridCariTipi";
             this.gridCariTipi.Visible = true;

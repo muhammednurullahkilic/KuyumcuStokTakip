@@ -82,29 +82,32 @@ namespace KuyumcuStokTakip
 
         private void btnSatisFatura_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var frm = new frmSatisFatura();
-            frm.ShowDialog();
+            OpenFormShow(new frmSatisFatura(), e.Item.Caption);
         }
 
         private void btnAlisFatura_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var frm = new frmAlisFatura();
-            frm.ShowDialog();
-        }
-
-        private void btnIslemGecmisi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            OpenFormShow(new frmIslemGecmisiListele(), e.Item.Caption);
-        }
-
-        private void btnSatisIstatistikler_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            OpenFormShow(new frmSatisIstatistikler(), e.Item.Caption);
+            OpenFormShow(new frmAlisFatura(), e.Item.Caption);
         }
 
         private void btnKullaniciBilgileri_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             OpenFormShow(new frmKullaniciBilgileri(), e.Item.Caption);
+        }
+
+        private void btnRaporIstatistik_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenFormShow(new frmRaporIstatistik(), e.Item.Caption);
+        }
+
+        private void btnSatisIstatistik_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenFormShow(new frmSatisIstatistikler(), e.Item.Caption);
+        }
+
+        private void btnIslemGecmisi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenFormShow(new frmIslemGecmisiListele(), e.Item.Caption);
         }
     }
 
