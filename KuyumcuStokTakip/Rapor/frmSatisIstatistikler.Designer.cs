@@ -28,19 +28,91 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.PieSeriesLabel pieSeriesLabel1 = new DevExpress.XtraCharts.PieSeriesLabel();
+            DevExpress.XtraCharts.PieSeriesView pieSeriesView1 = new DevExpress.XtraCharts.PieSeriesView();
+            DevExpress.XtraCharts.ChartTitle chartTitle1 = new DevExpress.XtraCharts.ChartTitle();
+            DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.PieSeriesLabel pieSeriesLabel2 = new DevExpress.XtraCharts.PieSeriesLabel();
+            DevExpress.XtraCharts.PieSeriesView pieSeriesView2 = new DevExpress.XtraCharts.PieSeriesView();
+            DevExpress.XtraCharts.ChartTitle chartTitle2 = new DevExpress.XtraCharts.ChartTitle();
+            this.chartSatilanUrunTablosu = new DevExpress.XtraCharts.ChartControl();
+            this.chartToptanciSatisMiktari = new DevExpress.XtraCharts.ChartControl();
+            ((System.ComponentModel.ISupportInitialize)(this.chartSatilanUrunTablosu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesLabel1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartToptanciSatisMiktari)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesLabel2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView2)).BeginInit();
             this.SuspendLayout();
+            // 
+            // chartSatilanUrunTablosu
+            // 
+            this.chartSatilanUrunTablosu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.chartSatilanUrunTablosu.Location = new System.Drawing.Point(0, 0);
+            this.chartSatilanUrunTablosu.Name = "chartSatilanUrunTablosu";
+            pieSeriesLabel1.ResolveOverlappingMode = DevExpress.XtraCharts.ResolveOverlappingMode.Default;
+            pieSeriesLabel1.TextPattern = "{A}: {VP:P2}";
+            series1.Label = pieSeriesLabel1;
+            series1.Name = "Series 1";
+            series1.SeriesID = 0;
+            series1.View = pieSeriesView1;
+            this.chartSatilanUrunTablosu.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
+        series1};
+            this.chartSatilanUrunTablosu.Size = new System.Drawing.Size(584, 655);
+            this.chartSatilanUrunTablosu.TabIndex = 0;
+            chartTitle1.Text = "Satılan Ürün Tablosu";
+            chartTitle1.TitleID = 0;
+            this.chartSatilanUrunTablosu.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
+            chartTitle1});
+            // 
+            // chartToptanciSatisMiktari
+            // 
+            this.chartToptanciSatisMiktari.Dock = System.Windows.Forms.DockStyle.Right;
+            this.chartToptanciSatisMiktari.Location = new System.Drawing.Point(585, 0);
+            this.chartToptanciSatisMiktari.Name = "chartToptanciSatisMiktari";
+            pieSeriesLabel2.ResolveOverlappingMode = DevExpress.XtraCharts.ResolveOverlappingMode.Default;
+            pieSeriesLabel2.TextPattern = "{A}: {VP:P2}";
+            series2.Label = pieSeriesLabel2;
+            series2.Name = "Series 1";
+            series2.SeriesID = 0;
+            series2.View = pieSeriesView2;
+            this.chartToptanciSatisMiktari.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
+        series2};
+            this.chartToptanciSatisMiktari.Size = new System.Drawing.Size(545, 655);
+            this.chartToptanciSatisMiktari.TabIndex = 1;
+            chartTitle2.Text = "Toptancı Satış Miktarı";
+            chartTitle2.TitleID = 0;
+            this.chartToptanciSatisMiktari.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
+            chartTitle2});
             // 
             // frmSatisIstatistikler
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(640, 360);
+            this.ClientSize = new System.Drawing.Size(1130, 655);
+            this.Controls.Add(this.chartToptanciSatisMiktari);
+            this.Controls.Add(this.chartSatilanUrunTablosu);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmSatisIstatistikler";
             this.Text = "Satış İstatistikleri";
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesLabel1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartSatilanUrunTablosu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesLabel2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartToptanciSatisMiktari)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private DevExpress.XtraCharts.ChartControl chartSatilanUrunTablosu;
+        private DevExpress.XtraCharts.ChartControl chartToptanciSatisMiktari;
     }
 }
