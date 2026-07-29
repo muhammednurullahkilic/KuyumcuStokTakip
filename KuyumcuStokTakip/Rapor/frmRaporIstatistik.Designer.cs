@@ -78,7 +78,7 @@
             series1.View = sideBySideBarSeriesView1;
             this.chartControlKasaDurumOzet.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series1};
-            this.chartControlKasaDurumOzet.Size = new System.Drawing.Size(267, 450);
+            this.chartControlKasaDurumOzet.Size = new System.Drawing.Size(395, 450);
             this.chartControlKasaDurumOzet.TabIndex = 16;
             chartTitle1.Text = "Kasa Durum Özet";
             chartTitle1.TitleID = 0;
@@ -88,10 +88,10 @@
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(267, 0);
+            this.gridControl1.Location = new System.Drawing.Point(395, 0);
             this.gridControl1.MainView = this.gridGüncelKasa;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(533, 450);
+            this.gridControl1.Size = new System.Drawing.Size(405, 450);
             this.gridControl1.TabIndex = 17;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridGüncelKasa});
