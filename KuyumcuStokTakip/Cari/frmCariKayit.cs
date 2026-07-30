@@ -41,11 +41,11 @@ namespace KuyumcuStokTakip
 
             if(string.IsNullOrWhiteSpace(txtCariAd.Text) || string.IsNullOrWhiteSpace(txtCariKod.Text) || string.IsNullOrWhiteSpace(gleCariTip.Text))
             {
-                _cariTableAdapter.InsertQuery(txtCariKod.Text, Convert.ToInt32(gleCariTip.EditValue), txtCariAd.Text, txtAdres.Text, txtNot.Text, txtTelefonNo.Text, 1, DateTime.Now, true);
                 MessageBox.Show("Lütfen Zorunlu Kısımları Doldurun!");
             }
             else
             {
+                _cariTableAdapter.InsertQuery(txtCariKod.Text, Convert.ToInt32(gleCariTip.EditValue), txtCariAd.Text, txtAdres.Text, txtNot.Text, txtTelefonNo.Text, 1, DateTime.Now, true);
                 MessageBox.Show("Kayıt Başarılı");
                 CariKayitFormTemizle();
             }

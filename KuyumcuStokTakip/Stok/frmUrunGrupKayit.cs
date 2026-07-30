@@ -24,15 +24,16 @@ namespace KuyumcuStokTakip.Stok
         {
            
 
-            if (!string.IsNullOrEmpty(txtGrubAd.Text) && !string.IsNullOrEmpty(txtGrupKod.Text))
+            if (string.IsNullOrEmpty(txtGrubAd.Text) || !string.IsNullOrEmpty(txtGrupKod.Text))
+            {
+                
+                MessageBox.Show("lütfen zorunlu alanaları doldurun!");
+            }
+            else
             {
                 _UrunGrubuTableAdapter.InsertQuery(txtGrupKod.Text, txtGrubAd.Text, chkUrunGrupAktifMi.Checked, 1, DateTime.Now);
                 MessageBox.Show("Kayıt Başarılı!");
                 urunGrubFormTemizle();
-            }
-            else
-            {
-                MessageBox.Show("lütfen zorunlu alanaları doldurun!");
             }
         }
 

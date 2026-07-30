@@ -1413,6 +1413,8 @@ namespace KuyumcuStokTakip.Database {
             
             private global::System.Data.DataColumn columnGrupAd;
             
+            private global::System.Data.DataColumn columnisActive;
+            
             private global::System.Data.DataColumn columnCUser;
             
             private global::System.Data.DataColumn columnCDate;
@@ -1420,8 +1422,6 @@ namespace KuyumcuStokTakip.Database {
             private global::System.Data.DataColumn columnMUserID;
             
             private global::System.Data.DataColumn columnMDate;
-            
-            private global::System.Data.DataColumn columnisActive;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
@@ -1482,6 +1482,14 @@ namespace KuyumcuStokTakip.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public global::System.Data.DataColumn isActiveColumn {
+                get {
+                    return this.columnisActive;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             public global::System.Data.DataColumn CUserColumn {
                 get {
                     return this.columnCUser;
@@ -1509,14 +1517,6 @@ namespace KuyumcuStokTakip.Database {
             public global::System.Data.DataColumn MDateColumn {
                 get {
                     return this.columnMDate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public global::System.Data.DataColumn isActiveColumn {
-                get {
-                    return this.columnisActive;
                 }
             }
             
@@ -1557,17 +1557,17 @@ namespace KuyumcuStokTakip.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public UrunGrubuRow AddUrunGrubuRow(string GrupKod, string GrupAd, int CUser, System.DateTime CDate, int MUserID, System.DateTime MDate, bool isActive) {
+            public UrunGrubuRow AddUrunGrubuRow(string GrupKod, string GrupAd, bool isActive, int CUser, System.DateTime CDate, int MUserID, System.DateTime MDate) {
                 UrunGrubuRow rowUrunGrubuRow = ((UrunGrubuRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         GrupKod,
                         GrupAd,
+                        isActive,
                         CUser,
                         CDate,
                         MUserID,
-                        MDate,
-                        isActive};
+                        MDate};
                 rowUrunGrubuRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowUrunGrubuRow);
                 return rowUrunGrubuRow;
@@ -1600,11 +1600,11 @@ namespace KuyumcuStokTakip.Database {
                 this.columnGrupID = base.Columns["GrupID"];
                 this.columnGrupKod = base.Columns["GrupKod"];
                 this.columnGrupAd = base.Columns["GrupAd"];
+                this.columnisActive = base.Columns["isActive"];
                 this.columnCUser = base.Columns["CUser"];
                 this.columnCDate = base.Columns["CDate"];
                 this.columnMUserID = base.Columns["MUserID"];
                 this.columnMDate = base.Columns["MDate"];
-                this.columnisActive = base.Columns["isActive"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1616,6 +1616,8 @@ namespace KuyumcuStokTakip.Database {
                 base.Columns.Add(this.columnGrupKod);
                 this.columnGrupAd = new global::System.Data.DataColumn("GrupAd", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnGrupAd);
+                this.columnisActive = new global::System.Data.DataColumn("isActive", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnisActive);
                 this.columnCUser = new global::System.Data.DataColumn("CUser", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCUser);
                 this.columnCDate = new global::System.Data.DataColumn("CDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
@@ -1624,8 +1626,6 @@ namespace KuyumcuStokTakip.Database {
                 base.Columns.Add(this.columnMUserID);
                 this.columnMDate = new global::System.Data.DataColumn("MDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMDate);
-                this.columnisActive = new global::System.Data.DataColumn("isActive", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnisActive);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnGrupID}, true));
                 this.columnGrupID.AutoIncrement = true;
@@ -1638,9 +1638,9 @@ namespace KuyumcuStokTakip.Database {
                 this.columnGrupKod.MaxLength = 50;
                 this.columnGrupAd.AllowDBNull = false;
                 this.columnGrupAd.MaxLength = 50;
+                this.columnisActive.AllowDBNull = false;
                 this.columnCUser.AllowDBNull = false;
                 this.columnCDate.AllowDBNull = false;
-                this.columnisActive.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2172,6 +2172,17 @@ namespace KuyumcuStokTakip.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public bool isActive {
+                get {
+                    return ((bool)(this[this.tableUrunGrubu.isActiveColumn]));
+                }
+                set {
+                    this[this.tableUrunGrubu.isActiveColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             public int CUser {
                 get {
                     return ((int)(this[this.tableUrunGrubu.CUserColumn]));
@@ -2221,17 +2232,6 @@ namespace KuyumcuStokTakip.Database {
                 }
                 set {
                     this[this.tableUrunGrubu.MDateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public bool isActive {
-                get {
-                    return ((bool)(this[this.tableUrunGrubu.isActiveColumn]));
-                }
-                set {
-                    this[this.tableUrunGrubu.isActiveColumn] = value;
                 }
             }
             
@@ -3527,11 +3527,11 @@ SELECT AyarID, AyarAdi, isActive, CUser, CDate, MUserID, MDate FROM UrunAyar WHE
             tableMapping.ColumnMappings.Add("GrupID", "GrupID");
             tableMapping.ColumnMappings.Add("GrupKod", "GrupKod");
             tableMapping.ColumnMappings.Add("GrupAd", "GrupAd");
+            tableMapping.ColumnMappings.Add("isActive", "isActive");
             tableMapping.ColumnMappings.Add("CUser", "CUser");
             tableMapping.ColumnMappings.Add("CDate", "CDate");
             tableMapping.ColumnMappings.Add("MUserID", "MUserID");
             tableMapping.ColumnMappings.Add("MDate", "MDate");
-            tableMapping.ColumnMappings.Add("isActive", "isActive");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -3597,19 +3597,18 @@ SELECT GrupID, GrupKod, GrupAd, isActive, CUser, CDate, MUserID, MDate FROM Urun
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        GrupID, GrupKod, GrupAd, isActive, CUser, CDate, MUserID, MDate\r\nFR" +
-                "OM            UrunGrubu";
+            this._commandCollection[0].CommandText = "SELECT        UrunGrubu.*\r\nFROM            UrunGrubu";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "INSERT INTO UrunGrubu\r\n                         (GrupKod, GrupAd, isActive, CUser" +
-                ", CDate)\r\nVALUES        (@GrupKod,@GrupAd,@IsActive,@CUser,@CDate);  \r\nSELECT Gr" +
-                "upID, GrupKod, GrupAd, IsActive, CUser, CDate FROM UrunGrubu WHERE (GrupID = SCO" +
-                "PE_IDENTITY())";
+                ", CDate)\r\nVALUES        (@GrupKod,@GrupAd,@isActive,@CUser,@CDate); \r\nSELECT Gru" +
+                "pID, GrupKod, GrupAd, isActive, CUser, CDate FROM UrunGrubu WHERE (GrupID = SCOP" +
+                "E_IDENTITY())";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GrupKod", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "GrupKod", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GrupAd", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "GrupAd", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsActive", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "isActive", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@isActive", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "isActive", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CUser", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CUser", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CDate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "CDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -3877,7 +3876,7 @@ SELECT GrupID, GrupKod, GrupAd, isActive, CUser, CDate, MUserID, MDate FROM Urun
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int InsertQuery(string GrupKod, string GrupAd, bool IsActive, int CUser, System.DateTime CDate) {
+        public virtual int InsertQuery(string GrupKod, string GrupAd, bool isActive, int CUser, System.DateTime CDate) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
             if ((GrupKod == null)) {
                 throw new global::System.ArgumentNullException("GrupKod");
@@ -3891,7 +3890,7 @@ SELECT GrupID, GrupKod, GrupAd, isActive, CUser, CDate, MUserID, MDate FROM Urun
             else {
                 command.Parameters[1].Value = ((string)(GrupAd));
             }
-            command.Parameters[2].Value = ((bool)(IsActive));
+            command.Parameters[2].Value = ((bool)(isActive));
             command.Parameters[3].Value = ((int)(CUser));
             command.Parameters[4].Value = ((System.DateTime)(CDate));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
