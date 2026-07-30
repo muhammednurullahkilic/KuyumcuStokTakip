@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KuyumcuStokTakip.Database.KuyumcuStokTakipTableAdapters;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,35 @@ namespace KuyumcuStokTakip.Stok
 {
     public partial class frmUrunGrupKayit : Form
     {
+        private readonly UrunGrubuTableAdapter _UrunGrubuTableAdapter = new UrunGrubuTableAdapter();
         public frmUrunGrupKayit()
         {
             InitializeComponent();
         }
+
+
+        private void btnUrunGrubuKaydet_Click(object sender, EventArgs e)
+        {
+           
+
+            if (!string.IsNullOrEmpty(txtGrubAd.Text) && !string.IsNullOrEmpty(txtGrupKod.Text))
+            {
+                _UrunGrubuTableAdapter.InsertQuery(txtGrupKod.Text, txtGrubAd.Text, chkUrunGrupAktifMi.Checked, 1, DateTime.Now);
+                MessageBox.Show("Kayıt Başarılı!");
+                urunGrubFormTemizle();
+            }
+            else
+            {
+                MessageBox.Show("lütfen zorunlu alanaları doldurun!");
+            }
+        }
+
+        private void urunGrubFormTemizle()
+        {
+            txtGrubAd.Clear();
+            txtGrupKod.Clear();
+            chkUrunGrupAktifMi.Checked = false;
+        }
+
     }
 }

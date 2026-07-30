@@ -37,10 +37,11 @@ namespace KuyumcuStokTakip
 
         private void btnCariKayit_Click(object sender, EventArgs e)
         {
-            _cariTableAdapter.InsertQuery(txtCariKod.Text, Convert.ToInt32(gleCariTip.EditValue), txtCariAd.Text, txtAdres.Text, txtNot.Text, txtTelefonNo.Text, 1, DateTime.Now, true);
+            
 
             if(string.IsNullOrWhiteSpace(txtCariAd.Text) || string.IsNullOrWhiteSpace(txtCariKod.Text) || string.IsNullOrWhiteSpace(gleCariTip.Text))
             {
+                _cariTableAdapter.InsertQuery(txtCariKod.Text, Convert.ToInt32(gleCariTip.EditValue), txtCariAd.Text, txtAdres.Text, txtNot.Text, txtTelefonNo.Text, 1, DateTime.Now, true);
                 MessageBox.Show("Lütfen Zorunlu Kısımları Doldurun!");
             }
             else
