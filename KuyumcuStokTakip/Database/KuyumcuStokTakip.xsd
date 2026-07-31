@@ -33,7 +33,7 @@ FROM     Cari INNER JOIN
               <Mapping SourceColumn="CariTipAdi" DataSetColumn="CariTipAdi" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="KuyumcuStokTakipConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="CariKodKontrolEt" Modifier="Public" Name="CariKodKontrolEt" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="CariKodKontrolEt">
+              <DbSource ConnectionRef="KuyumcuStokTakipConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="CariKodKontrolEt" Modifier="Public" Name="CariKodKontrolEt" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="CariKodKontrolEt">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT COUNT(*) AS Expr1
@@ -45,7 +45,7 @@ WHERE  (CariKod = @CariKod)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="KuyumcuStokTakipConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertQuery">
+              <DbSource ConnectionRef="KuyumcuStokTakipConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertQuery">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO [Cari] ([CariKod], [CariTipi], [CariAd], [CariAdres], [CariNot], [CariTelefon], [CUser], [CDate], [IsActive]) VALUES (@CariKod, @CariTipi, @CariAd, @CariAdres, @CariNot, @CariTelefon, @CUser, @CDate, @IsActive);
@@ -190,7 +190,7 @@ SELECT AyarID, AyarAdi, isActive, CUser, CDate, MUserID, MDate FROM UrunAyar WHE
               <Mapping SourceColumn="isActive" DataSetColumn="isActive" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="KuyumcuStokTakipConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="AyarKontrolEt" Modifier="Public" Name="AyarKontrolEt" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="AyarKontrolEt">
+              <DbSource ConnectionRef="KuyumcuStokTakipConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="AyarKontrolEt" Modifier="Public" Name="AyarKontrolEt" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="AyarKontrolEt">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT COUNT(*) AS Expr1
@@ -202,7 +202,7 @@ WHERE  (AyarAdi = @AyarAdi)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="KuyumcuStokTakipConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertQuery">
+              <DbSource ConnectionRef="KuyumcuStokTakipConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertQuery">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO UrunAyar
@@ -301,7 +301,7 @@ SELECT GrupID, GrupKod, GrupAd, isActive, CUser, CDate, MUserID, MDate FROM Urun
               <Mapping SourceColumn="MDate" DataSetColumn="MDate" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="KuyumcuStokTakipConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="GrupKontrolEt" Modifier="Public" Name="GrupKontrolEt" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="GrupKontrolEt">
+              <DbSource ConnectionRef="KuyumcuStokTakipConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="GrupKontrolEt" Modifier="Public" Name="GrupKontrolEt" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="GrupKontrolEt">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT COUNT(*) AS Expr1
@@ -315,7 +315,7 @@ WHERE  (GrupAd = @GrupAd) OR
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="KuyumcuStokTakipConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertQuery">
+              <DbSource ConnectionRef="KuyumcuStokTakipConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertQuery">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO UrunGrubu
@@ -333,6 +333,168 @@ SELECT GrupID, GrupKod, GrupAd, isActive, CUser, CDate FROM UrunGrubu WHERE (Gru
                 </InsertCommand>
               </DbSource>
             </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="StokTableAdapter" GeneratorDataComponentClassName="StokTableAdapter" Name="Stok" UserDataComponentName="StokTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="KuyumcuStokTakipConnectionString (Settings)" DbObjectName="KuyumcuStokTakip.dbo.Stok" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [Stok] WHERE (([StokID] = @Original_StokID) AND ([GrupID] = @Original_GrupID) AND ([AyarID] = @Original_AyarID) AND ([CariID] = @Original_CariID) AND ([UrunGram] = @Original_UrunGram) AND ([UrunMaliyet] = @Original_UrunMaliyet) AND ([UrunIscilik] = @Original_UrunIscilik) AND ([BarkodNo] = @Original_BarkodNo) AND ((@IsNull_isActive = 1 AND [isActive] IS NULL) OR ([isActive] = @Original_isActive)) AND ([CUser] = @Original_CUser) AND ([CDate] = @Original_CDate) AND ((@IsNull_MUserID = 1 AND [MUserID] IS NULL) OR ([MUserID] = @Original_MUserID)) AND ((@IsNull_MDate = 1 AND [MDate] IS NULL) OR ([MDate] = @Original_MDate)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_StokID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="StokID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_GrupID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GrupID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_AyarID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="AyarID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_CariID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CariID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_UrunGram" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="UrunGram" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_UrunMaliyet" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="UrunMaliyet" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_UrunIscilik" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="UrunIscilik" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_BarkodNo" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="BarkodNo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_isActive" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="isActive" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_isActive" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="isActive" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_CUser" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CUser" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_CDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="CDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_MUserID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MUserID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_MUserID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MUserID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_MDate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MDate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_MDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="MDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [Stok] ([GrupID], [AyarID], [CariID], [UrunGram], [UrunMaliyet], [UrunIscilik], [BarkodNo], [isActive], [CUser], [CDate], [MUserID], [MDate]) VALUES (@GrupID, @AyarID, @CariID, @UrunGram, @UrunMaliyet, @UrunIscilik, @BarkodNo, @isActive, @CUser, @CDate, @MUserID, @MDate);
+SELECT StokID, GrupID, AyarID, CariID, UrunGram, UrunMaliyet, UrunIscilik, BarkodNo, isActive, CUser, CDate, MUserID, MDate FROM Stok WHERE (StokID = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@GrupID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GrupID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@AyarID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="AyarID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@CariID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CariID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@UrunGram" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="UrunGram" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@UrunMaliyet" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="UrunMaliyet" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@UrunIscilik" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="UrunIscilik" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@BarkodNo" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="BarkodNo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@isActive" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="isActive" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@CUser" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CUser" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@CDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="CDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@MUserID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MUserID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@MDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="MDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Stok.*
+FROM     Stok</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [Stok] SET [GrupID] = @GrupID, [AyarID] = @AyarID, [CariID] = @CariID, [UrunGram] = @UrunGram, [UrunMaliyet] = @UrunMaliyet, [UrunIscilik] = @UrunIscilik, [BarkodNo] = @BarkodNo, [isActive] = @isActive, [CUser] = @CUser, [CDate] = @CDate, [MUserID] = @MUserID, [MDate] = @MDate WHERE (([StokID] = @Original_StokID) AND ([GrupID] = @Original_GrupID) AND ([AyarID] = @Original_AyarID) AND ([CariID] = @Original_CariID) AND ([UrunGram] = @Original_UrunGram) AND ([UrunMaliyet] = @Original_UrunMaliyet) AND ([UrunIscilik] = @Original_UrunIscilik) AND ([BarkodNo] = @Original_BarkodNo) AND ((@IsNull_isActive = 1 AND [isActive] IS NULL) OR ([isActive] = @Original_isActive)) AND ([CUser] = @Original_CUser) AND ([CDate] = @Original_CDate) AND ((@IsNull_MUserID = 1 AND [MUserID] IS NULL) OR ([MUserID] = @Original_MUserID)) AND ((@IsNull_MDate = 1 AND [MDate] IS NULL) OR ([MDate] = @Original_MDate)));
+SELECT StokID, GrupID, AyarID, CariID, UrunGram, UrunMaliyet, UrunIscilik, BarkodNo, isActive, CUser, CDate, MUserID, MDate FROM Stok WHERE (StokID = @StokID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@GrupID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GrupID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@AyarID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="AyarID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@CariID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CariID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@UrunGram" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="UrunGram" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@UrunMaliyet" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="UrunMaliyet" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@UrunIscilik" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="UrunIscilik" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@BarkodNo" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="BarkodNo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@isActive" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="isActive" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@CUser" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CUser" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@CDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="CDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@MUserID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MUserID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@MDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="MDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_StokID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="StokID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_GrupID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="GrupID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_AyarID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="AyarID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_CariID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CariID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_UrunGram" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="UrunGram" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_UrunMaliyet" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="UrunMaliyet" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_UrunIscilik" Precision="18" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="UrunIscilik" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_BarkodNo" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="BarkodNo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_isActive" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="isActive" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_isActive" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="isActive" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_CUser" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CUser" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_CDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="CDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_MUserID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MUserID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_MUserID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MUserID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_MDate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MDate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_MDate" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="MDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="StokID" ColumnName="StokID" DataSourceName="KuyumcuStokTakip.dbo.Stok" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@StokID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="StokID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="StokID" DataSetColumn="StokID" />
+              <Mapping SourceColumn="GrupID" DataSetColumn="GrupID" />
+              <Mapping SourceColumn="AyarID" DataSetColumn="AyarID" />
+              <Mapping SourceColumn="CariID" DataSetColumn="CariID" />
+              <Mapping SourceColumn="UrunGram" DataSetColumn="UrunGram" />
+              <Mapping SourceColumn="UrunMaliyet" DataSetColumn="UrunMaliyet" />
+              <Mapping SourceColumn="UrunIscilik" DataSetColumn="UrunIscilik" />
+              <Mapping SourceColumn="BarkodNo" DataSetColumn="BarkodNo" />
+              <Mapping SourceColumn="isActive" DataSetColumn="isActive" />
+              <Mapping SourceColumn="CUser" DataSetColumn="CUser" />
+              <Mapping SourceColumn="CDate" DataSetColumn="CDate" />
+              <Mapping SourceColumn="MUserID" DataSetColumn="MUserID" />
+              <Mapping SourceColumn="MDate" DataSetColumn="MDate" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="KuyumcuStokTakipConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertQuery">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO Stok
+                  (GrupID, AyarID, CariID, UrunGram, UrunMaliyet, UrunIscilik, BarkodNo, isActive, CUser, CDate)
+VALUES (@GrupID,@AyarID,@CariID,@UrunGram,@UrunMaliyet,@UrunIscilik,@BarkodNo,@isActive,@CUser,@CDate); 
+SELECT StokID, GrupID, AyarID, CariID, UrunGram, UrunMaliyet, UrunIscilik, BarkodNo, isActive, CUser, CDate FROM Stok WHERE (StokID = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="GrupID" ColumnName="GrupID" DataSourceName="KuyumcuStokTakip.dbo.Stok" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@GrupID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="GrupID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="AyarID" ColumnName="AyarID" DataSourceName="KuyumcuStokTakip.dbo.Stok" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@AyarID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="AyarID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="CariID" ColumnName="CariID" DataSourceName="KuyumcuStokTakip.dbo.Stok" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CariID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="CariID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="UrunGram" ColumnName="UrunGram" DataSourceName="KuyumcuStokTakip.dbo.Stok" DataTypeServer="decimal(18, 2)" DbType="Decimal" Direction="Input" ParameterName="@UrunGram" Precision="18" ProviderType="Decimal" Scale="2" Size="9" SourceColumn="UrunGram" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="UrunMaliyet" ColumnName="UrunMaliyet" DataSourceName="KuyumcuStokTakip.dbo.Stok" DataTypeServer="decimal(18, 2)" DbType="Decimal" Direction="Input" ParameterName="@UrunMaliyet" Precision="18" ProviderType="Decimal" Scale="2" Size="9" SourceColumn="UrunMaliyet" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="UrunIscilik" ColumnName="UrunIscilik" DataSourceName="KuyumcuStokTakip.dbo.Stok" DataTypeServer="decimal(18, 2)" DbType="Decimal" Direction="Input" ParameterName="@UrunIscilik" Precision="18" ProviderType="Decimal" Scale="2" Size="9" SourceColumn="UrunIscilik" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="BarkodNo" ColumnName="BarkodNo" DataSourceName="KuyumcuStokTakip.dbo.Stok" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@BarkodNo" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="BarkodNo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="isActive" ColumnName="isActive" DataSourceName="KuyumcuStokTakip.dbo.Stok" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@isActive" Precision="0" ProviderType="Bit" Scale="0" Size="1" SourceColumn="isActive" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="CUser" ColumnName="CUser" DataSourceName="KuyumcuStokTakip.dbo.Stok" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CUser" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="CUser" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="CDate" ColumnName="CDate" DataSourceName="KuyumcuStokTakip.dbo.Stok" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@CDate" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="CDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="StokListeTableAdapter" GeneratorDataComponentClassName="StokListeTableAdapter" Name="StokListe" UserDataComponentName="StokListeTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="KuyumcuStokTakipConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillStokListesiniGetir" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="StokListesiniGetir" GeneratorSourceName="FillStokListesiniGetir" GetMethodModifier="Public" GetMethodName="StokListesiniGetir" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="StokListesiniGetir" UserSourceName="FillStokListesiniGetir">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Stok.StokID, UrunGrubu.GrupAd, UrunAyar.AyarAdi, Cari.CariAd, Stok.UrunGram, Stok.UrunMaliyet, Stok.UrunIscilik, Stok.BarkodNo, Stok.isActive, Stok.CUser, Stok.CDate
+FROM     Stok INNER JOIN
+                  UrunGrubu ON Stok.GrupID = UrunGrubu.GrupID INNER JOIN
+                  UrunAyar ON Stok.AyarID = UrunAyar.AyarID INNER JOIN
+                  Cari ON Stok.CariID = Cari.CariID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="StokID" DataSetColumn="StokID" />
+              <Mapping SourceColumn="GrupAd" DataSetColumn="GrupAd" />
+              <Mapping SourceColumn="AyarAdi" DataSetColumn="AyarAdi" />
+              <Mapping SourceColumn="CariAd" DataSetColumn="CariAd" />
+              <Mapping SourceColumn="UrunGram" DataSetColumn="UrunGram" />
+              <Mapping SourceColumn="UrunMaliyet" DataSetColumn="UrunMaliyet" />
+              <Mapping SourceColumn="UrunIscilik" DataSetColumn="UrunIscilik" />
+              <Mapping SourceColumn="BarkodNo" DataSetColumn="BarkodNo" />
+              <Mapping SourceColumn="isActive" DataSetColumn="isActive" />
+              <Mapping SourceColumn="CUser" DataSetColumn="CUser" />
+              <Mapping SourceColumn="CDate" DataSetColumn="CDate" />
+            </Mappings>
+            <Sources />
           </TableAdapter>
         </Tables>
         <Sources />
@@ -421,29 +583,89 @@ SELECT GrupID, GrupKod, GrupAd, isActive, CUser, CDate FROM UrunGrubu WHERE (Gru
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="UrunGrubu" msprop:Generator_RowClassName="UrunGrubuRow" msprop:Generator_RowEvHandlerName="UrunGrubuRowChangeEventHandler" msprop:Generator_RowDeletedName="UrunGrubuRowDeleted" msprop:Generator_RowDeletingName="UrunGrubuRowDeleting" msprop:Generator_RowEvArgName="UrunGrubuRowChangeEvent" msprop:Generator_TablePropName="UrunGrubu" msprop:Generator_RowChangedName="UrunGrubuRowChanged" msprop:Generator_UserTableName="UrunGrubu" msprop:Generator_RowChangingName="UrunGrubuRowChanging" msprop:Generator_TableClassName="UrunGrubuDataTable" msprop:Generator_TableVarName="tableUrunGrubu">
+        <xs:element name="UrunGrubu" msprop:Generator_RowEvHandlerName="UrunGrubuRowChangeEventHandler" msprop:Generator_RowDeletedName="UrunGrubuRowDeleted" msprop:Generator_RowDeletingName="UrunGrubuRowDeleting" msprop:Generator_RowEvArgName="UrunGrubuRowChangeEvent" msprop:Generator_TablePropName="UrunGrubu" msprop:Generator_RowChangedName="UrunGrubuRowChanged" msprop:Generator_UserTableName="UrunGrubu" msprop:Generator_RowChangingName="UrunGrubuRowChanging" msprop:Generator_RowClassName="UrunGrubuRow" msprop:Generator_TableClassName="UrunGrubuDataTable" msprop:Generator_TableVarName="tableUrunGrubu">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="GrupID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="GrupID" msprop:Generator_ColumnPropNameInTable="GrupIDColumn" msprop:Generator_ColumnPropNameInRow="GrupID" msprop:Generator_ColumnVarNameInTable="columnGrupID" type="xs:int" />
-              <xs:element name="GrupKod" msprop:Generator_UserColumnName="GrupKod" msprop:Generator_ColumnPropNameInTable="GrupKodColumn" msprop:Generator_ColumnPropNameInRow="GrupKod" msprop:Generator_ColumnVarNameInTable="columnGrupKod">
+              <xs:element name="GrupID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="GrupIDColumn" msprop:Generator_ColumnPropNameInRow="GrupID" msprop:Generator_UserColumnName="GrupID" msprop:Generator_ColumnVarNameInTable="columnGrupID" type="xs:int" />
+              <xs:element name="GrupKod" msprop:Generator_ColumnPropNameInTable="GrupKodColumn" msprop:Generator_ColumnPropNameInRow="GrupKod" msprop:Generator_UserColumnName="GrupKod" msprop:Generator_ColumnVarNameInTable="columnGrupKod">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="GrupAd" msprop:Generator_UserColumnName="GrupAd" msprop:Generator_ColumnPropNameInTable="GrupAdColumn" msprop:Generator_ColumnPropNameInRow="GrupAd" msprop:Generator_ColumnVarNameInTable="columnGrupAd">
+              <xs:element name="GrupAd" msprop:Generator_ColumnPropNameInTable="GrupAdColumn" msprop:Generator_ColumnPropNameInRow="GrupAd" msprop:Generator_UserColumnName="GrupAd" msprop:Generator_ColumnVarNameInTable="columnGrupAd">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="isActive" msprop:Generator_UserColumnName="isActive" msprop:Generator_ColumnPropNameInTable="isActiveColumn" msprop:Generator_ColumnPropNameInRow="isActive" msprop:Generator_ColumnVarNameInTable="columnisActive" type="xs:boolean" />
+              <xs:element name="isActive" msprop:Generator_ColumnPropNameInTable="isActiveColumn" msprop:Generator_ColumnPropNameInRow="isActive" msprop:Generator_UserColumnName="isActive" msprop:Generator_ColumnVarNameInTable="columnisActive" type="xs:boolean" />
+              <xs:element name="CUser" msprop:Generator_ColumnPropNameInTable="CUserColumn" msprop:Generator_ColumnPropNameInRow="CUser" msprop:Generator_UserColumnName="CUser" msprop:Generator_ColumnVarNameInTable="columnCUser" type="xs:int" />
+              <xs:element name="CDate" msprop:Generator_ColumnPropNameInTable="CDateColumn" msprop:Generator_ColumnPropNameInRow="CDate" msprop:Generator_UserColumnName="CDate" msprop:Generator_ColumnVarNameInTable="columnCDate" type="xs:dateTime" />
+              <xs:element name="MUserID" msprop:Generator_ColumnPropNameInTable="MUserIDColumn" msprop:Generator_ColumnPropNameInRow="MUserID" msprop:Generator_UserColumnName="MUserID" msprop:Generator_ColumnVarNameInTable="columnMUserID" type="xs:int" minOccurs="0" />
+              <xs:element name="MDate" msprop:Generator_ColumnPropNameInTable="MDateColumn" msprop:Generator_ColumnPropNameInRow="MDate" msprop:Generator_UserColumnName="MDate" msprop:Generator_ColumnVarNameInTable="columnMDate" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Stok" msprop:Generator_RowClassName="StokRow" msprop:Generator_RowEvHandlerName="StokRowChangeEventHandler" msprop:Generator_RowDeletedName="StokRowDeleted" msprop:Generator_RowDeletingName="StokRowDeleting" msprop:Generator_RowEvArgName="StokRowChangeEvent" msprop:Generator_TablePropName="Stok" msprop:Generator_RowChangedName="StokRowChanged" msprop:Generator_UserTableName="Stok" msprop:Generator_RowChangingName="StokRowChanging" msprop:Generator_TableClassName="StokDataTable" msprop:Generator_TableVarName="tableStok">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="StokID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="StokID" msprop:Generator_ColumnPropNameInTable="StokIDColumn" msprop:Generator_ColumnPropNameInRow="StokID" msprop:Generator_ColumnVarNameInTable="columnStokID" type="xs:int" />
+              <xs:element name="GrupID" msprop:Generator_UserColumnName="GrupID" msprop:Generator_ColumnPropNameInTable="GrupIDColumn" msprop:Generator_ColumnPropNameInRow="GrupID" msprop:Generator_ColumnVarNameInTable="columnGrupID" type="xs:int" />
+              <xs:element name="AyarID" msprop:Generator_UserColumnName="AyarID" msprop:Generator_ColumnPropNameInTable="AyarIDColumn" msprop:Generator_ColumnPropNameInRow="AyarID" msprop:Generator_ColumnVarNameInTable="columnAyarID" type="xs:int" />
+              <xs:element name="CariID" msprop:Generator_UserColumnName="CariID" msprop:Generator_ColumnPropNameInTable="CariIDColumn" msprop:Generator_ColumnPropNameInRow="CariID" msprop:Generator_ColumnVarNameInTable="columnCariID" type="xs:int" />
+              <xs:element name="UrunGram" msprop:Generator_UserColumnName="UrunGram" msprop:Generator_ColumnPropNameInTable="UrunGramColumn" msprop:Generator_ColumnPropNameInRow="UrunGram" msprop:Generator_ColumnVarNameInTable="columnUrunGram" type="xs:decimal" />
+              <xs:element name="UrunMaliyet" msprop:Generator_UserColumnName="UrunMaliyet" msprop:Generator_ColumnPropNameInTable="UrunMaliyetColumn" msprop:Generator_ColumnPropNameInRow="UrunMaliyet" msprop:Generator_ColumnVarNameInTable="columnUrunMaliyet" type="xs:decimal" />
+              <xs:element name="UrunIscilik" msprop:Generator_UserColumnName="UrunIscilik" msprop:Generator_ColumnPropNameInTable="UrunIscilikColumn" msprop:Generator_ColumnPropNameInRow="UrunIscilik" msprop:Generator_ColumnVarNameInTable="columnUrunIscilik" type="xs:decimal" />
+              <xs:element name="BarkodNo" msprop:Generator_UserColumnName="BarkodNo" msprop:Generator_ColumnPropNameInTable="BarkodNoColumn" msprop:Generator_ColumnPropNameInRow="BarkodNo" msprop:Generator_ColumnVarNameInTable="columnBarkodNo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="isActive" msprop:Generator_UserColumnName="isActive" msprop:Generator_ColumnPropNameInTable="isActiveColumn" msprop:Generator_ColumnPropNameInRow="isActive" msprop:Generator_ColumnVarNameInTable="columnisActive" type="xs:boolean" minOccurs="0" />
               <xs:element name="CUser" msprop:Generator_UserColumnName="CUser" msprop:Generator_ColumnPropNameInTable="CUserColumn" msprop:Generator_ColumnPropNameInRow="CUser" msprop:Generator_ColumnVarNameInTable="columnCUser" type="xs:int" />
               <xs:element name="CDate" msprop:Generator_UserColumnName="CDate" msprop:Generator_ColumnPropNameInTable="CDateColumn" msprop:Generator_ColumnPropNameInRow="CDate" msprop:Generator_ColumnVarNameInTable="columnCDate" type="xs:dateTime" />
               <xs:element name="MUserID" msprop:Generator_UserColumnName="MUserID" msprop:Generator_ColumnPropNameInTable="MUserIDColumn" msprop:Generator_ColumnPropNameInRow="MUserID" msprop:Generator_ColumnVarNameInTable="columnMUserID" type="xs:int" minOccurs="0" />
               <xs:element name="MDate" msprop:Generator_UserColumnName="MDate" msprop:Generator_ColumnPropNameInTable="MDateColumn" msprop:Generator_ColumnPropNameInRow="MDate" msprop:Generator_ColumnVarNameInTable="columnMDate" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="StokListe" msprop:Generator_RowEvHandlerName="StokListeRowChangeEventHandler" msprop:Generator_RowDeletedName="StokListeRowDeleted" msprop:Generator_RowDeletingName="StokListeRowDeleting" msprop:Generator_RowEvArgName="StokListeRowChangeEvent" msprop:Generator_TablePropName="StokListe" msprop:Generator_RowChangedName="StokListeRowChanged" msprop:Generator_RowChangingName="StokListeRowChanging" msprop:Generator_TableClassName="StokListeDataTable" msprop:Generator_RowClassName="StokListeRow" msprop:Generator_TableVarName="tableStokListe" msprop:Generator_UserTableName="StokListe">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="StokID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="StokID" msprop:Generator_ColumnPropNameInTable="StokIDColumn" msprop:Generator_ColumnVarNameInTable="columnStokID" msprop:Generator_UserColumnName="StokID" type="xs:int" />
+              <xs:element name="GrupAd" msprop:Generator_ColumnPropNameInRow="GrupAd" msprop:Generator_ColumnPropNameInTable="GrupAdColumn" msprop:Generator_ColumnVarNameInTable="columnGrupAd" msprop:Generator_UserColumnName="GrupAd">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AyarAdi" msprop:Generator_ColumnPropNameInRow="AyarAdi" msprop:Generator_ColumnPropNameInTable="AyarAdiColumn" msprop:Generator_ColumnVarNameInTable="columnAyarAdi" msprop:Generator_UserColumnName="AyarAdi" type="xs:int" />
+              <xs:element name="CariAd" msprop:Generator_ColumnPropNameInRow="CariAd" msprop:Generator_ColumnPropNameInTable="CariAdColumn" msprop:Generator_ColumnVarNameInTable="columnCariAd" msprop:Generator_UserColumnName="CariAd">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UrunGram" msprop:Generator_ColumnPropNameInRow="UrunGram" msprop:Generator_ColumnPropNameInTable="UrunGramColumn" msprop:Generator_ColumnVarNameInTable="columnUrunGram" msprop:Generator_UserColumnName="UrunGram" type="xs:decimal" />
+              <xs:element name="UrunMaliyet" msprop:Generator_ColumnPropNameInRow="UrunMaliyet" msprop:Generator_ColumnPropNameInTable="UrunMaliyetColumn" msprop:Generator_ColumnVarNameInTable="columnUrunMaliyet" msprop:Generator_UserColumnName="UrunMaliyet" type="xs:decimal" />
+              <xs:element name="UrunIscilik" msprop:Generator_ColumnPropNameInRow="UrunIscilik" msprop:Generator_ColumnPropNameInTable="UrunIscilikColumn" msprop:Generator_ColumnVarNameInTable="columnUrunIscilik" msprop:Generator_UserColumnName="UrunIscilik" type="xs:decimal" />
+              <xs:element name="BarkodNo" msprop:Generator_ColumnPropNameInRow="BarkodNo" msprop:Generator_ColumnPropNameInTable="BarkodNoColumn" msprop:Generator_ColumnVarNameInTable="columnBarkodNo" msprop:Generator_UserColumnName="BarkodNo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="isActive" msprop:Generator_ColumnPropNameInRow="isActive" msprop:Generator_ColumnPropNameInTable="isActiveColumn" msprop:Generator_ColumnVarNameInTable="columnisActive" msprop:Generator_UserColumnName="isActive" type="xs:boolean" minOccurs="0" />
+              <xs:element name="CUser" msprop:Generator_ColumnPropNameInRow="CUser" msprop:Generator_ColumnPropNameInTable="CUserColumn" msprop:Generator_ColumnVarNameInTable="columnCUser" msprop:Generator_UserColumnName="CUser" type="xs:int" />
+              <xs:element name="CDate" msprop:Generator_ColumnPropNameInRow="CDate" msprop:Generator_ColumnPropNameInTable="CDateColumn" msprop:Generator_ColumnVarNameInTable="columnCDate" msprop:Generator_UserColumnName="CDate" type="xs:dateTime" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -464,6 +686,14 @@ SELECT GrupID, GrupKod, GrupAd, isActive, CUser, CDate FROM UrunGrubu WHERE (Gru
     <xs:unique name="UrunGrubu_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:UrunGrubu" />
       <xs:field xpath="mstns:GrupID" />
+    </xs:unique>
+    <xs:unique name="Stok_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Stok" />
+      <xs:field xpath="mstns:StokID" />
+    </xs:unique>
+    <xs:unique name="StokListe_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:StokListe" />
+      <xs:field xpath="mstns:StokID" />
     </xs:unique>
   </xs:element>
 </xs:schema>
