@@ -33,11 +33,22 @@ namespace KuyumcuStokTakip.Stok
             }
             else
             {
-                 _UrunAyarTableAdapter.InsertQuery(Convert.ToInt32(txtAyar.Text), chkAyarAktifMi.Checked, 1, DateTime.Now);
+                int girilenAyar = Convert.ToInt32(txtAyar.Text.Trim());
+                int kayitSayisi = (int)_UrunAyarTableAdapter.AyarKontrolEt(girilenAyar);
+
+                if (kayitSayisi > 0)
+                {
+                   
+                    MessageBox.Show("Girdiğiniz Ayar ('" + girilenAyar + "') sistemde zaten kayıtlı!\nLütfen farklı bir Ayar belirleyiniz.",
+                                    "Mükerrer Kayıt",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Stop);
+                    return;
+                }
+                _UrunAyarTableAdapter.InsertQuery(Convert.ToInt32(txtAyar.Text), chkAyarAktifMi.Checked, 1, DateTime.Now);
 
                  MessageBox.Show("Kayıt Başarılı!");
-                 ayarKayitFormTemizle();
-                
+                 ayarKayitFormTemizle();  
             }
         }
 

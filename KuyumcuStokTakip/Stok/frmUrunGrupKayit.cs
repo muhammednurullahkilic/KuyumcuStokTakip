@@ -22,18 +22,32 @@ namespace KuyumcuStokTakip.Stok
 
         private void btnUrunGrubuKaydet_Click(object sender, EventArgs e)
         {
-           
+            string girilenAd = txtGrubAd.Text.Trim();
+            string girilenKod = txtGrupKod.Text.Trim();
 
             if (string.IsNullOrEmpty(txtGrubAd.Text) || !string.IsNullOrEmpty(txtGrupKod.Text))
             {
-                
-                MessageBox.Show("lütfen zorunlu alanaları doldurun!");
-            }
-            else
-            {
+
+                int kayitSayisi = (int)_UrunGrubuTableAdapter.GrupKontrolEt(girilenAd, girilenKod);
+
+                if (kayitSayisi > 0)
+                {
+                    MessageBox.Show("Girdiğiniz Ürün Adı ('" + girilenAd + "') veya Kısa Kod ('" + girilenKod + "') sistemde zaten kayıtlı!\nLütfen farklı bir ad veya kod belirleyiniz.",
+                                    "Mükerrer Kayıt",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Stop);
+                    return; 
+                }
+
                 _UrunGrubuTableAdapter.InsertQuery(txtGrupKod.Text, txtGrubAd.Text, chkUrunGrupAktifMi.Checked, 1, DateTime.Now);
                 MessageBox.Show("Kayıt Başarılı!");
                 urunGrubFormTemizle();
+           
+            }
+            else
+            {
+                MessageBox.Show("lütfen zorunlu alanaları doldurun!");
+
             }
         }
 

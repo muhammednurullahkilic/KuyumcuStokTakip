@@ -51,6 +51,7 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.gridCariKod = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlCari)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridCariListe)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).BeginInit();
@@ -73,6 +74,7 @@
             // gridCariListe
             // 
             this.gridCariListe.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridCariKod,
             this.gridCariAdı,
             this.gridCariTipi,
             this.gridTelefonNo,
@@ -102,7 +104,7 @@
             this.gridCariTipi.MinWidth = 25;
             this.gridCariTipi.Name = "gridCariTipi";
             this.gridCariTipi.Visible = true;
-            this.gridCariTipi.VisibleIndex = 1;
+            this.gridCariTipi.VisibleIndex = 2;
             this.gridCariTipi.Width = 79;
             // 
             // gridTelefonNo
@@ -112,7 +114,7 @@
             this.gridTelefonNo.MinWidth = 25;
             this.gridTelefonNo.Name = "gridTelefonNo";
             this.gridTelefonNo.Visible = true;
-            this.gridTelefonNo.VisibleIndex = 2;
+            this.gridTelefonNo.VisibleIndex = 3;
             this.gridTelefonNo.Width = 79;
             // 
             // gridAdres
@@ -122,7 +124,7 @@
             this.gridAdres.MinWidth = 25;
             this.gridAdres.Name = "gridAdres";
             this.gridAdres.Visible = true;
-            this.gridAdres.VisibleIndex = 3;
+            this.gridAdres.VisibleIndex = 4;
             this.gridAdres.Width = 79;
             // 
             // gridNot
@@ -132,7 +134,7 @@
             this.gridNot.MinWidth = 25;
             this.gridNot.Name = "gridNot";
             this.gridNot.Visible = true;
-            this.gridNot.VisibleIndex = 4;
+            this.gridNot.VisibleIndex = 5;
             this.gridNot.Width = 79;
             // 
             // gridAktifMi
@@ -142,7 +144,7 @@
             this.gridAktifMi.MinWidth = 25;
             this.gridAktifMi.Name = "gridAktifMi";
             this.gridAktifMi.Visible = true;
-            this.gridAktifMi.VisibleIndex = 5;
+            this.gridAktifMi.VisibleIndex = 6;
             this.gridAktifMi.Width = 79;
             // 
             // gridCariListePersonel
@@ -152,7 +154,7 @@
             this.gridCariListePersonel.MinWidth = 25;
             this.gridCariListePersonel.Name = "gridCariListePersonel";
             this.gridCariListePersonel.Visible = true;
-            this.gridCariListePersonel.VisibleIndex = 6;
+            this.gridCariListePersonel.VisibleIndex = 7;
             this.gridCariListePersonel.Width = 79;
             // 
             // gridCariListeCreatedDate
@@ -162,7 +164,7 @@
             this.gridCariListeCreatedDate.MinWidth = 25;
             this.gridCariListeCreatedDate.Name = "gridCariListeCreatedDate";
             this.gridCariListeCreatedDate.Visible = true;
-            this.gridCariListeCreatedDate.VisibleIndex = 7;
+            this.gridCariListeCreatedDate.VisibleIndex = 8;
             this.gridCariListeCreatedDate.Width = 79;
             // 
             // gridCariListeUpdatedDate
@@ -172,7 +174,7 @@
             this.gridCariListeUpdatedDate.MinWidth = 25;
             this.gridCariListeUpdatedDate.Name = "gridCariListeUpdatedDate";
             this.gridCariListeUpdatedDate.Visible = true;
-            this.gridCariListeUpdatedDate.VisibleIndex = 8;
+            this.gridCariListeUpdatedDate.VisibleIndex = 9;
             this.gridCariListeUpdatedDate.Width = 85;
             // 
             // repositoryItemLookUpEdit1
@@ -271,6 +273,16 @@
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 641);
             // 
+            // gridCariKod
+            // 
+            this.gridCariKod.Caption = "Cari Kod";
+            this.gridCariKod.FieldName = "CariKod";
+            this.gridCariKod.MinWidth = 25;
+            this.gridCariKod.Name = "gridCariKod";
+            this.gridCariKod.Visible = true;
+            this.gridCariKod.VisibleIndex = 1;
+            this.gridCariKod.Width = 94;
+            // 
             // frmCariListe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -316,5 +328,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridCariListeCreatedDate;
         private DevExpress.XtraGrid.Columns.GridColumn gridCariListeUpdatedDate;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridCariKod;
     }
 }

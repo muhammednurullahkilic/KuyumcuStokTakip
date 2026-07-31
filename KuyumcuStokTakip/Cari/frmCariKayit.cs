@@ -37,14 +37,25 @@ namespace KuyumcuStokTakip
 
         private void btnCariKayit_Click(object sender, EventArgs e)
         {
-            
 
-            if(string.IsNullOrWhiteSpace(txtCariAd.Text) || string.IsNullOrWhiteSpace(txtCariKod.Text) || string.IsNullOrWhiteSpace(gleCariTip.Text))
+            string girilenCariKod = txtCariKod.Text.Trim();
+            if (string.IsNullOrWhiteSpace(txtCariAd.Text) || string.IsNullOrWhiteSpace(txtCariKod.Text) || string.IsNullOrWhiteSpace(gleCariTip.Text))
             {
                 MessageBox.Show("Lütfen Zorunlu Kısımları Doldurun!");
             }
             else
             {
+                int kayitSayisi = (int)_cariTableAdapter.CariKodKontrolEt(girilenCariKod);
+
+                if (kayitSayisi > 0)
+                {
+                    // Eğer sayı 0'dan büyükse, ya 'Bilezik' adı ya da 'BLZ' kodu içeride var demektir.
+                    MessageBox.Show("Girdiğiniz Cari Kodu ('" + girilenCariKod + "')  sistemde zaten kayıtlı!\nLütfen farklı Cari kod belirleyiniz.",
+                                    "Mükerrer Kayıt",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Stop);
+                    return; // İşlemi kes, Insert komutuna inmesine izin verme
+                }
                 _cariTableAdapter.InsertQuery(txtCariKod.Text, Convert.ToInt32(gleCariTip.EditValue), txtCariAd.Text, txtAdres.Text, txtNot.Text, txtTelefonNo.Text, 1, DateTime.Now, true);
                 MessageBox.Show("Kayıt Başarılı");
                 CariKayitFormTemizle();
