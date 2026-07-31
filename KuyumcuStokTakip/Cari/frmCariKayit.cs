@@ -33,6 +33,7 @@ namespace KuyumcuStokTakip
             gleCariTip.Properties.DataSource = _cariTipTableAdapter.GetData();
             gleCariTip.Properties.ValueMember = "ID";
             gleCariTip.Properties.DisplayMember = "Tip";
+            gleCariTip.Properties.NullText = "Lütfen Seçiniz...";
         }
 
         private void btnCariKayit_Click(object sender, EventArgs e)
