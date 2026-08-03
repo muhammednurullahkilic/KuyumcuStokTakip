@@ -89,7 +89,7 @@ namespace KuyumcuStokTakip
         {
             OpenFormShow(new frmAlisFatura(), e.Item.Caption);
         }
-
+     
         private void btnKullaniciBilgileri_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             OpenFormShow(new frmKullaniciBilgileri(), e.Item.Caption);

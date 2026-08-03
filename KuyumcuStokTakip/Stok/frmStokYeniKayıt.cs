@@ -29,7 +29,7 @@ namespace KuyumcuStokTakip.Stok
         {
 
             lueUrunAd.Properties.DataSource = _UrunGrubuTableAdapter.GetData();
-            lueUrunAd.Properties.DisplayMember = "GrupAd";
+            lueUrunAd.Properties.DisplayMember = "GrupKod";
             lueUrunAd.Properties.ValueMember = "GrupID";
             lueUrunAd.Properties.NullText = "Lütfen Seçiniz...";
             lueUrunAd.Properties.Columns.Clear();
@@ -118,6 +118,44 @@ namespace KuyumcuStokTakip.Stok
             txtIscilik.Clear();
             txtBarkodNo.Clear();
             chkAktifMi.Checked = false;
+        }
+
+        private void txtIscilik_Leave(object sender, EventArgs e)
+        {
+
+            var barkod = " ";
+
+               
+            string urunAdi = lueUrunAd.Text;   
+            string urunAyar = lueUrunAyar.Text; 
+
+               
+            string barkodAnahtar = $"{urunAdi}-{urunAyar}-"; 
+
+
+            decimal gram = Convert.ToDecimal(txtUrunGram.Text);
+            decimal maliyet = Convert.ToDecimal(txtUrunMaliyet.Text);
+            decimal iscilik = Convert.ToDecimal(txtIscilik.Text);
+            decimal toplamDeger = gram + maliyet + iscilik;
+
+
+
+            var maxBarkod = _StokTableAdapter.ScalarQueryBarkodNo(barkodAnahtar);
+
+            int yeniSira = 1;
+            if (!string.IsNullOrEmpty(maxBarkod))
+            {
+      
+                string sonDortHane = maxBarkod.Substring(maxBarkod.Length - 4);
+
+                
+                yeniSira = Convert.ToInt32(sonDortHane) + 1;
+            }
+
+            string yeniBarkodNo = $"{barkodAnahtar}{toplamDeger.ToString("0.00")}-{yeniSira.ToString("D4")}";
+
+            
+            txtBarkodNo.Text = yeniBarkodNo;
         }
     }
 }

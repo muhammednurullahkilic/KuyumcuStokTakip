@@ -109,6 +109,7 @@
             this.gridSatisFaturaListesi.GridControl = this.gridControlSatisFaturaListesi;
             this.gridSatisFaturaListesi.GroupPanelText = "Satış Listesi";
             this.gridSatisFaturaListesi.Name = "gridSatisFaturaListesi";
+            this.gridSatisFaturaListesi.OptionsBehavior.Editable = false;
             // 
             // gridSatisFaturaNo
             // 
@@ -213,6 +214,7 @@
             this.gridAlisFaturaListesi.GridControl = this.gridControlAlisFaturaListesi;
             this.gridAlisFaturaListesi.GroupPanelText = "Alış Listesi";
             this.gridAlisFaturaListesi.Name = "gridAlisFaturaListesi";
+            this.gridAlisFaturaListesi.OptionsBehavior.Editable = false;
             // 
             // gridAlisFaturaNo
             // 

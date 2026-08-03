@@ -41,12 +41,22 @@
             this.btnAlisFaturaOnayla = new DevExpress.XtraEditors.SimpleButton();
             this.txtAlisFaturaNo = new System.Windows.Forms.TextBox();
             this.lblFaturaNo = new System.Windows.Forms.Label();
+            this.gridControlAlisFatura = new DevExpress.XtraGrid.GridControl();
+            this.gridAlisFaturasi = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridFaturaNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridMusteriAd = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridTarih = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridBarkodNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridGramFiyat = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridTutar = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.lueMusteriAd.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueBarkodNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtAlisTarihi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtAlisTarihi.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAlisGramFiyat.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAlisTutar.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlAlisFatura)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridAlisFaturasi)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMusteriAd
@@ -72,7 +82,7 @@
             // lblBarkodNo
             // 
             this.lblBarkodNo.AutoSize = true;
-            this.lblBarkodNo.Location = new System.Drawing.Point(55, 156);
+            this.lblBarkodNo.Location = new System.Drawing.Point(315, 41);
             this.lblBarkodNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBarkodNo.Name = "lblBarkodNo";
             this.lblBarkodNo.Size = new System.Drawing.Size(65, 13);
@@ -82,7 +92,7 @@
             // lblGramFiyat
             // 
             this.lblGramFiyat.AutoSize = true;
-            this.lblGramFiyat.Location = new System.Drawing.Point(55, 193);
+            this.lblGramFiyat.Location = new System.Drawing.Point(315, 78);
             this.lblGramFiyat.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGramFiyat.Name = "lblGramFiyat";
             this.lblGramFiyat.Size = new System.Drawing.Size(64, 13);
@@ -92,7 +102,7 @@
             // lblTutar
             // 
             this.lblTutar.AutoSize = true;
-            this.lblTutar.Location = new System.Drawing.Point(55, 235);
+            this.lblTutar.Location = new System.Drawing.Point(315, 120);
             this.lblTutar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTutar.Name = "lblTutar";
             this.lblTutar.Size = new System.Drawing.Size(39, 13);
@@ -102,7 +112,7 @@
             // lueMusteriAd
             // 
             this.lueMusteriAd.Location = new System.Drawing.Point(135, 71);
-            this.lueMusteriAd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lueMusteriAd.Margin = new System.Windows.Forms.Padding(2);
             this.lueMusteriAd.Name = "lueMusteriAd";
             this.lueMusteriAd.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -112,8 +122,8 @@
             // 
             // lueBarkodNo
             // 
-            this.lueBarkodNo.Location = new System.Drawing.Point(135, 154);
-            this.lueBarkodNo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lueBarkodNo.Location = new System.Drawing.Point(395, 39);
+            this.lueBarkodNo.Margin = new System.Windows.Forms.Padding(2);
             this.lueBarkodNo.Name = "lueBarkodNo";
             this.lueBarkodNo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -125,7 +135,7 @@
             // 
             this.dtAlisTarihi.EditValue = null;
             this.dtAlisTarihi.Location = new System.Drawing.Point(135, 112);
-            this.dtAlisTarihi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtAlisTarihi.Margin = new System.Windows.Forms.Padding(2);
             this.dtAlisTarihi.Name = "dtAlisTarihi";
             this.dtAlisTarihi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -136,8 +146,8 @@
             // 
             // txtAlisGramFiyat
             // 
-            this.txtAlisGramFiyat.Location = new System.Drawing.Point(135, 188);
-            this.txtAlisGramFiyat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAlisGramFiyat.Location = new System.Drawing.Point(395, 73);
+            this.txtAlisGramFiyat.Margin = new System.Windows.Forms.Padding(2);
             this.txtAlisGramFiyat.Name = "txtAlisGramFiyat";
             this.txtAlisGramFiyat.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.txtAlisGramFiyat.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
@@ -146,8 +156,8 @@
             // 
             // txtAlisTutar
             // 
-            this.txtAlisTutar.Location = new System.Drawing.Point(135, 230);
-            this.txtAlisTutar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAlisTutar.Location = new System.Drawing.Point(395, 115);
+            this.txtAlisTutar.Margin = new System.Windows.Forms.Padding(2);
             this.txtAlisTutar.Name = "txtAlisTutar";
             this.txtAlisTutar.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.txtAlisTutar.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
@@ -156,8 +166,8 @@
             // 
             // btnAlisFaturaOnayla
             // 
-            this.btnAlisFaturaOnayla.Location = new System.Drawing.Point(143, 274);
-            this.btnAlisFaturaOnayla.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAlisFaturaOnayla.Location = new System.Drawing.Point(616, 45);
+            this.btnAlisFaturaOnayla.Margin = new System.Windows.Forms.Padding(2);
             this.btnAlisFaturaOnayla.Name = "btnAlisFaturaOnayla";
             this.btnAlisFaturaOnayla.Size = new System.Drawing.Size(122, 32);
             this.btnAlisFaturaOnayla.TabIndex = 14;
@@ -166,7 +176,7 @@
             // txtAlisFaturaNo
             // 
             this.txtAlisFaturaNo.Location = new System.Drawing.Point(135, 40);
-            this.txtAlisFaturaNo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAlisFaturaNo.Margin = new System.Windows.Forms.Padding(2);
             this.txtAlisFaturaNo.Name = "txtAlisFaturaNo";
             this.txtAlisFaturaNo.Size = new System.Drawing.Size(141, 20);
             this.txtAlisFaturaNo.TabIndex = 15;
@@ -181,11 +191,78 @@
             this.lblFaturaNo.TabIndex = 16;
             this.lblFaturaNo.Text = "*Fatura No:";
             // 
+            // gridControlAlisFatura
+            // 
+            this.gridControlAlisFatura.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.gridControlAlisFatura.Location = new System.Drawing.Point(0, 161);
+            this.gridControlAlisFatura.MainView = this.gridAlisFaturasi;
+            this.gridControlAlisFatura.Name = "gridControlAlisFatura";
+            this.gridControlAlisFatura.Size = new System.Drawing.Size(1001, 346);
+            this.gridControlAlisFatura.TabIndex = 17;
+            this.gridControlAlisFatura.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridAlisFaturasi});
+            // 
+            // gridAlisFaturasi
+            // 
+            this.gridAlisFaturasi.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridFaturaNo,
+            this.gridMusteriAd,
+            this.gridTarih,
+            this.gridBarkodNo,
+            this.gridGramFiyat,
+            this.gridTutar});
+            this.gridAlisFaturasi.GridControl = this.gridControlAlisFatura;
+            this.gridAlisFaturasi.GroupPanelText = "Alış Faturası Sepet Listesi";
+            this.gridAlisFaturasi.Name = "gridAlisFaturasi";
+            // 
+            // gridFaturaNo
+            // 
+            this.gridFaturaNo.Caption = "Fatura No";
+            this.gridFaturaNo.Name = "gridFaturaNo";
+            this.gridFaturaNo.Visible = true;
+            this.gridFaturaNo.VisibleIndex = 0;
+            // 
+            // gridMusteriAd
+            // 
+            this.gridMusteriAd.Caption = "Müşteri Ad";
+            this.gridMusteriAd.Name = "gridMusteriAd";
+            this.gridMusteriAd.Visible = true;
+            this.gridMusteriAd.VisibleIndex = 1;
+            // 
+            // gridTarih
+            // 
+            this.gridTarih.Caption = "Tarih";
+            this.gridTarih.Name = "gridTarih";
+            this.gridTarih.Visible = true;
+            this.gridTarih.VisibleIndex = 2;
+            // 
+            // gridBarkodNo
+            // 
+            this.gridBarkodNo.Caption = "Barkod No";
+            this.gridBarkodNo.Name = "gridBarkodNo";
+            this.gridBarkodNo.Visible = true;
+            this.gridBarkodNo.VisibleIndex = 3;
+            // 
+            // gridGramFiyat
+            // 
+            this.gridGramFiyat.Caption = "Gram Fiyat";
+            this.gridGramFiyat.Name = "gridGramFiyat";
+            this.gridGramFiyat.Visible = true;
+            this.gridGramFiyat.VisibleIndex = 4;
+            // 
+            // gridTutar
+            // 
+            this.gridTutar.Caption = "Tutar";
+            this.gridTutar.Name = "gridTutar";
+            this.gridTutar.Visible = true;
+            this.gridTutar.VisibleIndex = 5;
+            // 
             // frmAlisFatura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(442, 371);
+            this.ClientSize = new System.Drawing.Size(1001, 507);
+            this.Controls.Add(this.gridControlAlisFatura);
             this.Controls.Add(this.lblFaturaNo);
             this.Controls.Add(this.txtAlisFaturaNo);
             this.Controls.Add(this.btnAlisFaturaOnayla);
@@ -199,7 +276,7 @@
             this.Controls.Add(this.lblGramFiyat);
             this.Controls.Add(this.lblAlisTarih);
             this.Controls.Add(this.lblMusteriAd);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmAlisFatura";
             this.Text = "Alış Fatura";
             ((System.ComponentModel.ISupportInitialize)(this.lueMusteriAd.Properties)).EndInit();
@@ -208,6 +285,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtAlisTarihi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAlisGramFiyat.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAlisTutar.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlAlisFatura)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridAlisFaturasi)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,5 +307,13 @@
         private DevExpress.XtraEditors.SimpleButton btnAlisFaturaOnayla;
         private System.Windows.Forms.TextBox txtAlisFaturaNo;
         private System.Windows.Forms.Label lblFaturaNo;
+        private DevExpress.XtraGrid.GridControl gridControlAlisFatura;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridAlisFaturasi;
+        private DevExpress.XtraGrid.Columns.GridColumn gridFaturaNo;
+        private DevExpress.XtraGrid.Columns.GridColumn gridMusteriAd;
+        private DevExpress.XtraGrid.Columns.GridColumn gridTarih;
+        private DevExpress.XtraGrid.Columns.GridColumn gridBarkodNo;
+        private DevExpress.XtraGrid.Columns.GridColumn gridGramFiyat;
+        private DevExpress.XtraGrid.Columns.GridColumn gridTutar;
     }
 }

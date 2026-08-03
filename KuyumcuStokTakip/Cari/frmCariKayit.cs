@@ -26,6 +26,7 @@ namespace KuyumcuStokTakip
             InitializeComponent();
 
             cariTip();
+            cariKodOlustur();
         }
 
         private void cariTip()
@@ -63,6 +64,24 @@ namespace KuyumcuStokTakip
             }
         }
 
+        private string cariKodOlustur()
+        {
+            
+            var cariKod = " ";
+            var maxFis = _cariTableAdapter.ScalarQueryCariKod();
+            if(maxFis != null)
+            {
+                
+            }
+            else
+            {
+                cariKod = "T0001";
+                txtCariKod.Text= cariKod;
+            }
+
+            return cariKod;
+            
+        }
         private void CariKayitFormTemizle()
         {
             txtCariAd.Clear();

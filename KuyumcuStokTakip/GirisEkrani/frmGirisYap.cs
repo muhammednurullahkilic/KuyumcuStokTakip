@@ -1,13 +1,5 @@
 ﻿using DevExpress.XtraEditors;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace KuyumcuStokTakip.GirisEkrani
@@ -19,14 +11,45 @@ namespace KuyumcuStokTakip.GirisEkrani
             InitializeComponent();
         }
 
+
+        private void frmGirisYap_Load(object sender, EventArgs e)
+        {
+            if (Properties.Settings.Default.BeniHatirla == true)
+            {
+                txtKullaniciAdi.Text = Properties.Settings.Default.KullaniciAdi;
+                txtSifre.Text = Properties.Settings.Default.Sifre;
+                chkBeniHatirla.Checked = true;
+            }
+        }
+
         private void btnGirisYap_Click(object sender, EventArgs e)
         {
             string kullanciAdi = "admin";
             string Sifre = "123";
-            bool isLogin = false;
 
+            
             if (txtKullaniciAdi.Text == kullanciAdi && txtSifre.Text == Sifre)
             {
+                
+                if (chkBeniHatirla.Checked == true)
+                {
+                    
+                    Properties.Settings.Default.KullaniciAdi = txtKullaniciAdi.Text;
+                    Properties.Settings.Default.Sifre = txtSifre.Text;
+                    Properties.Settings.Default.BeniHatirla = true;
+                }
+                else
+                {
+                   
+                    Properties.Settings.Default.KullaniciAdi = "";
+                    Properties.Settings.Default.Sifre = "";
+                    Properties.Settings.Default.BeniHatirla = false;
+                }
+
+                
+                Properties.Settings.Default.Save();
+
+               
                 frmMain anaForm = new frmMain(System.Globalization.CultureInfo.CurrentCulture);
                 anaForm.Show();
                 this.Hide();
@@ -34,10 +57,9 @@ namespace KuyumcuStokTakip.GirisEkrani
             else
             {
                 MessageBox.Show("Kullanıcı adı veya şifre hatalı");
-                
             }
-
-
         }
+
+        
     }
 }

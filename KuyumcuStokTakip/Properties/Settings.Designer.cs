@@ -33,5 +33,41 @@ namespace KuyumcuStokTakip.Properties {
                 return ((string)(this["KuyumcuStokTakipConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string KullaniciAdi {
+            get {
+                return ((string)(this["KullaniciAdi"]));
+            }
+            set {
+                this["KullaniciAdi"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Sifre {
+            get {
+                return ((string)(this["Sifre"]));
+            }
+            set {
+                this["Sifre"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool BeniHatirla {
+            get {
+                return ((bool)(this["BeniHatirla"]));
+            }
+            set {
+                this["BeniHatirla"] = value;
+            }
+        }
     }
 }

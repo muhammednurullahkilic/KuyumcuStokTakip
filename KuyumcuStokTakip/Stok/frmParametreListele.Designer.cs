@@ -190,6 +190,7 @@
             this.gridUrunGrup.GridControl = this.gridControlUrunGrup;
             this.gridUrunGrup.GroupPanelText = "Ürün Grupları Listesi";
             this.gridUrunGrup.Name = "gridUrunGrup";
+            this.gridUrunGrup.OptionsBehavior.Editable = false;
             // 
             // gridUrunAd
             // 
@@ -197,7 +198,7 @@
             this.gridUrunAd.FieldName = "GrupAd";
             this.gridUrunAd.Name = "gridUrunAd";
             this.gridUrunAd.Visible = true;
-            this.gridUrunAd.VisibleIndex = 1;
+            this.gridUrunAd.VisibleIndex = 0;
             // 
             // gridUrunKisaKod
             // 
@@ -205,7 +206,7 @@
             this.gridUrunKisaKod.FieldName = "GrupKod";
             this.gridUrunKisaKod.Name = "gridUrunKisaKod";
             this.gridUrunKisaKod.Visible = true;
-            this.gridUrunKisaKod.VisibleIndex = 2;
+            this.gridUrunKisaKod.VisibleIndex = 1;
             // 
             // gridUrunGrupAktifMi
             // 
@@ -213,7 +214,7 @@
             this.gridUrunGrupAktifMi.FieldName = "isActive";
             this.gridUrunGrupAktifMi.Name = "gridUrunGrupAktifMi";
             this.gridUrunGrupAktifMi.Visible = true;
-            this.gridUrunGrupAktifMi.VisibleIndex = 3;
+            this.gridUrunGrupAktifMi.VisibleIndex = 2;
             // 
             // gridUrunGrupOlusturanPersonel
             // 
@@ -221,7 +222,7 @@
             this.gridUrunGrupOlusturanPersonel.FieldName = "CUser";
             this.gridUrunGrupOlusturanPersonel.Name = "gridUrunGrupOlusturanPersonel";
             this.gridUrunGrupOlusturanPersonel.Visible = true;
-            this.gridUrunGrupOlusturanPersonel.VisibleIndex = 4;
+            this.gridUrunGrupOlusturanPersonel.VisibleIndex = 3;
             // 
             // gridUrunGrupOlusturmaTarih
             // 
@@ -229,7 +230,7 @@
             this.gridUrunGrupOlusturmaTarih.FieldName = "CDate";
             this.gridUrunGrupOlusturmaTarih.Name = "gridUrunGrupOlusturmaTarih";
             this.gridUrunGrupOlusturmaTarih.Visible = true;
-            this.gridUrunGrupOlusturmaTarih.VisibleIndex = 5;
+            this.gridUrunGrupOlusturmaTarih.VisibleIndex = 4;
             // 
             // gridUrunGrupGuncelleyenPersonel
             // 
@@ -237,7 +238,7 @@
             this.gridUrunGrupGuncelleyenPersonel.FieldName = "MUserID";
             this.gridUrunGrupGuncelleyenPersonel.Name = "gridUrunGrupGuncelleyenPersonel";
             this.gridUrunGrupGuncelleyenPersonel.Visible = true;
-            this.gridUrunGrupGuncelleyenPersonel.VisibleIndex = 6;
+            this.gridUrunGrupGuncelleyenPersonel.VisibleIndex = 5;
             // 
             // gridUrunGrupGuncellemeTarih
             // 
@@ -245,7 +246,7 @@
             this.gridUrunGrupGuncellemeTarih.FieldName = "MDate";
             this.gridUrunGrupGuncellemeTarih.Name = "gridUrunGrupGuncellemeTarih";
             this.gridUrunGrupGuncellemeTarih.Visible = true;
-            this.gridUrunGrupGuncellemeTarih.VisibleIndex = 7;
+            this.gridUrunGrupGuncellemeTarih.VisibleIndex = 6;
             // 
             // xtpAyarGrup
             // 
@@ -278,6 +279,7 @@
             this.gridAyarGrup.GridControl = this.gridControlAyarGrup;
             this.gridAyarGrup.GroupPanelText = "Ayar Gruplar Listesi";
             this.gridAyarGrup.Name = "gridAyarGrup";
+            this.gridAyarGrup.OptionsBehavior.Editable = false;
             // 
             // gridAyar
             // 
@@ -285,7 +287,7 @@
             this.gridAyar.FieldName = "AyarAdi";
             this.gridAyar.Name = "gridAyar";
             this.gridAyar.Visible = true;
-            this.gridAyar.VisibleIndex = 1;
+            this.gridAyar.VisibleIndex = 0;
             // 
             // gridAyarAktifMi
             // 
@@ -301,7 +303,7 @@
             this.gridAyarOlusturanPersonel.FieldName = "CUser";
             this.gridAyarOlusturanPersonel.Name = "gridAyarOlusturanPersonel";
             this.gridAyarOlusturanPersonel.Visible = true;
-            this.gridAyarOlusturanPersonel.VisibleIndex = 3;
+            this.gridAyarOlusturanPersonel.VisibleIndex = 2;
             // 
             // gridOlusturmaTarihi
             // 
@@ -309,7 +311,7 @@
             this.gridOlusturmaTarihi.FieldName = "CDate";
             this.gridOlusturmaTarihi.Name = "gridOlusturmaTarihi";
             this.gridOlusturmaTarihi.Visible = true;
-            this.gridOlusturmaTarihi.VisibleIndex = 4;
+            this.gridOlusturmaTarihi.VisibleIndex = 3;
             // 
             // gridAyarGüncelleyenPersonel
             // 
@@ -317,7 +319,7 @@
             this.gridAyarGüncelleyenPersonel.FieldName = "MUserID";
             this.gridAyarGüncelleyenPersonel.Name = "gridAyarGüncelleyenPersonel";
             this.gridAyarGüncelleyenPersonel.Visible = true;
-            this.gridAyarGüncelleyenPersonel.VisibleIndex = 5;
+            this.gridAyarGüncelleyenPersonel.VisibleIndex = 4;
             // 
             // gridAyarGuncellemeTarihi
             // 
@@ -325,7 +327,7 @@
             this.gridAyarGuncellemeTarihi.FieldName = "MDate";
             this.gridAyarGuncellemeTarihi.Name = "gridAyarGuncellemeTarihi";
             this.gridAyarGuncellemeTarihi.Visible = true;
-            this.gridAyarGuncellemeTarihi.VisibleIndex = 6;
+            this.gridAyarGuncellemeTarihi.VisibleIndex = 5;
             // 
             // frmParametreListele
             // 

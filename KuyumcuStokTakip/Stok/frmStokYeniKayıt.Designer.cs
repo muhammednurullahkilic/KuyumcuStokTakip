@@ -124,7 +124,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lueUrunAd.Properties.NullText = "";
             this.lueUrunAd.Size = new System.Drawing.Size(149, 22);
-            this.lueUrunAd.TabIndex = 7;
+            this.lueUrunAd.TabIndex = 0;
             // 
             // lueUrunAyar
             // 
@@ -135,7 +135,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lueUrunAyar.Properties.NullText = "";
             this.lueUrunAyar.Size = new System.Drawing.Size(149, 22);
-            this.lueUrunAyar.TabIndex = 8;
+            this.lueUrunAyar.TabIndex = 1;
             // 
             // lueToptanci
             // 
@@ -146,15 +146,16 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lueToptanci.Properties.NullText = "";
             this.lueToptanci.Size = new System.Drawing.Size(149, 22);
-            this.lueToptanci.TabIndex = 9;
+            this.lueToptanci.TabIndex = 2;
             // 
             // txtBarkodNo
             // 
+            this.txtBarkodNo.Enabled = false;
             this.txtBarkodNo.Location = new System.Drawing.Point(164, 271);
             this.txtBarkodNo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBarkodNo.Name = "txtBarkodNo";
             this.txtBarkodNo.Size = new System.Drawing.Size(151, 22);
-            this.txtBarkodNo.TabIndex = 13;
+            this.txtBarkodNo.TabIndex = 6;
             // 
             // txtUrunGram
             // 
@@ -164,7 +165,7 @@
             this.txtUrunGram.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.txtUrunGram.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
             this.txtUrunGram.Size = new System.Drawing.Size(149, 22);
-            this.txtUrunGram.TabIndex = 14;
+            this.txtUrunGram.TabIndex = 3;
             // 
             // txtUrunMaliyet
             // 
@@ -174,7 +175,7 @@
             this.txtUrunMaliyet.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.txtUrunMaliyet.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
             this.txtUrunMaliyet.Size = new System.Drawing.Size(149, 22);
-            this.txtUrunMaliyet.TabIndex = 15;
+            this.txtUrunMaliyet.TabIndex = 4;
             // 
             // txtIscilik
             // 
@@ -184,7 +185,8 @@
             this.txtIscilik.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.txtIscilik.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
             this.txtIscilik.Size = new System.Drawing.Size(149, 22);
-            this.txtIscilik.TabIndex = 16;
+            this.txtIscilik.TabIndex = 5;
+            this.txtIscilik.Leave += new System.EventHandler(this.txtIscilik_Leave);
             // 
             // btnStokYeniUrunKayıt
             // 

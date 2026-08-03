@@ -43,6 +43,15 @@
             this.btnSatisFaturaOnayla = new DevExpress.XtraEditors.SimpleButton();
             this.lblFaturaNo = new System.Windows.Forms.Label();
             this.txtSatisFaturaNo = new System.Windows.Forms.TextBox();
+            this.gridControlSatisFatura = new DevExpress.XtraGrid.GridControl();
+            this.gridSatisFaturasi = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridFaturaNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridMusteriAd = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridTarih = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridBarkodNo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridGramFiyat = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridIskonto = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridTutar = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.lueMusteriAd.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueBarkodNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtSatisTarihi.Properties)).BeginInit();
@@ -50,12 +59,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSatisGramFiyat.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIskonto.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSatisTutar.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlSatisFatura)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridSatisFaturasi)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMusteriAd
             // 
             this.lblMusteriAd.AutoSize = true;
-            this.lblMusteriAd.Location = new System.Drawing.Point(64, 92);
+            this.lblMusteriAd.Location = new System.Drawing.Point(53, 66);
             this.lblMusteriAd.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMusteriAd.Name = "lblMusteriAd";
             this.lblMusteriAd.Size = new System.Drawing.Size(64, 13);
@@ -65,7 +76,7 @@
             // lblSatisTarih
             // 
             this.lblSatisTarih.AutoSize = true;
-            this.lblSatisTarih.Location = new System.Drawing.Point(64, 133);
+            this.lblSatisTarih.Location = new System.Drawing.Point(53, 107);
             this.lblSatisTarih.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSatisTarih.Name = "lblSatisTarih";
             this.lblSatisTarih.Size = new System.Drawing.Size(38, 13);
@@ -75,7 +86,7 @@
             // lblBarkodNo
             // 
             this.lblBarkodNo.AutoSize = true;
-            this.lblBarkodNo.Location = new System.Drawing.Point(64, 172);
+            this.lblBarkodNo.Location = new System.Drawing.Point(329, 35);
             this.lblBarkodNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBarkodNo.Name = "lblBarkodNo";
             this.lblBarkodNo.Size = new System.Drawing.Size(65, 13);
@@ -85,7 +96,7 @@
             // lblGramFiyat
             // 
             this.lblGramFiyat.AutoSize = true;
-            this.lblGramFiyat.Location = new System.Drawing.Point(64, 209);
+            this.lblGramFiyat.Location = new System.Drawing.Point(329, 72);
             this.lblGramFiyat.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGramFiyat.Name = "lblGramFiyat";
             this.lblGramFiyat.Size = new System.Drawing.Size(64, 13);
@@ -95,7 +106,7 @@
             // lblIskonto
             // 
             this.lblIskonto.AutoSize = true;
-            this.lblIskonto.Location = new System.Drawing.Point(64, 242);
+            this.lblIskonto.Location = new System.Drawing.Point(329, 105);
             this.lblIskonto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblIskonto.Name = "lblIskonto";
             this.lblIskonto.Size = new System.Drawing.Size(49, 13);
@@ -105,7 +116,7 @@
             // lblTutar
             // 
             this.lblTutar.AutoSize = true;
-            this.lblTutar.Location = new System.Drawing.Point(64, 278);
+            this.lblTutar.Location = new System.Drawing.Point(329, 141);
             this.lblTutar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTutar.Name = "lblTutar";
             this.lblTutar.Size = new System.Drawing.Size(39, 13);
@@ -114,8 +125,8 @@
             // 
             // lueMusteriAd
             // 
-            this.lueMusteriAd.Location = new System.Drawing.Point(144, 87);
-            this.lueMusteriAd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lueMusteriAd.Location = new System.Drawing.Point(133, 61);
+            this.lueMusteriAd.Margin = new System.Windows.Forms.Padding(2);
             this.lueMusteriAd.Name = "lueMusteriAd";
             this.lueMusteriAd.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -125,8 +136,8 @@
             // 
             // lueBarkodNo
             // 
-            this.lueBarkodNo.Location = new System.Drawing.Point(144, 170);
-            this.lueBarkodNo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lueBarkodNo.Location = new System.Drawing.Point(409, 33);
+            this.lueBarkodNo.Margin = new System.Windows.Forms.Padding(2);
             this.lueBarkodNo.Name = "lueBarkodNo";
             this.lueBarkodNo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -137,8 +148,8 @@
             // dtSatisTarihi
             // 
             this.dtSatisTarihi.EditValue = null;
-            this.dtSatisTarihi.Location = new System.Drawing.Point(144, 128);
-            this.dtSatisTarihi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtSatisTarihi.Location = new System.Drawing.Point(133, 102);
+            this.dtSatisTarihi.Margin = new System.Windows.Forms.Padding(2);
             this.dtSatisTarihi.Name = "dtSatisTarihi";
             this.dtSatisTarihi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -149,8 +160,8 @@
             // 
             // txtSatisGramFiyat
             // 
-            this.txtSatisGramFiyat.Location = new System.Drawing.Point(144, 204);
-            this.txtSatisGramFiyat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSatisGramFiyat.Location = new System.Drawing.Point(409, 67);
+            this.txtSatisGramFiyat.Margin = new System.Windows.Forms.Padding(2);
             this.txtSatisGramFiyat.Name = "txtSatisGramFiyat";
             this.txtSatisGramFiyat.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.txtSatisGramFiyat.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
@@ -159,8 +170,8 @@
             // 
             // txtIskonto
             // 
-            this.txtIskonto.Location = new System.Drawing.Point(144, 237);
-            this.txtIskonto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtIskonto.Location = new System.Drawing.Point(409, 100);
+            this.txtIskonto.Margin = new System.Windows.Forms.Padding(2);
             this.txtIskonto.Name = "txtIskonto";
             this.txtIskonto.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.txtIskonto.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
@@ -169,8 +180,8 @@
             // 
             // txtSatisTutar
             // 
-            this.txtSatisTutar.Location = new System.Drawing.Point(144, 274);
-            this.txtSatisTutar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSatisTutar.Location = new System.Drawing.Point(409, 137);
+            this.txtSatisTutar.Margin = new System.Windows.Forms.Padding(2);
             this.txtSatisTutar.Name = "txtSatisTutar";
             this.txtSatisTutar.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.txtSatisTutar.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
@@ -179,8 +190,8 @@
             // 
             // btnSatisFaturaOnayla
             // 
-            this.btnSatisFaturaOnayla.Location = new System.Drawing.Point(154, 310);
-            this.btnSatisFaturaOnayla.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSatisFaturaOnayla.Location = new System.Drawing.Point(713, 122);
+            this.btnSatisFaturaOnayla.Margin = new System.Windows.Forms.Padding(2);
             this.btnSatisFaturaOnayla.Name = "btnSatisFaturaOnayla";
             this.btnSatisFaturaOnayla.Size = new System.Drawing.Size(122, 32);
             this.btnSatisFaturaOnayla.TabIndex = 14;
@@ -189,7 +200,7 @@
             // lblFaturaNo
             // 
             this.lblFaturaNo.AutoSize = true;
-            this.lblFaturaNo.Location = new System.Drawing.Point(64, 61);
+            this.lblFaturaNo.Location = new System.Drawing.Point(53, 35);
             this.lblFaturaNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFaturaNo.Name = "lblFaturaNo";
             this.lblFaturaNo.Size = new System.Drawing.Size(61, 13);
@@ -198,17 +209,110 @@
             // 
             // txtSatisFaturaNo
             // 
-            this.txtSatisFaturaNo.Location = new System.Drawing.Point(144, 59);
-            this.txtSatisFaturaNo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSatisFaturaNo.Location = new System.Drawing.Point(133, 33);
+            this.txtSatisFaturaNo.Margin = new System.Windows.Forms.Padding(2);
             this.txtSatisFaturaNo.Name = "txtSatisFaturaNo";
             this.txtSatisFaturaNo.Size = new System.Drawing.Size(141, 20);
             this.txtSatisFaturaNo.TabIndex = 16;
+            // 
+            // gridControlSatisFatura
+            // 
+            this.gridControlSatisFatura.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.gridControlSatisFatura.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
+            this.gridControlSatisFatura.Location = new System.Drawing.Point(0, 181);
+            this.gridControlSatisFatura.MainView = this.gridSatisFaturasi;
+            this.gridControlSatisFatura.Margin = new System.Windows.Forms.Padding(2);
+            this.gridControlSatisFatura.Name = "gridControlSatisFatura";
+            this.gridControlSatisFatura.Size = new System.Drawing.Size(1116, 340);
+            this.gridControlSatisFatura.TabIndex = 17;
+            this.gridControlSatisFatura.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridSatisFaturasi});
+            // 
+            // gridSatisFaturasi
+            // 
+            this.gridSatisFaturasi.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridFaturaNo,
+            this.gridMusteriAd,
+            this.gridTarih,
+            this.gridBarkodNo,
+            this.gridGramFiyat,
+            this.gridIskonto,
+            this.gridTutar});
+            this.gridSatisFaturasi.DetailHeight = 284;
+            this.gridSatisFaturasi.GridControl = this.gridControlSatisFatura;
+            this.gridSatisFaturasi.GroupPanelText = "Satış Fatura Sepet Listesi";
+            this.gridSatisFaturasi.Name = "gridSatisFaturasi";
+            this.gridSatisFaturasi.OptionsEditForm.PopupEditFormWidth = 600;
+            // 
+            // gridFaturaNo
+            // 
+            this.gridFaturaNo.Caption = "Fatura No";
+            this.gridFaturaNo.MinWidth = 19;
+            this.gridFaturaNo.Name = "gridFaturaNo";
+            this.gridFaturaNo.Visible = true;
+            this.gridFaturaNo.VisibleIndex = 0;
+            this.gridFaturaNo.Width = 70;
+            // 
+            // gridMusteriAd
+            // 
+            this.gridMusteriAd.Caption = "Müşteri Ad";
+            this.gridMusteriAd.MinWidth = 19;
+            this.gridMusteriAd.Name = "gridMusteriAd";
+            this.gridMusteriAd.Visible = true;
+            this.gridMusteriAd.VisibleIndex = 1;
+            this.gridMusteriAd.Width = 70;
+            // 
+            // gridTarih
+            // 
+            this.gridTarih.Caption = "Tarih";
+            this.gridTarih.MinWidth = 19;
+            this.gridTarih.Name = "gridTarih";
+            this.gridTarih.Visible = true;
+            this.gridTarih.VisibleIndex = 2;
+            this.gridTarih.Width = 70;
+            // 
+            // gridBarkodNo
+            // 
+            this.gridBarkodNo.Caption = "Barkod No";
+            this.gridBarkodNo.MinWidth = 19;
+            this.gridBarkodNo.Name = "gridBarkodNo";
+            this.gridBarkodNo.Visible = true;
+            this.gridBarkodNo.VisibleIndex = 3;
+            this.gridBarkodNo.Width = 70;
+            // 
+            // gridGramFiyat
+            // 
+            this.gridGramFiyat.Caption = "Gram Fiyat";
+            this.gridGramFiyat.MinWidth = 19;
+            this.gridGramFiyat.Name = "gridGramFiyat";
+            this.gridGramFiyat.Visible = true;
+            this.gridGramFiyat.VisibleIndex = 4;
+            this.gridGramFiyat.Width = 70;
+            // 
+            // gridIskonto
+            // 
+            this.gridIskonto.Caption = "İskonto";
+            this.gridIskonto.MinWidth = 19;
+            this.gridIskonto.Name = "gridIskonto";
+            this.gridIskonto.Visible = true;
+            this.gridIskonto.VisibleIndex = 5;
+            this.gridIskonto.Width = 70;
+            // 
+            // gridTutar
+            // 
+            this.gridTutar.Caption = "Tutar";
+            this.gridTutar.MinWidth = 19;
+            this.gridTutar.Name = "gridTutar";
+            this.gridTutar.Visible = true;
+            this.gridTutar.VisibleIndex = 6;
+            this.gridTutar.Width = 70;
             // 
             // frmSatisFatura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(429, 415);
+            this.ClientSize = new System.Drawing.Size(1116, 521);
+            this.Controls.Add(this.gridControlSatisFatura);
             this.Controls.Add(this.txtSatisFaturaNo);
             this.Controls.Add(this.lblFaturaNo);
             this.Controls.Add(this.btnSatisFaturaOnayla);
@@ -224,7 +328,7 @@
             this.Controls.Add(this.lblGramFiyat);
             this.Controls.Add(this.lblSatisTarih);
             this.Controls.Add(this.lblMusteriAd);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmSatisFatura";
             this.Text = "Satış Fatura";
             ((System.ComponentModel.ISupportInitialize)(this.lueMusteriAd.Properties)).EndInit();
@@ -234,6 +338,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSatisGramFiyat.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIskonto.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSatisTutar.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlSatisFatura)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridSatisFaturasi)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -256,5 +362,14 @@
         private DevExpress.XtraEditors.SimpleButton btnSatisFaturaOnayla;
         private System.Windows.Forms.Label lblFaturaNo;
         private System.Windows.Forms.TextBox txtSatisFaturaNo;
+        private DevExpress.XtraGrid.GridControl gridControlSatisFatura;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridSatisFaturasi;
+        private DevExpress.XtraGrid.Columns.GridColumn gridFaturaNo;
+        private DevExpress.XtraGrid.Columns.GridColumn gridMusteriAd;
+        private DevExpress.XtraGrid.Columns.GridColumn gridTarih;
+        private DevExpress.XtraGrid.Columns.GridColumn gridBarkodNo;
+        private DevExpress.XtraGrid.Columns.GridColumn gridGramFiyat;
+        private DevExpress.XtraGrid.Columns.GridColumn gridIskonto;
+        private DevExpress.XtraGrid.Columns.GridColumn gridTutar;
     }
 }

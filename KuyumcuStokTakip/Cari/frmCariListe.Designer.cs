@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCariListe));
             this.gridControlCari = new DevExpress.XtraGrid.GridControl();
             this.gridCariListe = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridCariKod = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridCariAdı = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridCariTipi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridTelefonNo = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -51,7 +52,6 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.gridCariKod = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlCari)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridCariListe)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).BeginInit();
@@ -61,12 +61,14 @@
             // gridControlCari
             // 
             this.gridControlCari.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlCari.Location = new System.Drawing.Point(0, 30);
+            this.gridControlCari.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gridControlCari.Location = new System.Drawing.Point(0, 24);
             this.gridControlCari.MainView = this.gridCariListe;
+            this.gridControlCari.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gridControlCari.Name = "gridControlCari";
             this.gridControlCari.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemLookUpEdit1});
-            this.gridControlCari.Size = new System.Drawing.Size(1259, 641);
+            this.gridControlCari.Size = new System.Drawing.Size(944, 521);
             this.gridControlCari.TabIndex = 0;
             this.gridControlCari.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridCariListe});
@@ -84,98 +86,112 @@
             this.gridCariListePersonel,
             this.gridCariListeCreatedDate,
             this.gridCariListeUpdatedDate});
+            this.gridCariListe.DetailHeight = 284;
             this.gridCariListe.GridControl = this.gridControlCari;
             this.gridCariListe.GroupPanelText = "Cari Liste";
             this.gridCariListe.Name = "gridCariListe";
+            this.gridCariListe.OptionsBehavior.Editable = false;
+            this.gridCariListe.OptionsEditForm.PopupEditFormWidth = 600;
+            // 
+            // gridCariKod
+            // 
+            this.gridCariKod.Caption = "Cari Kod";
+            this.gridCariKod.FieldName = "CariKod";
+            this.gridCariKod.MinWidth = 19;
+            this.gridCariKod.Name = "gridCariKod";
+            this.gridCariKod.Visible = true;
+            this.gridCariKod.VisibleIndex = 1;
+            this.gridCariKod.Width = 70;
             // 
             // gridCariAdı
             // 
             this.gridCariAdı.Caption = "Cari Adı";
             this.gridCariAdı.FieldName = "CariAd";
-            this.gridCariAdı.MinWidth = 25;
+            this.gridCariAdı.MinWidth = 19;
             this.gridCariAdı.Name = "gridCariAdı";
             this.gridCariAdı.Visible = true;
             this.gridCariAdı.VisibleIndex = 0;
+            this.gridCariAdı.Width = 56;
             // 
             // gridCariTipi
             // 
             this.gridCariTipi.Caption = "Cari Tipi";
             this.gridCariTipi.FieldName = "CariTipAdi";
-            this.gridCariTipi.MinWidth = 25;
+            this.gridCariTipi.MinWidth = 19;
             this.gridCariTipi.Name = "gridCariTipi";
             this.gridCariTipi.Visible = true;
             this.gridCariTipi.VisibleIndex = 2;
-            this.gridCariTipi.Width = 79;
+            this.gridCariTipi.Width = 59;
             // 
             // gridTelefonNo
             // 
             this.gridTelefonNo.Caption = "Telefon No";
             this.gridTelefonNo.FieldName = "CariTelefon";
-            this.gridTelefonNo.MinWidth = 25;
+            this.gridTelefonNo.MinWidth = 19;
             this.gridTelefonNo.Name = "gridTelefonNo";
             this.gridTelefonNo.Visible = true;
             this.gridTelefonNo.VisibleIndex = 3;
-            this.gridTelefonNo.Width = 79;
+            this.gridTelefonNo.Width = 59;
             // 
             // gridAdres
             // 
             this.gridAdres.Caption = "Adres";
             this.gridAdres.FieldName = "CariAdres";
-            this.gridAdres.MinWidth = 25;
+            this.gridAdres.MinWidth = 19;
             this.gridAdres.Name = "gridAdres";
             this.gridAdres.Visible = true;
             this.gridAdres.VisibleIndex = 4;
-            this.gridAdres.Width = 79;
+            this.gridAdres.Width = 59;
             // 
             // gridNot
             // 
             this.gridNot.Caption = "Not";
             this.gridNot.FieldName = "CariNot";
-            this.gridNot.MinWidth = 25;
+            this.gridNot.MinWidth = 19;
             this.gridNot.Name = "gridNot";
             this.gridNot.Visible = true;
             this.gridNot.VisibleIndex = 5;
-            this.gridNot.Width = 79;
+            this.gridNot.Width = 59;
             // 
             // gridAktifMi
             // 
             this.gridAktifMi.Caption = "Aktif mi";
             this.gridAktifMi.FieldName = "IsActive";
-            this.gridAktifMi.MinWidth = 25;
+            this.gridAktifMi.MinWidth = 19;
             this.gridAktifMi.Name = "gridAktifMi";
             this.gridAktifMi.Visible = true;
             this.gridAktifMi.VisibleIndex = 6;
-            this.gridAktifMi.Width = 79;
+            this.gridAktifMi.Width = 59;
             // 
             // gridCariListePersonel
             // 
             this.gridCariListePersonel.Caption = "Personel";
             this.gridCariListePersonel.FieldName = "CUser";
-            this.gridCariListePersonel.MinWidth = 25;
+            this.gridCariListePersonel.MinWidth = 19;
             this.gridCariListePersonel.Name = "gridCariListePersonel";
             this.gridCariListePersonel.Visible = true;
             this.gridCariListePersonel.VisibleIndex = 7;
-            this.gridCariListePersonel.Width = 79;
+            this.gridCariListePersonel.Width = 59;
             // 
             // gridCariListeCreatedDate
             // 
             this.gridCariListeCreatedDate.Caption = "Oluşturulma Tarihi";
             this.gridCariListeCreatedDate.FieldName = "CDate";
-            this.gridCariListeCreatedDate.MinWidth = 25;
+            this.gridCariListeCreatedDate.MinWidth = 19;
             this.gridCariListeCreatedDate.Name = "gridCariListeCreatedDate";
             this.gridCariListeCreatedDate.Visible = true;
             this.gridCariListeCreatedDate.VisibleIndex = 8;
-            this.gridCariListeCreatedDate.Width = 79;
+            this.gridCariListeCreatedDate.Width = 59;
             // 
             // gridCariListeUpdatedDate
             // 
             this.gridCariListeUpdatedDate.Caption = "Güncelleme Tarihi";
             this.gridCariListeUpdatedDate.FieldName = "MDate";
-            this.gridCariListeUpdatedDate.MinWidth = 25;
+            this.gridCariListeUpdatedDate.MinWidth = 19;
             this.gridCariListeUpdatedDate.Name = "gridCariListeUpdatedDate";
             this.gridCariListeUpdatedDate.Visible = true;
             this.gridCariListeUpdatedDate.VisibleIndex = 9;
-            this.gridCariListeUpdatedDate.Width = 85;
+            this.gridCariListeUpdatedDate.Width = 64;
             // 
             // repositoryItemLookUpEdit1
             // 
@@ -247,52 +263,47 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1259, 30);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.barDockControlTop.Size = new System.Drawing.Size(944, 24);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 671);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 545);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1259, 0);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.barDockControlBottom.Size = new System.Drawing.Size(944, 0);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 641);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 521);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1259, 30);
+            this.barDockControlRight.Location = new System.Drawing.Point(944, 24);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 641);
-            // 
-            // gridCariKod
-            // 
-            this.gridCariKod.Caption = "Cari Kod";
-            this.gridCariKod.FieldName = "CariKod";
-            this.gridCariKod.MinWidth = 25;
-            this.gridCariKod.Name = "gridCariKod";
-            this.gridCariKod.Visible = true;
-            this.gridCariKod.VisibleIndex = 1;
-            this.gridCariKod.Width = 94;
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 521);
             // 
             // frmCariListe
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1259, 671);
+            this.ClientSize = new System.Drawing.Size(944, 545);
             this.Controls.Add(this.gridControlCari);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmCariListe";
             this.Text = "Cari Liste";
             this.Load += new System.EventHandler(this.frmCariListe_Load);
