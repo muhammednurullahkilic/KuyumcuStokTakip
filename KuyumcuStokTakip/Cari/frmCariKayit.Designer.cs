@@ -47,123 +47,138 @@
             // 
             // lblCariAd
             // 
-            this.lblCariAd.Location = new System.Drawing.Point(60, 47);
+            this.lblCariAd.Location = new System.Drawing.Point(45, 80);
+            this.lblCariAd.Margin = new System.Windows.Forms.Padding(2);
             this.lblCariAd.Name = "lblCariAd";
-            this.lblCariAd.Size = new System.Drawing.Size(55, 16);
+            this.lblCariAd.Size = new System.Drawing.Size(45, 13);
             this.lblCariAd.TabIndex = 0;
             this.lblCariAd.Tag = "Cari Ad";
             this.lblCariAd.Text = "*Cari Ad:";
             // 
             // lblCariKod
             // 
-            this.lblCariKod.Location = new System.Drawing.Point(60, 83);
+            this.lblCariKod.Location = new System.Drawing.Point(45, 109);
+            this.lblCariKod.Margin = new System.Windows.Forms.Padding(2);
             this.lblCariKod.Name = "lblCariKod";
-            this.lblCariKod.Size = new System.Drawing.Size(61, 16);
+            this.lblCariKod.Size = new System.Drawing.Size(50, 13);
             this.lblCariKod.TabIndex = 1;
             this.lblCariKod.Text = "*Cari Kod:";
             // 
             // lblHesapTip
             // 
-            this.lblHesapTip.Location = new System.Drawing.Point(60, 123);
+            this.lblHesapTip.Location = new System.Drawing.Point(45, 44);
+            this.lblHesapTip.Margin = new System.Windows.Forms.Padding(2);
             this.lblHesapTip.Name = "lblHesapTip";
-            this.lblHesapTip.Size = new System.Drawing.Size(61, 16);
+            this.lblHesapTip.Size = new System.Drawing.Size(48, 13);
             this.lblHesapTip.TabIndex = 2;
             this.lblHesapTip.Text = "*Cari Tipi:";
             // 
             // lblTelefonNo
             // 
-            this.lblTelefonNo.Location = new System.Drawing.Point(60, 159);
+            this.lblTelefonNo.Location = new System.Drawing.Point(45, 148);
+            this.lblTelefonNo.Margin = new System.Windows.Forms.Padding(2);
             this.lblTelefonNo.Name = "lblTelefonNo";
-            this.lblTelefonNo.Size = new System.Drawing.Size(67, 16);
+            this.lblTelefonNo.Size = new System.Drawing.Size(56, 13);
             this.lblTelefonNo.TabIndex = 3;
             this.lblTelefonNo.Text = "Telefon No:";
             // 
             // lblAdres
             // 
-            this.lblAdres.Location = new System.Drawing.Point(60, 199);
+            this.lblAdres.Location = new System.Drawing.Point(45, 181);
+            this.lblAdres.Margin = new System.Windows.Forms.Padding(2);
             this.lblAdres.Name = "lblAdres";
-            this.lblAdres.Size = new System.Drawing.Size(38, 16);
+            this.lblAdres.Size = new System.Drawing.Size(32, 13);
             this.lblAdres.TabIndex = 4;
             this.lblAdres.Text = "Adres:";
             // 
             // lblNot
             // 
-            this.lblNot.Location = new System.Drawing.Point(60, 235);
+            this.lblNot.Location = new System.Drawing.Point(45, 210);
+            this.lblNot.Margin = new System.Windows.Forms.Padding(2);
             this.lblNot.Name = "lblNot";
-            this.lblNot.Size = new System.Drawing.Size(24, 16);
+            this.lblNot.Size = new System.Drawing.Size(21, 13);
             this.lblNot.TabIndex = 5;
             this.lblNot.Text = "Not:";
             // 
             // txtCariAd
             // 
-            this.txtCariAd.Location = new System.Drawing.Point(175, 41);
+            this.txtCariAd.Location = new System.Drawing.Point(131, 75);
+            this.txtCariAd.Margin = new System.Windows.Forms.Padding(2);
             this.txtCariAd.Name = "txtCariAd";
-            this.txtCariAd.Size = new System.Drawing.Size(135, 22);
-            this.txtCariAd.TabIndex = 7;
+            this.txtCariAd.Size = new System.Drawing.Size(102, 20);
+            this.txtCariAd.TabIndex = 1;
             // 
             // txtCariKod
             // 
-            this.txtCariKod.Location = new System.Drawing.Point(175, 83);
+            this.txtCariKod.Location = new System.Drawing.Point(131, 109);
+            this.txtCariKod.Margin = new System.Windows.Forms.Padding(2);
             this.txtCariKod.Name = "txtCariKod";
-            this.txtCariKod.Size = new System.Drawing.Size(135, 22);
-            this.txtCariKod.TabIndex = 8;
+            this.txtCariKod.Size = new System.Drawing.Size(102, 20);
+            this.txtCariKod.TabIndex = 2;
             // 
             // txtTelefonNo
             // 
-            this.txtTelefonNo.Location = new System.Drawing.Point(175, 153);
+            this.txtTelefonNo.Location = new System.Drawing.Point(131, 143);
+            this.txtTelefonNo.Margin = new System.Windows.Forms.Padding(2);
             this.txtTelefonNo.Name = "txtTelefonNo";
-            this.txtTelefonNo.Size = new System.Drawing.Size(135, 22);
-            this.txtTelefonNo.TabIndex = 9;
+            this.txtTelefonNo.Size = new System.Drawing.Size(102, 20);
+            this.txtTelefonNo.TabIndex = 3;
             // 
             // txtAdres
             // 
-            this.txtAdres.Location = new System.Drawing.Point(175, 193);
+            this.txtAdres.Location = new System.Drawing.Point(131, 176);
+            this.txtAdres.Margin = new System.Windows.Forms.Padding(2);
             this.txtAdres.Name = "txtAdres";
-            this.txtAdres.Size = new System.Drawing.Size(135, 22);
-            this.txtAdres.TabIndex = 10;
+            this.txtAdres.Size = new System.Drawing.Size(102, 20);
+            this.txtAdres.TabIndex = 4;
             // 
             // txtNot
             // 
-            this.txtNot.Location = new System.Drawing.Point(175, 229);
+            this.txtNot.Location = new System.Drawing.Point(131, 205);
+            this.txtNot.Margin = new System.Windows.Forms.Padding(2);
             this.txtNot.Name = "txtNot";
-            this.txtNot.Size = new System.Drawing.Size(135, 22);
-            this.txtNot.TabIndex = 11;
+            this.txtNot.Size = new System.Drawing.Size(102, 20);
+            this.txtNot.TabIndex = 5;
             // 
             // chkCariAktifMi
             // 
             this.chkCariAktifMi.AutoSize = true;
-            this.chkCariAktifMi.Location = new System.Drawing.Point(175, 268);
+            this.chkCariAktifMi.Location = new System.Drawing.Point(131, 237);
+            this.chkCariAktifMi.Margin = new System.Windows.Forms.Padding(2);
             this.chkCariAktifMi.Name = "chkCariAktifMi";
-            this.chkCariAktifMi.Size = new System.Drawing.Size(71, 20);
+            this.chkCariAktifMi.Size = new System.Drawing.Size(61, 17);
             this.chkCariAktifMi.TabIndex = 12;
             this.chkCariAktifMi.Text = "Aktif Mi";
             this.chkCariAktifMi.UseVisualStyleBackColor = true;
             // 
             // btnCariKayit
             // 
-            this.btnCariKayit.Location = new System.Drawing.Point(186, 317);
+            this.btnCariKayit.Location = new System.Drawing.Point(140, 277);
+            this.btnCariKayit.Margin = new System.Windows.Forms.Padding(2);
             this.btnCariKayit.Name = "btnCariKayit";
-            this.btnCariKayit.Size = new System.Drawing.Size(84, 34);
+            this.btnCariKayit.Size = new System.Drawing.Size(63, 28);
             this.btnCariKayit.TabIndex = 13;
             this.btnCariKayit.Text = "Kayıt";
             this.btnCariKayit.Click += new System.EventHandler(this.btnCariKayit_Click);
             // 
             // gleCariTip
             // 
-            this.gleCariTip.Location = new System.Drawing.Point(175, 120);
+            this.gleCariTip.Location = new System.Drawing.Point(131, 42);
+            this.gleCariTip.Margin = new System.Windows.Forms.Padding(2);
             this.gleCariTip.Name = "gleCariTip";
             this.gleCariTip.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.gleCariTip.Properties.NullText = "";
-            this.gleCariTip.Size = new System.Drawing.Size(131, 22);
-            this.gleCariTip.TabIndex = 14;
+            this.gleCariTip.Size = new System.Drawing.Size(98, 20);
+            this.gleCariTip.TabIndex = 0;
             this.gleCariTip.Tag = "Cari Tip";
+            this.gleCariTip.EditValueChanged += new System.EventHandler(this.gleCariTip_EditValueChanged);
             // 
             // frmCariKayit
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(502, 450);
+            this.ClientSize = new System.Drawing.Size(376, 366);
             this.Controls.Add(this.gleCariTip);
             this.Controls.Add(this.btnCariKayit);
             this.Controls.Add(this.chkCariAktifMi);
@@ -178,6 +193,7 @@
             this.Controls.Add(this.lblHesapTip);
             this.Controls.Add(this.lblCariKod);
             this.Controls.Add(this.lblCariAd);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmCariKayit";
             this.Text = "Cari Kayıt";
             ((System.ComponentModel.ISupportInitialize)(this.gleCariTip.Properties)).EndInit();

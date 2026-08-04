@@ -122,39 +122,44 @@ namespace KuyumcuStokTakip.Stok
 
         private void txtIscilik_Leave(object sender, EventArgs e)
         {
+            // 1. Ürün Adı ve Ayar seçilmemişse barkod oluşturmaya çalışma
+            if (string.IsNullOrWhiteSpace(lueUrunAd.Text) ||
+                string.IsNullOrWhiteSpace(lueUrunAyar.Text))
+            {
+                return;
+            }
 
-            var barkod = " ";
+            // 2. Güvenli Sayısal Çeviri (Programın çökmesini engeller)
+            decimal gram = 0, maliyet = 0, iscilik = 0;
 
-               
-            string urunAdi = lueUrunAd.Text;   
-            string urunAyar = lueUrunAyar.Text; 
+            // Eğer bu üç alandan herhangi biri boşsa veya sayı değilse, hesaplama yapmadan metottan çık
+            if (!decimal.TryParse(txtUrunGram.Text, out gram) ||
+                !decimal.TryParse(txtUrunMaliyet.Text, out maliyet) ||
+                !decimal.TryParse(txtIscilik.Text, out iscilik))
+            {
+                return;
+            }
 
-               
-            string barkodAnahtar = $"{urunAdi}-{urunAyar}-"; 
-
-
-            decimal gram = Convert.ToDecimal(txtUrunGram.Text);
-            decimal maliyet = Convert.ToDecimal(txtUrunMaliyet.Text);
-            decimal iscilik = Convert.ToDecimal(txtIscilik.Text);
+            // 3. Barkod Anahtarını ve Toplam Değeri Oluşturma
+            string barkodAnahtar = $"{lueUrunAd.Text}-{lueUrunAyar.Text}-";
             decimal toplamDeger = gram + maliyet + iscilik;
 
-
-
+            // 4. SQL'den Son Barkodu Getirme
             var maxBarkod = _StokTableAdapter.ScalarQueryBarkodNo(barkodAnahtar);
 
             int yeniSira = 1;
-            if (!string.IsNullOrEmpty(maxBarkod))
-            {
-      
-                string sonDortHane = maxBarkod.Substring(maxBarkod.Length - 4);
 
-                
+            // maxBarkod boş dönmediyse ve beklediğimiz formatta geldiyse
+            if (maxBarkod != null && maxBarkod.ToString().Length >= 4)
+            {
+                string sonDortHane = maxBarkod.ToString().Substring(maxBarkod.ToString().Length - 4);
+
+                // TryParse burada da kullanılabilir ama veritabanından kesin sayı geldiğinden eminseniz Convert.ToInt32 yeterlidir
                 yeniSira = Convert.ToInt32(sonDortHane) + 1;
             }
 
+            // 5. Yeni Barkodu Yazdırma
             string yeniBarkodNo = $"{barkodAnahtar}{toplamDeger.ToString("0.00")}-{yeniSira.ToString("D4")}";
-
-            
             txtBarkodNo.Text = yeniBarkodNo;
         }
     }

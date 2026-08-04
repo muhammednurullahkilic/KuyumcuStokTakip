@@ -26,7 +26,6 @@ namespace KuyumcuStokTakip
             InitializeComponent();
 
             cariTip();
-            cariKodOlustur();
         }
 
         private void cariTip()
@@ -64,21 +63,32 @@ namespace KuyumcuStokTakip
             }
         }
 
-        private string cariKodOlustur()
+        private string cariKodOlustur(string onEk)
         {
             
             var cariKod = " ";
-            var maxFis = _cariTableAdapter.ScalarQueryCariKod();
+            var maxFis = _cariTableAdapter.ScalarQueryCariKod(onEk);
             if(maxFis != null)
             {
-                
+                // Gelen veriyi string'e çeviriyoruz (Örn: "T0005")
+                string sonKod = maxFis.ToString();
+
+                // Gelen kodun son 4 hanesini alıyoruz ("0005")
+                string sonDortHane = sonKod.Substring(sonKod.Length - 4);
+
+                // Sayıya çevirip 1 artırıyoruz (5 + 1 = 6)
+                int yeniSira = Convert.ToInt32(sonDortHane) + 1;
+
+                // "T" ön eki ile yeni sayıyı 4 haneli olacak şekilde (D4) birleştiriyoruz
+                cariKod = onEk + yeniSira.ToString("D4");
             }
             else
             {
                 cariKod = "T0001";
-                txtCariKod.Text= cariKod;
+                cariKod = onEk + "0001";
             }
 
+            txtCariKod.Text = cariKod;
             return cariKod;
             
         }
@@ -92,6 +102,25 @@ namespace KuyumcuStokTakip
             gleCariTip.Clear();
             chkCariAktifMi.Checked = false;
 
+        }
+
+        private void gleCariTip_EditValueChanged(object sender, EventArgs e)
+        {
+            // Seçim yapılmamışsa veya boşsa işlem yapma
+            if (gleCariTip.EditValue == null || string.IsNullOrWhiteSpace(gleCariTip.Text))
+                return;
+
+            // Veritabanınızdaki kayıtlı tiplerin adlarına göre kontrol ediyoruz.
+            // "Toptancı" ve "Müşteri" yazılarını kendi veritabanınızdaki (CariTip tablosu) 
+            // birebir aynı yazılışla eşleştirin.
+            if (gleCariTip.Text == "Toptancı")
+            {
+                cariKodOlustur("T");
+            }
+            else if (gleCariTip.Text == "Musteri") // veya "Musteri" vb.
+            {
+                cariKodOlustur("M");
+            }
         }
     }
 }

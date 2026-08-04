@@ -3928,8 +3928,10 @@ namespace KuyumcuStokTakip.Database.KuyumcuStokTakipTableAdapters {
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsActive", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "IsActive", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT TOP (1) CariKod\r\nFROM     Cari\r\nORDER BY CariKod DESC";
+            this._commandCollection[3].CommandText = "SELECT        TOP (1) CariKod\r\nFROM            Cari\r\nWHERE        (CariKod LIKE @" +
+                "Harf + \'%\')\r\nORDER BY CAST(RIGHT(CariKod, 4) AS INT) DESC";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Harf", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "CariKod", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4055,8 +4057,14 @@ namespace KuyumcuStokTakip.Database.KuyumcuStokTakipTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual string ScalarQueryCariKod() {
+        public virtual object ScalarQueryCariKod(string Harf) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            if ((Harf == null)) {
+                throw new global::System.ArgumentNullException("Harf");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(Harf));
+            }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4076,7 +4084,7 @@ namespace KuyumcuStokTakip.Database.KuyumcuStokTakipTableAdapters {
                 return null;
             }
             else {
-                return ((string)(returnValue));
+                return ((object)(returnValue));
             }
         }
     }
