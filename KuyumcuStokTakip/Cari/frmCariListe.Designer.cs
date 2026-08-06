@@ -61,10 +61,10 @@
             // gridControlCari
             // 
             this.gridControlCari.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlCari.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gridControlCari.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
             this.gridControlCari.Location = new System.Drawing.Point(0, 24);
             this.gridControlCari.MainView = this.gridCariListe;
-            this.gridControlCari.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gridControlCari.Margin = new System.Windows.Forms.Padding(2);
             this.gridControlCari.Name = "gridControlCari";
             this.gridControlCari.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemLookUpEdit1});
@@ -248,6 +248,7 @@
             this.btnExcelExport.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnExcelExport.ImageOptions.Image")));
             this.btnExcelExport.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnExcelExport.ImageOptions.LargeImage")));
             this.btnExcelExport.Name = "btnExcelExport";
+            this.btnExcelExport.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnExcelExport_ItemClick);
             // 
             // btnExportPdf
             // 
@@ -256,6 +257,7 @@
             this.btnExportPdf.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnExportPdf.ImageOptions.Image")));
             this.btnExportPdf.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnExportPdf.ImageOptions.LargeImage")));
             this.btnExportPdf.Name = "btnExportPdf";
+            this.btnExportPdf.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnExportPdf_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -263,7 +265,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(2);
             this.barDockControlTop.Size = new System.Drawing.Size(944, 24);
             // 
             // barDockControlBottom
@@ -272,7 +274,7 @@
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 545);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(2);
             this.barDockControlBottom.Size = new System.Drawing.Size(944, 0);
             // 
             // barDockControlLeft
@@ -281,7 +283,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(2);
             this.barDockControlLeft.Size = new System.Drawing.Size(0, 521);
             // 
             // barDockControlRight
@@ -290,7 +292,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(944, 24);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(2);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 521);
             // 
             // frmCariListe
@@ -303,7 +305,7 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmCariListe";
             this.Text = "Cari Liste";
             this.Load += new System.EventHandler(this.frmCariListe_Load);
