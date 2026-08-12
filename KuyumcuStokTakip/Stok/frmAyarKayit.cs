@@ -54,7 +54,7 @@ namespace KuyumcuStokTakip.Stok
 
         private void ayarKayitFormTemizle()
         {
-            txtAyar.Clear();
+            txtAyar.Clear();      
             chkAyarAktifMi.Checked = false;
         }
     }

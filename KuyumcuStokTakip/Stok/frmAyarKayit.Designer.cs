@@ -36,16 +36,16 @@
             // 
             // txtAyar
             // 
-            this.txtAyar.Location = new System.Drawing.Point(134, 73);
+            this.txtAyar.Location = new System.Drawing.Point(118, 66);
             this.txtAyar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAyar.Name = "txtAyar";
             this.txtAyar.Size = new System.Drawing.Size(111, 22);
-            this.txtAyar.TabIndex = 1;
+            this.txtAyar.TabIndex = 0;
             // 
             // chkAyarAktifMi
             // 
             this.chkAyarAktifMi.AutoSize = true;
-            this.chkAyarAktifMi.Location = new System.Drawing.Point(147, 124);
+            this.chkAyarAktifMi.Location = new System.Drawing.Point(130, 122);
             this.chkAyarAktifMi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkAyarAktifMi.Name = "chkAyarAktifMi";
             this.chkAyarAktifMi.Size = new System.Drawing.Size(71, 20);
@@ -56,7 +56,7 @@
             // lblAyar
             // 
             this.lblAyar.AutoSize = true;
-            this.lblAyar.Location = new System.Drawing.Point(47, 80);
+            this.lblAyar.Location = new System.Drawing.Point(47, 72);
             this.lblAyar.Name = "lblAyar";
             this.lblAyar.Size = new System.Drawing.Size(43, 16);
             this.lblAyar.TabIndex = 4;
@@ -64,7 +64,7 @@
             // 
             // btnAyarKaydet
             // 
-            this.btnAyarKaydet.Location = new System.Drawing.Point(118, 167);
+            this.btnAyarKaydet.Location = new System.Drawing.Point(101, 165);
             this.btnAyarKaydet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAyarKaydet.Name = "btnAyarKaydet";
             this.btnAyarKaydet.Size = new System.Drawing.Size(128, 30);

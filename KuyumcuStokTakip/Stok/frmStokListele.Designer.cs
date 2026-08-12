@@ -41,6 +41,7 @@
             this.gridCreatedDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridUpdatedDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridUrunAktifMi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridMilyem = new DevExpress.XtraGrid.Columns.GridColumn();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnStokYeniKayıt = new DevExpress.XtraBars.BarButtonItem();
@@ -59,10 +60,10 @@
             // gridControlStokListesi
             // 
             this.gridControlStokListesi.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlStokListesi.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
+            this.gridControlStokListesi.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gridControlStokListesi.Location = new System.Drawing.Point(0, 24);
             this.gridControlStokListesi.MainView = this.gridStokListesi;
-            this.gridControlStokListesi.Margin = new System.Windows.Forms.Padding(2);
+            this.gridControlStokListesi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gridControlStokListesi.Name = "gridControlStokListesi";
             this.gridControlStokListesi.Size = new System.Drawing.Size(1068, 268);
             this.gridControlStokListesi.TabIndex = 0;
@@ -80,7 +81,8 @@
             this.gridOlusturanPersonel,
             this.gridCreatedDate,
             this.gridUpdatedDate,
-            this.gridUrunAktifMi});
+            this.gridUrunAktifMi,
+            this.gridMilyem});
             this.gridStokListesi.DetailHeight = 284;
             this.gridStokListesi.GridControl = this.gridControlStokListesi;
             this.gridStokListesi.GroupPanelText = "Stok Listesi";
@@ -110,7 +112,7 @@
             this.gridGuncelleyenPersonel.FieldName = "MUserID";
             this.gridGuncelleyenPersonel.Name = "gridGuncelleyenPersonel";
             this.gridGuncelleyenPersonel.Visible = true;
-            this.gridGuncelleyenPersonel.VisibleIndex = 7;
+            this.gridGuncelleyenPersonel.VisibleIndex = 8;
             this.gridGuncelleyenPersonel.Width = 56;
             // 
             // gridUrunAd
@@ -144,7 +146,7 @@
             this.gridTotalGram.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "UrunGram", "{0:N2}")});
             this.gridTotalGram.Visible = true;
-            this.gridTotalGram.VisibleIndex = 3;
+            this.gridTotalGram.VisibleIndex = 4;
             this.gridTotalGram.Width = 31;
             // 
             // gridOlusturanPersonel
@@ -154,7 +156,7 @@
             this.gridOlusturanPersonel.MinWidth = 19;
             this.gridOlusturanPersonel.Name = "gridOlusturanPersonel";
             this.gridOlusturanPersonel.Visible = true;
-            this.gridOlusturanPersonel.VisibleIndex = 5;
+            this.gridOlusturanPersonel.VisibleIndex = 6;
             this.gridOlusturanPersonel.Width = 54;
             // 
             // gridCreatedDate
@@ -164,7 +166,7 @@
             this.gridCreatedDate.MinWidth = 19;
             this.gridCreatedDate.Name = "gridCreatedDate";
             this.gridCreatedDate.Visible = true;
-            this.gridCreatedDate.VisibleIndex = 6;
+            this.gridCreatedDate.VisibleIndex = 7;
             this.gridCreatedDate.Width = 82;
             // 
             // gridUpdatedDate
@@ -174,7 +176,7 @@
             this.gridUpdatedDate.MinWidth = 19;
             this.gridUpdatedDate.Name = "gridUpdatedDate";
             this.gridUpdatedDate.Visible = true;
-            this.gridUpdatedDate.VisibleIndex = 8;
+            this.gridUpdatedDate.VisibleIndex = 9;
             this.gridUpdatedDate.Width = 92;
             // 
             // gridUrunAktifMi
@@ -184,8 +186,17 @@
             this.gridUrunAktifMi.MinWidth = 19;
             this.gridUrunAktifMi.Name = "gridUrunAktifMi";
             this.gridUrunAktifMi.Visible = true;
-            this.gridUrunAktifMi.VisibleIndex = 4;
+            this.gridUrunAktifMi.VisibleIndex = 5;
             this.gridUrunAktifMi.Width = 49;
+            // 
+            // gridMilyem
+            // 
+            this.gridMilyem.Caption = "Milyem";
+            this.gridMilyem.FieldName = "Milyem";
+            this.gridMilyem.MinWidth = 19;
+            this.gridMilyem.Name = "gridMilyem";
+            this.gridMilyem.Visible = true;
+            this.gridMilyem.VisibleIndex = 3;
             // 
             // barManager1
             // 
@@ -250,7 +261,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(2);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.barDockControlTop.Size = new System.Drawing.Size(1068, 24);
             // 
             // barDockControlBottom
@@ -259,7 +270,7 @@
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 292);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(2);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.barDockControlBottom.Size = new System.Drawing.Size(1068, 0);
             // 
             // barDockControlLeft
@@ -268,7 +279,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(2);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.barDockControlLeft.Size = new System.Drawing.Size(0, 268);
             // 
             // barDockControlRight
@@ -277,7 +288,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1068, 24);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(2);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 268);
             // 
             // printDialog1
@@ -294,7 +305,7 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmStokListele";
             this.Text = "Stok Listesi";
             ((System.ComponentModel.ISupportInitialize)(this.gridControlStokListesi)).EndInit();
@@ -328,5 +339,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridUrunAktifMi;
         private DevExpress.XtraGrid.Columns.GridColumn gridGuncelleyenPersonel;
         private System.Windows.Forms.PrintDialog printDialog1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridMilyem;
     }
 }

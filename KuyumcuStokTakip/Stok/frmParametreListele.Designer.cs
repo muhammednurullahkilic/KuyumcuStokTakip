@@ -116,43 +116,44 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(2);
-            this.barDockControlTop.Size = new System.Drawing.Size(938, 20);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.barDockControlTop.Size = new System.Drawing.Size(1251, 25);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 532);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 655);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(2);
-            this.barDockControlBottom.Size = new System.Drawing.Size(938, 0);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1251, 0);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 20);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 25);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(2);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 512);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 630);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(938, 20);
+            this.barDockControlRight.Location = new System.Drawing.Point(1251, 25);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(2);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 512);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 630);
             // 
             // xtraTabControl1
             // 
             this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControl1.Location = new System.Drawing.Point(0, 20);
+            this.xtraTabControl1.Location = new System.Drawing.Point(0, 25);
+            this.xtraTabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtpUrunGrubu;
-            this.xtraTabControl1.Size = new System.Drawing.Size(938, 512);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1251, 630);
             this.xtraTabControl1.TabIndex = 15;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtpUrunGrubu,
@@ -161,18 +162,21 @@
             // xtpUrunGrubu
             // 
             this.xtpUrunGrubu.Controls.Add(this.gridControlUrunGrup);
+            this.xtpUrunGrubu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.xtpUrunGrubu.Name = "xtpUrunGrubu";
-            this.xtpUrunGrubu.Size = new System.Drawing.Size(936, 487);
+            this.xtpUrunGrubu.Size = new System.Drawing.Size(1249, 600);
             this.xtpUrunGrubu.Text = "Ürün Grubu Liste";
             // 
             // gridControlUrunGrup
             // 
             this.gridControlUrunGrup.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlUrunGrup.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gridControlUrunGrup.Location = new System.Drawing.Point(0, 0);
             this.gridControlUrunGrup.MainView = this.gridUrunGrup;
+            this.gridControlUrunGrup.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gridControlUrunGrup.MenuManager = this.barManager1;
             this.gridControlUrunGrup.Name = "gridControlUrunGrup";
-            this.gridControlUrunGrup.Size = new System.Drawing.Size(936, 487);
+            this.gridControlUrunGrup.Size = new System.Drawing.Size(1561, 750);
             this.gridControlUrunGrup.TabIndex = 0;
             this.gridControlUrunGrup.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridUrunGrup});
@@ -187,82 +191,101 @@
             this.gridUrunGrupOlusturmaTarih,
             this.gridUrunGrupGuncelleyenPersonel,
             this.gridUrunGrupGuncellemeTarih});
+            this.gridUrunGrup.DetailHeight = 431;
             this.gridUrunGrup.GridControl = this.gridControlUrunGrup;
             this.gridUrunGrup.GroupPanelText = "Ürün Grupları Listesi";
             this.gridUrunGrup.Name = "gridUrunGrup";
             this.gridUrunGrup.OptionsBehavior.Editable = false;
+            this.gridUrunGrup.OptionsEditForm.PopupEditFormWidth = 1067;
             // 
             // gridUrunAd
             // 
             this.gridUrunAd.Caption = "Ürün Ad";
             this.gridUrunAd.FieldName = "GrupAd";
+            this.gridUrunAd.MinWidth = 27;
             this.gridUrunAd.Name = "gridUrunAd";
             this.gridUrunAd.Visible = true;
             this.gridUrunAd.VisibleIndex = 0;
+            this.gridUrunAd.Width = 100;
             // 
             // gridUrunKisaKod
             // 
             this.gridUrunKisaKod.Caption = "Ürün Kısa Kod";
             this.gridUrunKisaKod.FieldName = "GrupKod";
+            this.gridUrunKisaKod.MinWidth = 27;
             this.gridUrunKisaKod.Name = "gridUrunKisaKod";
             this.gridUrunKisaKod.Visible = true;
             this.gridUrunKisaKod.VisibleIndex = 1;
+            this.gridUrunKisaKod.Width = 100;
             // 
             // gridUrunGrupAktifMi
             // 
             this.gridUrunGrupAktifMi.Caption = "Aktif Mi";
             this.gridUrunGrupAktifMi.FieldName = "isActive";
+            this.gridUrunGrupAktifMi.MinWidth = 27;
             this.gridUrunGrupAktifMi.Name = "gridUrunGrupAktifMi";
             this.gridUrunGrupAktifMi.Visible = true;
             this.gridUrunGrupAktifMi.VisibleIndex = 2;
+            this.gridUrunGrupAktifMi.Width = 100;
             // 
             // gridUrunGrupOlusturanPersonel
             // 
             this.gridUrunGrupOlusturanPersonel.Caption = "Oluşturan Personel";
             this.gridUrunGrupOlusturanPersonel.FieldName = "CUser";
+            this.gridUrunGrupOlusturanPersonel.MinWidth = 27;
             this.gridUrunGrupOlusturanPersonel.Name = "gridUrunGrupOlusturanPersonel";
             this.gridUrunGrupOlusturanPersonel.Visible = true;
             this.gridUrunGrupOlusturanPersonel.VisibleIndex = 3;
+            this.gridUrunGrupOlusturanPersonel.Width = 100;
             // 
             // gridUrunGrupOlusturmaTarih
             // 
             this.gridUrunGrupOlusturmaTarih.Caption = "Oluşturulma Tarihi";
             this.gridUrunGrupOlusturmaTarih.FieldName = "CDate";
+            this.gridUrunGrupOlusturmaTarih.MinWidth = 27;
             this.gridUrunGrupOlusturmaTarih.Name = "gridUrunGrupOlusturmaTarih";
             this.gridUrunGrupOlusturmaTarih.Visible = true;
             this.gridUrunGrupOlusturmaTarih.VisibleIndex = 4;
+            this.gridUrunGrupOlusturmaTarih.Width = 100;
             // 
             // gridUrunGrupGuncelleyenPersonel
             // 
             this.gridUrunGrupGuncelleyenPersonel.Caption = "Güncelleyen Personel";
             this.gridUrunGrupGuncelleyenPersonel.FieldName = "MUserID";
+            this.gridUrunGrupGuncelleyenPersonel.MinWidth = 27;
             this.gridUrunGrupGuncelleyenPersonel.Name = "gridUrunGrupGuncelleyenPersonel";
             this.gridUrunGrupGuncelleyenPersonel.Visible = true;
             this.gridUrunGrupGuncelleyenPersonel.VisibleIndex = 5;
+            this.gridUrunGrupGuncelleyenPersonel.Width = 100;
             // 
             // gridUrunGrupGuncellemeTarih
             // 
             this.gridUrunGrupGuncellemeTarih.Caption = "Güncelleme Tarih";
             this.gridUrunGrupGuncellemeTarih.FieldName = "MDate";
+            this.gridUrunGrupGuncellemeTarih.MinWidth = 27;
             this.gridUrunGrupGuncellemeTarih.Name = "gridUrunGrupGuncellemeTarih";
             this.gridUrunGrupGuncellemeTarih.Visible = true;
             this.gridUrunGrupGuncellemeTarih.VisibleIndex = 6;
+            this.gridUrunGrupGuncellemeTarih.Width = 100;
             // 
             // xtpAyarGrup
             // 
             this.xtpAyarGrup.Controls.Add(this.gridControlAyarGrup);
+            this.xtpAyarGrup.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.xtpAyarGrup.Name = "xtpAyarGrup";
-            this.xtpAyarGrup.Size = new System.Drawing.Size(936, 487);
+            this.xtpAyarGrup.Size = new System.Drawing.Size(1249, 600);
             this.xtpAyarGrup.Text = "Ayar Grubu Liste";
             // 
             // gridControlAyarGrup
             // 
             this.gridControlAyarGrup.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlAyarGrup.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gridControlAyarGrup.Location = new System.Drawing.Point(0, 0);
             this.gridControlAyarGrup.MainView = this.gridAyarGrup;
+            this.gridControlAyarGrup.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gridControlAyarGrup.MenuManager = this.barManager1;
             this.gridControlAyarGrup.Name = "gridControlAyarGrup";
-            this.gridControlAyarGrup.Size = new System.Drawing.Size(936, 487);
+            this.gridControlAyarGrup.Size = new System.Drawing.Size(1561, 750);
             this.gridControlAyarGrup.TabIndex = 0;
             this.gridControlAyarGrup.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridAyarGrup});
@@ -276,70 +299,84 @@
             this.gridOlusturmaTarihi,
             this.gridAyarGüncelleyenPersonel,
             this.gridAyarGuncellemeTarihi});
+            this.gridAyarGrup.DetailHeight = 431;
             this.gridAyarGrup.GridControl = this.gridControlAyarGrup;
             this.gridAyarGrup.GroupPanelText = "Ayar Gruplar Listesi";
             this.gridAyarGrup.Name = "gridAyarGrup";
             this.gridAyarGrup.OptionsBehavior.Editable = false;
+            this.gridAyarGrup.OptionsEditForm.PopupEditFormWidth = 1067;
             // 
             // gridAyar
             // 
             this.gridAyar.Caption = "Ayar";
             this.gridAyar.FieldName = "AyarAdi";
+            this.gridAyar.MinWidth = 27;
             this.gridAyar.Name = "gridAyar";
             this.gridAyar.Visible = true;
             this.gridAyar.VisibleIndex = 0;
+            this.gridAyar.Width = 100;
             // 
             // gridAyarAktifMi
             // 
             this.gridAyarAktifMi.Caption = "Aktif Mi";
             this.gridAyarAktifMi.FieldName = "isActive";
+            this.gridAyarAktifMi.MinWidth = 27;
             this.gridAyarAktifMi.Name = "gridAyarAktifMi";
             this.gridAyarAktifMi.Visible = true;
             this.gridAyarAktifMi.VisibleIndex = 1;
+            this.gridAyarAktifMi.Width = 100;
             // 
             // gridAyarOlusturanPersonel
             // 
             this.gridAyarOlusturanPersonel.Caption = "Oluşturan Personel";
             this.gridAyarOlusturanPersonel.FieldName = "CUser";
+            this.gridAyarOlusturanPersonel.MinWidth = 27;
             this.gridAyarOlusturanPersonel.Name = "gridAyarOlusturanPersonel";
             this.gridAyarOlusturanPersonel.Visible = true;
             this.gridAyarOlusturanPersonel.VisibleIndex = 2;
+            this.gridAyarOlusturanPersonel.Width = 100;
             // 
             // gridOlusturmaTarihi
             // 
             this.gridOlusturmaTarihi.Caption = "Oluşturma Tarihi";
             this.gridOlusturmaTarihi.FieldName = "CDate";
+            this.gridOlusturmaTarihi.MinWidth = 27;
             this.gridOlusturmaTarihi.Name = "gridOlusturmaTarihi";
             this.gridOlusturmaTarihi.Visible = true;
             this.gridOlusturmaTarihi.VisibleIndex = 3;
+            this.gridOlusturmaTarihi.Width = 100;
             // 
             // gridAyarGüncelleyenPersonel
             // 
             this.gridAyarGüncelleyenPersonel.Caption = "Güncelleyen Personel";
             this.gridAyarGüncelleyenPersonel.FieldName = "MUserID";
+            this.gridAyarGüncelleyenPersonel.MinWidth = 27;
             this.gridAyarGüncelleyenPersonel.Name = "gridAyarGüncelleyenPersonel";
             this.gridAyarGüncelleyenPersonel.Visible = true;
             this.gridAyarGüncelleyenPersonel.VisibleIndex = 4;
+            this.gridAyarGüncelleyenPersonel.Width = 100;
             // 
             // gridAyarGuncellemeTarihi
             // 
             this.gridAyarGuncellemeTarihi.Caption = "Güncelleme Tarihi";
             this.gridAyarGuncellemeTarihi.FieldName = "MDate";
+            this.gridAyarGuncellemeTarihi.MinWidth = 27;
             this.gridAyarGuncellemeTarihi.Name = "gridAyarGuncellemeTarihi";
             this.gridAyarGuncellemeTarihi.Visible = true;
             this.gridAyarGuncellemeTarihi.VisibleIndex = 5;
+            this.gridAyarGuncellemeTarihi.Width = 100;
             // 
             // frmParametreListele
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(938, 532);
+            this.ClientSize = new System.Drawing.Size(1251, 655);
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmParametreListele";
             this.Text = "Parametre Listesi";
             this.Load += new System.EventHandler(this.frmParametreListele_Load);

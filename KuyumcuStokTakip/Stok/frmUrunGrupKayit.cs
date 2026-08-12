@@ -25,9 +25,15 @@ namespace KuyumcuStokTakip.Stok
             string girilenAd = txtGrubAd.Text.Trim();
             string girilenKod = txtGrupKod.Text.Trim();
 
-            if (string.IsNullOrEmpty(txtGrubAd.Text) || !string.IsNullOrEmpty(txtGrupKod.Text))
+            if (string.IsNullOrEmpty(txtGrubAd.Text) || string.IsNullOrEmpty(txtGrupKod.Text))
             {
 
+                MessageBox.Show("lütfen zorunlu alanaları doldurun!");
+
+            }
+            else
+            {
+                
                 int kayitSayisi = (int)_UrunGrubuTableAdapter.GrupKontrolEt(girilenAd, girilenKod);
 
                 if (kayitSayisi > 0)
@@ -36,18 +42,12 @@ namespace KuyumcuStokTakip.Stok
                                     "Mükerrer Kayıt",
                                     MessageBoxButtons.OK,
                                     MessageBoxIcon.Stop);
-                    return; 
+                    return;
                 }
 
                 _UrunGrubuTableAdapter.InsertQuery(txtGrupKod.Text, txtGrubAd.Text, chkUrunGrupAktifMi.Checked, 1, DateTime.Now);
                 MessageBox.Show("Kayıt Başarılı!");
                 urunGrubFormTemizle();
-           
-            }
-            else
-            {
-                MessageBox.Show("lütfen zorunlu alanaları doldurun!");
-
             }
         }
 

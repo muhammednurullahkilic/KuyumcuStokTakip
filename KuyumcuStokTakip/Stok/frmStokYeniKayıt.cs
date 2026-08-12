@@ -52,16 +52,27 @@ namespace KuyumcuStokTakip.Stok
         {
             if (string.IsNullOrWhiteSpace(lueUrunAd.Text) ||
                 string.IsNullOrWhiteSpace(lueUrunAyar.Text) ||
-                string.IsNullOrWhiteSpace(txtStokNo.Text))
+                string.IsNullOrWhiteSpace(txtStokNo.Text) || 
+                string.IsNullOrWhiteSpace(txtMilyem.Text))
             {
                 
                 MessageBox.Show("Lütfen zorunlu alanları doldurun!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-         
+            // 1. Seçilen Ürün Adı (GrupID) ve Ürün Ayar (AyarID) değerlerini alıyoruz
+            int secilenGrupID = Convert.ToInt32(lueUrunAd.EditValue);
+            int secilenAyarID = Convert.ToInt32(lueUrunAyar.EditValue);
 
-          
+            // 2. Veritabanında bu kayıt var mı diye kontrol ediyoruz
+            if (StokKaydiZatenVarMi(secilenGrupID, secilenAyarID))
+            {
+                MessageBox.Show("Bu ürün ve ayar kombinasyonu ile zaten bir stok mevcut. Aynı stok tekrar açılamaz!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // İşlemi burada kesiyoruz, kayıt kodlarına geçmesini engelliyoruz.
+            }
+
+
+
             try
             {
                 _StokTableAdapter.InsertQuery(
@@ -69,9 +80,11 @@ namespace KuyumcuStokTakip.Stok
                     Convert.ToInt32(lueUrunAyar.EditValue),                
                     txtStokNo.Text,
                     0,
-                    chkAktifMi.Checked,
+                    Convert.ToDouble(txtMilyem.Text),
+                    chkAktifMi.Checked, 
                     1,
                     DateTime.Now
+                   
                 );
 
                 MessageBox.Show("Kayıt Başarılı!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -84,11 +97,32 @@ namespace KuyumcuStokTakip.Stok
         }
 
 
+        // Veritabanı kontrol metodumuz
+        private bool StokKaydiZatenVarMi(int grupId, int ayarId)
+        {
+            // Projendeki TableAdapter'ı tanımlıyoruz (İsmi senin projene göre değişebilir)
+            // Örnek: var stokAdapter = new KuyumcuDataSetTableAdapters.StokTableAdapter();
+            var stokAdapter = new StokTableAdapter();
+
+            // DataSet'te oluşturduğumuz metoda parametreleri gönderip dönen sayıyı (COUNT) alıyoruz
+            // Dönüş tipi object olabileceği için nullable int (int?) veya Convert kullanarak alabiliriz
+            int kayitSayisi = Convert.ToInt32(stokAdapter.StokKayitSayisiGetir(grupId, ayarId));
+
+            // Eğer sayı 0'dan büyükse kayıt zaten vardır
+            if (kayitSayisi > 0)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
         private void stokKayitListeTemizleme()
         {
             lueUrunAd.Clear();
             lueUrunAyar.Clear();
             txtStokNo.Clear();
+            txtMilyem.Clear();
             chkAktifMi.Checked = false;
         }
 
