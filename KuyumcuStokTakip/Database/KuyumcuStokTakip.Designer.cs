@@ -2770,6 +2770,8 @@ namespace KuyumcuStokTakip.Database {
             
             private global::System.Data.DataColumn columnIsDeleted;
             
+            private global::System.Data.DataColumn columnFT_CARI1;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             public FaturaDataTable() {
@@ -2925,6 +2927,14 @@ namespace KuyumcuStokTakip.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public global::System.Data.DataColumn FT_CARI1Column {
+                get {
+                    return this.columnFT_CARI1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2960,7 +2970,7 @@ namespace KuyumcuStokTakip.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public FaturaRow AddFaturaRow(System.DateTime FT_TARIH, string FT_FISNO, string FT_CARI, string FT_SOFORBILGI, string FT_SOFORTELEFON, string FT_ACIKLAMA, int FT_TIP, double FT_ISKONTO, double FT_TOPLAMTUTAR, int CUserID, System.DateTime CDate, int MUserID, System.DateTime MDate, bool IsDeleted) {
+            public FaturaRow AddFaturaRow(System.DateTime FT_TARIH, string FT_FISNO, string FT_CARI, string FT_SOFORBILGI, string FT_SOFORTELEFON, string FT_ACIKLAMA, int FT_TIP, double FT_ISKONTO, double FT_TOPLAMTUTAR, int CUserID, System.DateTime CDate, int MUserID, System.DateTime MDate, bool IsDeleted, int FT_CARI1) {
                 FaturaRow rowFaturaRow = ((FaturaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -2977,7 +2987,8 @@ namespace KuyumcuStokTakip.Database {
                         CDate,
                         MUserID,
                         MDate,
-                        IsDeleted};
+                        IsDeleted,
+                        FT_CARI1};
                 rowFaturaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowFaturaRow);
                 return rowFaturaRow;
@@ -3022,6 +3033,7 @@ namespace KuyumcuStokTakip.Database {
                 this.columnMUserID = base.Columns["MUserID"];
                 this.columnMDate = base.Columns["MDate"];
                 this.columnIsDeleted = base.Columns["IsDeleted"];
+                this.columnFT_CARI1 = base.Columns["FT_CARI1"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3057,6 +3069,8 @@ namespace KuyumcuStokTakip.Database {
                 base.Columns.Add(this.columnMDate);
                 this.columnIsDeleted = new global::System.Data.DataColumn("IsDeleted", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnIsDeleted);
+                this.columnFT_CARI1 = new global::System.Data.DataColumn("FT_CARI1", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFT_CARI1);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnFaturaID}, true));
                 this.columnFaturaID.AutoIncrement = true;
@@ -3070,6 +3084,7 @@ namespace KuyumcuStokTakip.Database {
                 this.columnFT_SOFORBILGI.MaxLength = 2147483647;
                 this.columnFT_SOFORTELEFON.MaxLength = 50;
                 this.columnFT_ACIKLAMA.MaxLength = 2147483647;
+                this.columnFT_CARI1.Caption = "FT_CARI";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4793,6 +4808,22 @@ namespace KuyumcuStokTakip.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public int FT_CARI1 {
+                get {
+                    try {
+                        return ((int)(this[this.tableFatura.FT_CARI1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'FT_CARI1\' in table \'Fatura\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFatura.FT_CARI1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             public bool IsFT_TARIHNull() {
                 return this.IsNull(this.tableFatura.FT_TARIHColumn);
             }
@@ -4957,6 +4988,18 @@ namespace KuyumcuStokTakip.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             public void SetIsDeletedNull() {
                 this[this.tableFatura.IsDeletedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public bool IsFT_CARI1Null() {
+                return this.IsNull(this.tableFatura.FT_CARI1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public void SetFT_CARI1Null() {
+                this[this.tableFatura.FT_CARI1Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -8697,7 +8740,6 @@ SELECT SH_ID, FaturaID, SH_TARIH, SH_TUR, StokID, SH_GRAMMIKTAR, SH_ISCILIK, SH_
             tableMapping.ColumnMappings.Add("FaturaID", "FaturaID");
             tableMapping.ColumnMappings.Add("FT_TARIH", "FT_TARIH");
             tableMapping.ColumnMappings.Add("FT_FISNO", "FT_FISNO");
-            tableMapping.ColumnMappings.Add("FT_CARI", "FT_CARI");
             tableMapping.ColumnMappings.Add("FT_SOFORBILGI", "FT_SOFORBILGI");
             tableMapping.ColumnMappings.Add("FT_SOFORTELEFON", "FT_SOFORTELEFON");
             tableMapping.ColumnMappings.Add("FT_ACIKLAMA", "FT_ACIKLAMA");
@@ -8709,6 +8751,7 @@ SELECT SH_ID, FaturaID, SH_TARIH, SH_TUR, StokID, SH_GRAMMIKTAR, SH_ISCILIK, SH_
             tableMapping.ColumnMappings.Add("MUserID", "MUserID");
             tableMapping.ColumnMappings.Add("MDate", "MDate");
             tableMapping.ColumnMappings.Add("IsDeleted", "IsDeleted");
+            tableMapping.ColumnMappings.Add("FT_CARI", "FT_CARI1");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -8720,7 +8763,7 @@ SELECT SH_ID, FaturaID, SH_TARIH, SH_TUR, StokID, SH_GRAMMIKTAR, SH_ISCILIK, SH_
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FT_FISNO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FT_FISNO", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FT_FISNO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FT_FISNO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FT_CARI", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FT_CARI", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FT_CARI", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FT_CARI", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FT_CARI", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FT_CARI", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FT_SOFORTELEFON", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FT_SOFORTELEFON", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FT_SOFORTELEFON", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FT_SOFORTELEFON", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FT_TIP", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FT_TIP", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -8746,7 +8789,7 @@ SELECT FaturaID, FT_TARIH, FT_FISNO, FT_CARI, FT_SOFORBILGI, FT_SOFORTELEFON, FT
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FT_TARIH", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FT_TARIH", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FT_FISNO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FT_FISNO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FT_CARI", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FT_CARI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FT_CARI", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FT_CARI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FT_SOFORBILGI", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FT_SOFORBILGI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FT_SOFORTELEFON", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FT_SOFORTELEFON", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FT_ACIKLAMA", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FT_ACIKLAMA", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -8785,7 +8828,7 @@ SELECT FaturaID, FT_TARIH, FT_FISNO, FT_CARI, FT_SOFORBILGI, FT_SOFORTELEFON, FT
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FT_TARIH", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FT_TARIH", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FT_FISNO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FT_FISNO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FT_CARI", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FT_CARI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FT_CARI", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FT_CARI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FT_SOFORBILGI", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FT_SOFORBILGI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FT_SOFORTELEFON", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FT_SOFORTELEFON", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FT_ACIKLAMA", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FT_ACIKLAMA", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -8803,7 +8846,7 @@ SELECT FaturaID, FT_TARIH, FT_FISNO, FT_CARI, FT_SOFORBILGI, FT_SOFORTELEFON, FT
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FT_FISNO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FT_FISNO", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FT_FISNO", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FT_FISNO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FT_CARI", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FT_CARI", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FT_CARI", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FT_CARI", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FT_CARI", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FT_CARI", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FT_SOFORTELEFON", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FT_SOFORTELEFON", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FT_SOFORTELEFON", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FT_SOFORTELEFON", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FT_TIP", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FT_TIP", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -8853,12 +8896,12 @@ SELECT FaturaID, FT_TARIH, FT_FISNO, FT_CARI, FT_SOFORBILGI, FT_SOFORTELEFON, FT
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = @"INSERT INTO Fatura
                   (FT_TARIH, FT_FISNO, FT_CARI, FT_SOFORBILGI, FT_SOFORTELEFON, FT_ACIKLAMA, FT_TIP, FT_ISKONTO, FT_TOPLAMTUTAR, CUserID, CDate, IsDeleted)
-VALUES (@FT_TARIH,@FT_FISNO,@FT_CARI,@FT_SOFORBILGI,@FT_SOFORTELEFON,@FT_ACIKLAMA,@FT_TIP,@FT_ISKONTO,@FT_TOPLAMTUTAR,@CUserID,@CDate,@IsDeleted); 
+VALUES (@FT_TARIH,@FT_FISNO,@FT_CARI,@FT_SOFORBILGI,@FT_SOFORTELEFON,@FT_ACIKLAMA,@FT_TIP,@FT_ISKONTO,@FT_TOPLAMTUTAR,@CUserID,@CDate,@IsDeleted);  
 SELECT FaturaID, FT_TARIH, FT_FISNO, FT_CARI, FT_SOFORBILGI, FT_SOFORTELEFON, FT_ACIKLAMA, FT_TIP, FT_ISKONTO, FT_TOPLAMTUTAR, CUserID, CDate, MUserID, MDate, IsDeleted FROM Fatura WHERE (FaturaID = SCOPE_IDENTITY())";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FT_TARIH", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "FT_TARIH", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FT_FISNO", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "FT_FISNO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FT_CARI", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "FT_CARI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FT_CARI", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "FT_CARI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FT_SOFORBILGI", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "FT_SOFORBILGI", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FT_SOFORTELEFON", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "FT_SOFORTELEFON", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FT_ACIKLAMA", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "FT_ACIKLAMA", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -8950,7 +8993,7 @@ SELECT FaturaID, FT_TARIH, FT_FISNO, FT_CARI, FT_SOFORBILGI, FT_SOFORTELEFON, FT
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_FaturaID, global::System.Nullable<global::System.DateTime> Original_FT_TARIH, string Original_FT_FISNO, string Original_FT_CARI, string Original_FT_SOFORTELEFON, global::System.Nullable<int> Original_FT_TIP, global::System.Nullable<double> Original_FT_ISKONTO, global::System.Nullable<double> Original_FT_TOPLAMTUTAR, global::System.Nullable<int> Original_CUserID, global::System.Nullable<global::System.DateTime> Original_CDate, global::System.Nullable<int> Original_MUserID, global::System.Nullable<global::System.DateTime> Original_MDate, global::System.Nullable<bool> Original_IsDeleted) {
+        public virtual int Delete(int Original_FaturaID, global::System.Nullable<global::System.DateTime> Original_FT_TARIH, string Original_FT_FISNO, global::System.Nullable<int> Original_FT_CARI, string Original_FT_SOFORTELEFON, global::System.Nullable<int> Original_FT_TIP, global::System.Nullable<double> Original_FT_ISKONTO, global::System.Nullable<double> Original_FT_TOPLAMTUTAR, global::System.Nullable<int> Original_CUserID, global::System.Nullable<global::System.DateTime> Original_CDate, global::System.Nullable<int> Original_MUserID, global::System.Nullable<global::System.DateTime> Original_MDate, global::System.Nullable<bool> Original_IsDeleted) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_FaturaID));
             if ((Original_FT_TARIH.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -8968,13 +9011,13 @@ SELECT FaturaID, FT_TARIH, FT_FISNO, FT_CARI, FT_SOFORBILGI, FT_SOFORTELEFON, FT
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_FT_FISNO));
             }
-            if ((Original_FT_CARI == null)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            if ((Original_FT_CARI.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_FT_CARI.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_FT_CARI));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             if ((Original_FT_SOFORTELEFON == null)) {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
@@ -9068,7 +9111,7 @@ SELECT FaturaID, FT_TARIH, FT_FISNO, FT_CARI, FT_SOFORBILGI, FT_SOFORTELEFON, FT
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<global::System.DateTime> FT_TARIH, string FT_FISNO, string FT_CARI, string FT_SOFORBILGI, string FT_SOFORTELEFON, string FT_ACIKLAMA, global::System.Nullable<int> FT_TIP, global::System.Nullable<double> FT_ISKONTO, global::System.Nullable<double> FT_TOPLAMTUTAR, global::System.Nullable<int> CUserID, global::System.Nullable<global::System.DateTime> CDate, global::System.Nullable<int> MUserID, global::System.Nullable<global::System.DateTime> MDate, global::System.Nullable<bool> IsDeleted) {
+        public virtual int Insert(global::System.Nullable<global::System.DateTime> FT_TARIH, string FT_FISNO, global::System.Nullable<int> FT_CARI, string FT_SOFORBILGI, string FT_SOFORTELEFON, string FT_ACIKLAMA, global::System.Nullable<int> FT_TIP, global::System.Nullable<double> FT_ISKONTO, global::System.Nullable<double> FT_TOPLAMTUTAR, global::System.Nullable<int> CUserID, global::System.Nullable<global::System.DateTime> CDate, global::System.Nullable<int> MUserID, global::System.Nullable<global::System.DateTime> MDate, global::System.Nullable<bool> IsDeleted) {
             if ((FT_TARIH.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(FT_TARIH.Value));
             }
@@ -9081,11 +9124,11 @@ SELECT FaturaID, FT_TARIH, FT_FISNO, FT_CARI, FT_SOFORBILGI, FT_SOFORTELEFON, FT
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(FT_FISNO));
             }
-            if ((FT_CARI == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            if ((FT_CARI.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(FT_CARI.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(FT_CARI));
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             if ((FT_SOFORBILGI == null)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
@@ -9176,7 +9219,7 @@ SELECT FaturaID, FT_TARIH, FT_FISNO, FT_CARI, FT_SOFORBILGI, FT_SOFORTELEFON, FT
         public virtual int Update(
                     global::System.Nullable<global::System.DateTime> FT_TARIH, 
                     string FT_FISNO, 
-                    string FT_CARI, 
+                    global::System.Nullable<int> FT_CARI, 
                     string FT_SOFORBILGI, 
                     string FT_SOFORTELEFON, 
                     string FT_ACIKLAMA, 
@@ -9191,7 +9234,7 @@ SELECT FaturaID, FT_TARIH, FT_FISNO, FT_CARI, FT_SOFORBILGI, FT_SOFORTELEFON, FT
                     int Original_FaturaID, 
                     global::System.Nullable<global::System.DateTime> Original_FT_TARIH, 
                     string Original_FT_FISNO, 
-                    string Original_FT_CARI, 
+                    global::System.Nullable<int> Original_FT_CARI, 
                     string Original_FT_SOFORTELEFON, 
                     global::System.Nullable<int> Original_FT_TIP, 
                     global::System.Nullable<double> Original_FT_ISKONTO, 
@@ -9214,11 +9257,11 @@ SELECT FaturaID, FT_TARIH, FT_FISNO, FT_CARI, FT_SOFORBILGI, FT_SOFORTELEFON, FT
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(FT_FISNO));
             }
-            if ((FT_CARI == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            if ((FT_CARI.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(FT_CARI.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(FT_CARI));
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             if ((FT_SOFORBILGI == null)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
@@ -9303,13 +9346,13 @@ SELECT FaturaID, FT_TARIH, FT_FISNO, FT_CARI, FT_SOFORBILGI, FT_SOFORTELEFON, FT
                 this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
                 this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_FT_FISNO));
             }
-            if ((Original_FT_CARI == null)) {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+            if ((Original_FT_CARI.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(Original_FT_CARI.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_FT_CARI));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             if ((Original_FT_SOFORTELEFON == null)) {
                 this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
@@ -9407,7 +9450,7 @@ SELECT FaturaID, FT_TARIH, FT_FISNO, FT_CARI, FT_SOFORBILGI, FT_SOFORTELEFON, FT
         public virtual int Update(
                     global::System.Nullable<global::System.DateTime> FT_TARIH, 
                     string FT_FISNO, 
-                    string FT_CARI, 
+                    global::System.Nullable<int> FT_CARI, 
                     string FT_SOFORBILGI, 
                     string FT_SOFORTELEFON, 
                     string FT_ACIKLAMA, 
@@ -9422,7 +9465,7 @@ SELECT FaturaID, FT_TARIH, FT_FISNO, FT_CARI, FT_SOFORBILGI, FT_SOFORTELEFON, FT
                     int Original_FaturaID, 
                     global::System.Nullable<global::System.DateTime> Original_FT_TARIH, 
                     string Original_FT_FISNO, 
-                    string Original_FT_CARI, 
+                    global::System.Nullable<int> Original_FT_CARI, 
                     string Original_FT_SOFORTELEFON, 
                     global::System.Nullable<int> Original_FT_TIP, 
                     global::System.Nullable<double> Original_FT_ISKONTO, 
@@ -9439,7 +9482,7 @@ SELECT FaturaID, FT_TARIH, FT_FISNO, FT_CARI, FT_SOFORBILGI, FT_SOFORTELEFON, FT
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int InsertQuery(global::System.Nullable<global::System.DateTime> FT_TARIH, string FT_FISNO, string FT_CARI, string FT_SOFORBILGI, string FT_SOFORTELEFON, string FT_ACIKLAMA, global::System.Nullable<int> FT_TIP, global::System.Nullable<double> FT_ISKONTO, global::System.Nullable<double> FT_TOPLAMTUTAR, global::System.Nullable<int> CUserID, global::System.Nullable<global::System.DateTime> CDate, global::System.Nullable<bool> IsDeleted) {
+        public virtual int InsertQuery(global::System.Nullable<global::System.DateTime> FT_TARIH, string FT_FISNO, global::System.Nullable<int> FT_CARI, string FT_SOFORBILGI, string FT_SOFORTELEFON, string FT_ACIKLAMA, global::System.Nullable<int> FT_TIP, global::System.Nullable<double> FT_ISKONTO, global::System.Nullable<double> FT_TOPLAMTUTAR, global::System.Nullable<int> CUserID, global::System.Nullable<global::System.DateTime> CDate, global::System.Nullable<bool> IsDeleted) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             if ((FT_TARIH.HasValue == true)) {
                 command.Parameters[0].Value = ((System.DateTime)(FT_TARIH.Value));
@@ -9453,11 +9496,11 @@ SELECT FaturaID, FT_TARIH, FT_FISNO, FT_CARI, FT_SOFORBILGI, FT_SOFORTELEFON, FT
             else {
                 command.Parameters[1].Value = ((string)(FT_FISNO));
             }
-            if ((FT_CARI == null)) {
-                command.Parameters[2].Value = global::System.DBNull.Value;
+            if ((FT_CARI.HasValue == true)) {
+                command.Parameters[2].Value = ((int)(FT_CARI.Value));
             }
             else {
-                command.Parameters[2].Value = ((string)(FT_CARI));
+                command.Parameters[2].Value = global::System.DBNull.Value;
             }
             if ((FT_SOFORBILGI == null)) {
                 command.Parameters[3].Value = global::System.DBNull.Value;

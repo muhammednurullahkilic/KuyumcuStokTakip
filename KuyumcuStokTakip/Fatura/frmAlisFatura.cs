@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraExport.Helpers;
+﻿using DevExpress.XtraEditors;
+using DevExpress.XtraExport.Helpers;
 using DevExpress.XtraGrid.Views.Grid;
 using KuyumcuStokTakip.Database.KuyumcuStokTakipTableAdapters;
 using KuyumcuStokTakip.Properties;
@@ -10,17 +11,23 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 using System.Windows.Forms;
 
 namespace KuyumcuStokTakip.Fatura
 {
     public partial class frmAlisFatura : Form
     {
-
+        private DateTime utcTime = DateTime.Now.ToUniversalTime().AddHours(3);
         private readonly StokTableAdapter _StokListeTableAdapter = new StokTableAdapter();
         private readonly StokHareketTableAdapter _StokHareketTableAdapter = new StokHareketTableAdapter();
         private readonly FaturaTableAdapter _FaturaTableAdapter = new FaturaTableAdapter();
         private readonly CariTableAdapter _CariTableAdapter = new CariTableAdapter();
+
+        private readonly CariHareketTableAdapter _CariHareketTableAdapter = new CariHareketTableAdapter();
+
+
+        private TransactionScope _scopeInsertAlisFatura;
         public frmAlisFatura()
         {
             InitializeComponent();
@@ -28,21 +35,29 @@ namespace KuyumcuStokTakip.Fatura
             InitStok();
             InitStokHareket();
             CariGetir();
-
-
+            formTemizle();
+            dtAlisTarihi.Text = utcTime.ToString();
+            
         }
 
         private void CariGetir()
         {
 
+            //lueCari.Properties.DataSource = _CariTableAdapter.GetData();
+            //lueCari.Properties.DisplayMember = "CariKod";
+            //lueCari.Properties.ValueMember = "CariID";
+            //lueCari.Properties.NullText = "Lütfen Seçiniz...";
+            //lueCari.Properties.Columns.Clear();
+            //lueCari.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CariAd", "Cariler"));
+            //lueCari.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CariKod", "Cari Kodları"));
+
+            
             lueCari.Properties.DataSource = _CariTableAdapter.GetData();
-            lueCari.Properties.DisplayMember = "CariKod";
             lueCari.Properties.ValueMember = "CariID";
-            lueCari.Properties.NullText = "Lütfen Seçiniz...";
-            lueCari.Properties.Columns.Clear();
-            lueCari.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CariAd", "Cariler"));
-            lueCari.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CariKod", "Cari Kodları"));
-        }
+            lueCari.Properties.DisplayMember = "CariAd";
+
+                
+            }
         public void InitStokHareket()
         {
             var kayit = _FaturaTableAdapter.GetDataByFisNoKontrol(txtAlisFaturaNo.Text).FirstOrDefault();
@@ -85,40 +100,33 @@ namespace KuyumcuStokTakip.Fatura
             repositoryItemGridLookUpEdit1.DataSource = _StokListeTableAdapter.GetData();
             repositoryItemGridLookUpEdit1.ValueMember = "StokID";
             repositoryItemGridLookUpEdit1.DisplayMember = "StokNo";
+
+            var view = repositoryItemGridLookUpEdit1.View;       
         }
 
-        private void lueBarkodNo_EditValueChanged(object sender, EventArgs e)
-        {
-        }
 
         private void gridAlisFatura_RowUpdated(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)
         {
-            // Burada her satırdan sonra gridde bulunan tutar kolonları toplancak
+
             GenelTutarHesapla();
         }
 
-        private void gridAlisFatura_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
-        {
-
-        }
+ 
 
         private void gridAlisFatura_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
-        {// Stok Kodu hücresinde bir değişiklik olduysa
+        {
             if (e.Column.FieldName == gridStokKod.FieldName)
             {
                 try
                 {
-                    // 1. Seçilen Stok ID'sini alıyoruz (FocusedRowHandle yerine e.RowHandle kullanmak daha güvenlidir)
                     var st_id = gridAlisFatura.GetRowCellValue(e.RowHandle, gridStokKod.FieldName) != DBNull.Value
                                 ? Convert.ToInt32(gridAlisFatura.GetRowCellValue(e.RowHandle, gridStokKod.FieldName))
                                 : 0;
 
                     if (st_id == 0) return;
 
-                    // 2. ÇÖZÜM: Bütün listeyi değil, sadece seçilen 'st_id' değerine eşit olan stoğu buluyoruz
                     var stok = _StokListeTableAdapter.GetData().FirstOrDefault(x => x.StokID == st_id);
 
-                    // 3. Eğer stok bulunduysa, o stoğa ait Milyem değerini aynı satırın Milyem hücresine yazdırıyoruz
                     if (stok != null)
                     {
                         gridAlisFatura.SetRowCellValue(e.RowHandle, gridAlisFatura.Columns[gridMilyem.FieldName], stok.Milyem);
@@ -137,14 +145,11 @@ namespace KuyumcuStokTakip.Fatura
                 var Iscilik = gridAlisFatura.GetRowCellValue(gridAlisFatura.FocusedRowHandle, gridIscilik.FieldName) != DBNull.Value ? Convert.ToDouble(gridAlisFatura.GetRowCellValue(gridAlisFatura.FocusedRowHandle, gridIscilik.FieldName)) : 0;
                 var Maliyet = gridAlisFatura.GetRowCellValue(gridAlisFatura.FocusedRowHandle, gridMaliyet.FieldName) != DBNull.Value ? Convert.ToDouble(gridAlisFatura.GetRowCellValue(gridAlisFatura.FocusedRowHandle, gridMaliyet.FieldName)) : 0;
 
-                // 1. EKLENEN KISIM: Has Fiyatı Oku
                 var HasFiyat = gridAlisFatura.GetRowCellValue(gridAlisFatura.FocusedRowHandle, gridHasFiyat.FieldName) != DBNull.Value ? Convert.ToDouble(gridAlisFatura.GetRowCellValue(gridAlisFatura.FocusedRowHandle, gridHasFiyat.FieldName)) : 0;
                 var HasMiktar = (Milyem * gramMiktar) + Iscilik + Maliyet;
 
-                // Has Miktarı Yaz
                 gridAlisFatura.SetRowCellValue(gridAlisFatura.FocusedRowHandle, gridAlisFatura.Columns[gridHasMiktar.FieldName], HasMiktar);
 
-                // 2. EKLENEN KISIM: Tutarı anında güncelle
                 gridAlisFatura.SetRowCellValue(gridAlisFatura.FocusedRowHandle, gridAlisFatura.Columns[gridTutar.FieldName], HasMiktar * HasFiyat);
                 gridAlisFatura.SetRowCellValue(gridAlisFatura.FocusedRowHandle, gridAlisFatura.Columns[gridHasMiktar.FieldName], (Milyem * gramMiktar) + Iscilik + Maliyet); 
             }
@@ -156,15 +161,12 @@ namespace KuyumcuStokTakip.Fatura
                 var Iscilik = gridAlisFatura.GetRowCellValue(gridAlisFatura.FocusedRowHandle, gridIscilik.FieldName) != DBNull.Value ? Convert.ToDouble(gridAlisFatura.GetRowCellValue(gridAlisFatura.FocusedRowHandle, gridIscilik.FieldName)) : 0;
                 var Maliyet = gridAlisFatura.GetRowCellValue(gridAlisFatura.FocusedRowHandle, gridMaliyet.FieldName) != DBNull.Value ? Convert.ToDouble(gridAlisFatura.GetRowCellValue(gridAlisFatura.FocusedRowHandle, gridMaliyet.FieldName)) : 0;
 
-                // 1. EKLENEN KISIM: Has Fiyatı Oku
                 var HasFiyat = gridAlisFatura.GetRowCellValue(gridAlisFatura.FocusedRowHandle, gridHasFiyat.FieldName) != DBNull.Value ? Convert.ToDouble(gridAlisFatura.GetRowCellValue(gridAlisFatura.FocusedRowHandle, gridHasFiyat.FieldName)) : 0;
 
                 var HasMiktar = (Milyem * gramMiktar) + Iscilik + Maliyet;
 
-                // Has Miktarı Yaz
                 gridAlisFatura.SetRowCellValue(gridAlisFatura.FocusedRowHandle, gridAlisFatura.Columns[gridHasMiktar.FieldName], HasMiktar);
 
-                // 2. EKLENEN KISIM: Tutarı anında güncelle
                 gridAlisFatura.SetRowCellValue(gridAlisFatura.FocusedRowHandle, gridAlisFatura.Columns[gridTutar.FieldName], HasMiktar * HasFiyat);
 
                 gridAlisFatura.SetRowCellValue(gridAlisFatura.FocusedRowHandle, gridAlisFatura.Columns[gridHasMiktar.FieldName], (Milyem * gramMiktar) + Iscilik + Maliyet);
@@ -177,15 +179,13 @@ namespace KuyumcuStokTakip.Fatura
                 var Iscilik = gridAlisFatura.GetRowCellValue(gridAlisFatura.FocusedRowHandle, gridIscilik.FieldName) != DBNull.Value ? Convert.ToDouble(gridAlisFatura.GetRowCellValue(gridAlisFatura.FocusedRowHandle, gridIscilik.FieldName)) : 0;
                 var Maliyet = gridAlisFatura.GetRowCellValue(gridAlisFatura.FocusedRowHandle, gridMaliyet.FieldName) != DBNull.Value ? Convert.ToDouble(gridAlisFatura.GetRowCellValue(gridAlisFatura.FocusedRowHandle, gridMaliyet.FieldName)) : 0;
 
-                // 1. EKLENEN KISIM: Has Fiyatı Oku
                 var HasFiyat = gridAlisFatura.GetRowCellValue(gridAlisFatura.FocusedRowHandle, gridHasFiyat.FieldName) != DBNull.Value ? Convert.ToDouble(gridAlisFatura.GetRowCellValue(gridAlisFatura.FocusedRowHandle, gridHasFiyat.FieldName)) : 0;
 
                 var HasMiktar = (Milyem * gramMiktar) + Iscilik + Maliyet;
 
-                // Has Miktarı Yaz
                 gridAlisFatura.SetRowCellValue(gridAlisFatura.FocusedRowHandle, gridAlisFatura.Columns[gridHasMiktar.FieldName], HasMiktar);
 
-                // 2. EKLENEN KISIM: Tutarı anında güncelle
+
                 gridAlisFatura.SetRowCellValue(gridAlisFatura.FocusedRowHandle, gridAlisFatura.Columns[gridTutar.FieldName], HasMiktar * HasFiyat);
 
                 gridAlisFatura.SetRowCellValue(gridAlisFatura.FocusedRowHandle, gridAlisFatura.Columns[gridHasMiktar.FieldName], (Milyem * gramMiktar) + Iscilik + Maliyet);
@@ -213,10 +213,10 @@ namespace KuyumcuStokTakip.Fatura
         {
             double genelToplam = 0;
 
-            // Grid'deki tüm veri satırlarını tek tek dönüyoruz
+
             for (int i = 0; i < gridAlisFatura.DataRowCount; i++)
             {
-                // Kodundaki gridTutar sütunundan değeri okuyoruz
+
                 var satirTutari = gridAlisFatura.GetRowCellValue(i, gridTutar.FieldName);
 
                 if (satirTutari != null && satirTutari != DBNull.Value)
@@ -226,8 +226,6 @@ namespace KuyumcuStokTakip.Fatura
             }
 
 
-            // 2. ÇÖZÜM BURADA: Eğer kullanıcı şu an "Yeni Kayıt (*)" satırına veri giriyorsa, 
-            // bu satır henüz DataRowCount'a dahil edilmemiştir. O anki Tutar değerini okuyup ayrıca ekliyoruz!
             if (gridAlisFatura.FocusedRowHandle == DevExpress.XtraGrid.GridControl.NewItemRowHandle)
             {
                 var yeniSatirTutari = gridAlisFatura.GetRowCellValue(DevExpress.XtraGrid.GridControl.NewItemRowHandle, gridTutar.FieldName);
@@ -238,8 +236,99 @@ namespace KuyumcuStokTakip.Fatura
                 }
             }
 
-            // Toplamı yukarıdaki Tutar kutusuna atıyoruz
             txtAlisTutar.Text = genelToplam.ToString("N2");
         }
+
+        private void btnKaydet_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (_scopeInsertAlisFatura = new TransactionScope())
+                {
+
+                    if (string.IsNullOrWhiteSpace(txtAlisFaturaNo.Text) ||
+                        string.IsNullOrWhiteSpace(lueCari.Text) ||
+                        string.IsNullOrWhiteSpace(dtAlisTarihi.Text))
+                    {
+
+                        MessageBox.Show("Lütfen zorunlu alanları doldurun!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+
+                    var ftId = _FaturaTableAdapter.InsertQuery(Convert.ToDateTime(dtAlisTarihi.Text), txtAlisFaturaNo.Text, Convert.ToInt32(lueCari.EditValue), txtAdSoyad.Text,
+                        txtTelefon.Text, txtAciklama.Text, 1, 0, Convert.ToDouble(txtAlisTutar.Text), 1, DateTime.Now, false);
+
+
+                    if (Convert.ToInt32(ftId) <= 0)
+                    {
+                        MessageBox.Show("Kayıt eklenemedi! Aynı fiş numarası mevcut olabilir veya başka bir hata oluştu.",
+                                        "Hata", MessageBoxButtons.OK, MessageBoxIcon.Warning);                    
+                    }
+
+
+                   
+
+                    for (var i = 0; i < gridAlisFatura.RowCount - 1; i++)
+                    {
+                        _StokHareketTableAdapter.Insert(Convert.ToInt32(ftId), Convert.ToDateTime(dtAlisTarihi.Text), 1,
+                            Convert.ToInt32(string.IsNullOrEmpty(gridAlisFatura.GetRowCellValue(i, gridStokKod.FieldName).ToString()) ? "0" : gridAlisFatura.GetRowCellValue(i, gridStokKod.FieldName).ToString()),
+                            Convert.ToDouble(string.IsNullOrEmpty(gridAlisFatura.GetRowCellValue(i, gridGramMiktar.FieldName).ToString()) ? "0" : gridAlisFatura.GetRowCellValue(i, gridGramMiktar.FieldName).ToString()),
+                            Convert.ToDouble(string.IsNullOrEmpty(gridAlisFatura.GetRowCellValue(i, gridIscilik.FieldName).ToString()) ? "0" : gridAlisFatura.GetRowCellValue(i, gridIscilik.FieldName).ToString()),
+                            Convert.ToDouble(string.IsNullOrEmpty(gridAlisFatura.GetRowCellValue(i, gridMaliyet.FieldName).ToString()) ? "0" : gridAlisFatura.GetRowCellValue(i, gridMaliyet.FieldName).ToString()),
+                            Convert.ToDouble(string.IsNullOrEmpty(gridAlisFatura.GetRowCellValue(i, gridHasMiktar.FieldName).ToString()) ? "0" : gridAlisFatura.GetRowCellValue(i, gridHasMiktar.FieldName).ToString()),
+                            Convert.ToDouble(string.IsNullOrEmpty(gridAlisFatura.GetRowCellValue(i, gridMilyem.FieldName).ToString()) ? "0" : gridAlisFatura.GetRowCellValue(i, gridMilyem.FieldName).ToString()),
+                            Convert.ToDouble(string.IsNullOrEmpty(gridAlisFatura.GetRowCellValue(i, gridTutar.FieldName).ToString()) ? "0" : gridAlisFatura.GetRowCellValue(i, gridTutar.FieldName).ToString()),
+                            Convert.ToDouble(string.IsNullOrEmpty(gridAlisFatura.GetRowCellValue(i, gridHasFiyat.FieldName).ToString()) ? "0" : gridAlisFatura.GetRowCellValue(i, gridHasFiyat.FieldName).ToString()));
+                    }
+
+
+
+                    _CariHareketTableAdapter.Insert(Convert.ToInt32(ftId), Convert.ToInt32(lueCari.EditValue), 1, Convert.ToDateTime(dtAlisTarihi.Text), Convert.ToDouble(txtAlisTutar.Text));
+
+                    MessageBox.Show("Kayıt Başarılı", Text, MessageBoxButtons.OK);
+                    _scopeInsertAlisFatura.Complete();
+                    formTemizle();
+
+
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show(
+                //    "Yönetilemeyen bir hata ile karşılaşıldı.Ekran görüntüsü alarak sistem yöneticiniz ile görüşün "  );
+            }
+            
+        }
+
+        private void formTemizle()
+        {
+            txtAlisFaturaNo.Clear();
+            lueCari.EditValue = null;
+            dtAlisTarihi.Text = utcTime.ToString();
+            txtAdSoyad.Clear();
+            txtTelefon.Clear();
+            txtAciklama.Clear();
+            txtAlisTutar.Text = "0.00";
+
+
+            if (gridControlAlisFatura.DataSource is DataTable dt)
+            {
+                dt.Clear();
+            }
+            else
+            {
+                // Eğer grid doğrudan bir tabloya değil de listeye bağlıysa veri kaynağını sıfırlarız.
+                gridControlAlisFatura.DataSource = null;
+            }
+
+            // YENİ FATURA İÇİN HAZIRLIK (Opsiyonel ama tavsiye edilir)
+            // Form temizlendikten sonra sıradaki fatura için yeni bir Fiş/Fatura Numarası oluşturmak isteyebilirsin.
+            FisNoOlustur();
+        }
+
+
     }
 }

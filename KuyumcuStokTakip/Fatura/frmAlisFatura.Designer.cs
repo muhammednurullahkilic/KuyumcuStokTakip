@@ -103,7 +103,11 @@
             this.lueCari.Name = "lueCari";
             this.lueCari.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lueCari.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CariAd", "cariAdi"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CariID", "cariID")});
             this.lueCari.Properties.NullText = "Lütfen Seçiniz";
+            this.lueCari.Properties.ValueMember = "CariID";
             this.lueCari.Size = new System.Drawing.Size(187, 22);
             this.lueCari.TabIndex = 7;
             // 
@@ -168,6 +172,7 @@
             this.btnKaydet.Size = new System.Drawing.Size(119, 32);
             this.btnKaydet.TabIndex = 20;
             this.btnKaydet.Text = "Kaydet";
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // lblAciklama
             // 
@@ -257,7 +262,6 @@
             this.gridAlisFatura.OptionsView.ShowAutoFilterRow = true;
             this.gridAlisFatura.OptionsView.ShowGroupPanel = false;
             this.gridAlisFatura.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridAlisFatura_CellValueChanged);
-            this.gridAlisFatura.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gridAlisFatura_ValidateRow);
             this.gridAlisFatura.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gridAlisFatura_RowUpdated);
             // 
             // gridStokKod
