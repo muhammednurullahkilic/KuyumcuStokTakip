@@ -109,7 +109,7 @@
             this.lueCari.Properties.NullText = "Lütfen Seçiniz";
             this.lueCari.Properties.ValueMember = "CariID";
             this.lueCari.Size = new System.Drawing.Size(187, 22);
-            this.lueCari.TabIndex = 7;
+            this.lueCari.TabIndex = 1;
             // 
             // dtAlisTarihi
             // 
@@ -122,7 +122,7 @@
             this.dtAlisTarihi.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtAlisTarihi.Size = new System.Drawing.Size(187, 22);
-            this.dtAlisTarihi.TabIndex = 9;
+            this.dtAlisTarihi.TabIndex = 2;
             // 
             // txtAlisTutar
             // 
@@ -140,7 +140,7 @@
             this.txtAlisFaturaNo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAlisFaturaNo.Name = "txtAlisFaturaNo";
             this.txtAlisFaturaNo.Size = new System.Drawing.Size(187, 22);
-            this.txtAlisFaturaNo.TabIndex = 15;
+            this.txtAlisFaturaNo.TabIndex = 0;
             // 
             // lblFaturaNo
             // 
@@ -189,7 +189,7 @@
             this.txtAciklama.Margin = new System.Windows.Forms.Padding(4);
             this.txtAciklama.Name = "txtAciklama";
             this.txtAciklama.Size = new System.Drawing.Size(185, 22);
-            this.txtAciklama.TabIndex = 22;
+            this.txtAciklama.TabIndex = 5;
             // 
             // lblAdSoyad
             // 
@@ -207,7 +207,7 @@
             this.txtAdSoyad.Margin = new System.Windows.Forms.Padding(4);
             this.txtAdSoyad.Name = "txtAdSoyad";
             this.txtAdSoyad.Size = new System.Drawing.Size(185, 22);
-            this.txtAdSoyad.TabIndex = 24;
+            this.txtAdSoyad.TabIndex = 3;
             // 
             // lblTelefon
             // 
@@ -225,7 +225,7 @@
             this.txtTelefon.Margin = new System.Windows.Forms.Padding(4);
             this.txtTelefon.Name = "txtTelefon";
             this.txtTelefon.Size = new System.Drawing.Size(184, 22);
-            this.txtTelefon.TabIndex = 26;
+            this.txtTelefon.TabIndex = 4;
             // 
             // gridControlAlisFatura
             // 
