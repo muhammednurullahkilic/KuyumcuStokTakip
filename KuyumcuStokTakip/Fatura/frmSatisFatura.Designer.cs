@@ -304,6 +304,7 @@
             this.btnKaydet.Size = new System.Drawing.Size(117, 30);
             this.btnKaydet.TabIndex = 19;
             this.btnKaydet.Text = "Kaydet";
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // lblAdSoyad
             // 

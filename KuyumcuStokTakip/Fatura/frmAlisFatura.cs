@@ -42,6 +42,8 @@ namespace KuyumcuStokTakip.Fatura
 
         private void CariGetir()
         {
+
+
             
             lueCari.Properties.DataSource = _CariTableAdapter.GetData();
             lueCari.Properties.ValueMember = "CariID";

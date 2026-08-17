@@ -8,16 +8,21 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 using System.Windows.Forms;
 
 namespace KuyumcuStokTakip.Fatura
 {
     public partial class frmSatisFatura : Form
     {
+        private DateTime utcTime = DateTime.Now.ToUniversalTime().AddHours(3);
         private readonly StokTableAdapter _StokListeTableAdapter = new StokTableAdapter();
         private readonly StokHareketTableAdapter _StokHareketTableAdapter = new StokHareketTableAdapter();
         private readonly FaturaTableAdapter _FaturaTableAdapter = new FaturaTableAdapter();
         private readonly CariTableAdapter _CariTableAdapter = new CariTableAdapter();
+        private readonly CariHareketTableAdapter _CariHareketTableAdapter = new CariHareketTableAdapter();
+
+        private TransactionScope _scopeInsertSatisFatura;
         public frmSatisFatura()
         {
             InitializeComponent();
@@ -25,6 +30,8 @@ namespace KuyumcuStokTakip.Fatura
             InitStok();
             InitStokHareket();
             CariGetir();
+            formTemizle();
+            dtSatisTarihi.Text = utcTime.ToString();
         }
 
         private void CariGetir()
@@ -226,6 +233,122 @@ namespace KuyumcuStokTakip.Fatura
             }
 
             txtSatisTutar.Text = genelToplam.ToString("N2");
-        }     
+        }
+
+        private void btnKaydet_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // 1. KONTROL: ZORUNLU ALANLAR
+                if (string.IsNullOrWhiteSpace(txtSatisFaturaNo.Text) ||
+                    string.IsNullOrWhiteSpace(lueCari.Text) ||
+                    string.IsNullOrWhiteSpace(dtSatisTarihi.Text))
+                {
+                    MessageBox.Show("Lütfen zorunlu alanları (Fatura No, Cari, Tarih) doldurun!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return; // İşlemi burada kes
+                }
+
+                // 2. KONTROL: BOŞ FATURA ENGELLENMESİ
+                // DataRowCount 0 ise grid'e hiç satır (stok) girilmemiş demektir.
+                if (gridSatisFaturasi.DataRowCount == 0)
+                {
+                    MessageBox.Show("Faturaya hiç ürün eklemediniz! Lütfen tabloya en az bir kalem giriş yapın.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return; // İşlemi burada kes
+                }
+
+                // 3. KONTROL: AYNI FİŞ NUMARASI ENGELLENMESİ
+                // Yazılan fiş numarasını veritabanında arıyoruz, varsa kayıt işlemini durduruyoruz.
+                var ayniFisVarMi = _FaturaTableAdapter.GetDataByFisNoKontrol(txtSatisFaturaNo.Text).FirstOrDefault();
+                if (ayniFisVarMi != null)
+                {
+                    MessageBox.Show($"Bu Fiş Numarası ({txtSatisFaturaNo.Text}) daha önce kullanılmış!\nLütfen farklı bir numara girin.", "Mükerrer Kayıt", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return; // İşlemi burada kes
+                }
+
+
+                // TÜM KONTROLLERDEN GEÇTİYSE KAYIT İŞLEMİ BAŞLAR
+                using (_scopeInsertSatisFatura = new TransactionScope())
+                {
+                    // Faturayı Kaydet
+                    var etkilenenSatir = _FaturaTableAdapter.InsertQuery(Convert.ToDateTime(dtSatisTarihi.Text), txtSatisFaturaNo.Text, Convert.ToInt32(lueCari.EditValue), txtAdSoyad.Text,
+                        txtTelefon.Text, txtAciklama.Text, 2, 0, Convert.ToDouble(txtSatisTutar.Text), 1, DateTime.Now, false);
+
+                    if (etkilenenSatir <= 0)
+                    {
+                        MessageBox.Show("Kayıt eklenemedi! Bir hata oluştu.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                    // Gerçek ID'yi Al
+                    var eklenenFatura = _FaturaTableAdapter.GetDataByFisNoKontrol(txtSatisFaturaNo.Text).FirstOrDefault();
+                    int gercekFaturaId = eklenenFatura.FaturaID;
+
+                    // Stok Hareketlerini Kaydet
+                    for (var i = 0; i < gridSatisFaturasi.RowCount - 1; i++)
+                    {
+                        // Ekstra Güvenlik: Kullanıcı yarım satır açıp bıraktıysa o satırı atla
+                        var stokKod = gridSatisFaturasi.GetRowCellValue(i, gridStokKod.FieldName);
+                        if (stokKod == null || stokKod == DBNull.Value || string.IsNullOrEmpty(stokKod.ToString()))
+                            continue;
+
+                        _StokHareketTableAdapter.Insert(
+                            gercekFaturaId,
+                            Convert.ToDateTime(dtSatisTarihi.Text), 2,
+                            Convert.ToInt32(gridSatisFaturasi.GetRowCellValue(i, gridStokKod.FieldName)?.ToString() ?? "0"),
+                            Convert.ToDouble(gridSatisFaturasi.GetRowCellValue(i, gridGramMiktar.FieldName)?.ToString() ?? "0"),
+                            Convert.ToDouble(gridSatisFaturasi.GetRowCellValue(i, gridIscilik.FieldName)?.ToString() ?? "0"),
+                            Convert.ToDouble(gridSatisFaturasi.GetRowCellValue(i, gridMaliyet.FieldName)?.ToString() ?? "0"),
+                            Convert.ToDouble(gridSatisFaturasi.GetRowCellValue(i, gridHasMiktar.FieldName)?.ToString() ?? "0"),
+                            Convert.ToDouble(gridSatisFaturasi.GetRowCellValue(i, gridMilyem.FieldName)?.ToString() ?? "0"),
+                            Convert.ToDouble(gridSatisFaturasi.GetRowCellValue(i, gridTutar.FieldName)?.ToString() ?? "0"),
+                            Convert.ToDouble(gridSatisFaturasi.GetRowCellValue(i, gridHasFiyat.FieldName)?.ToString() ?? "0")
+                        );
+                    }
+
+                    // Cari Hareketi Kaydet
+                    _CariHareketTableAdapter.Insert(gercekFaturaId, Convert.ToInt32(lueCari.EditValue), 2, Convert.ToDateTime(dtSatisTarihi.Text), Convert.ToDouble(txtSatisTutar.Text));
+
+                    // İşlemi onayla
+                    _scopeInsertSatisFatura.Complete();
+
+                } // <--- DİKKAT: Veritabanına kayıt işlemi tam bu noktada ("}") kalıcı olarak yazılır!
+
+
+                // 4. SON İŞLEMLER (Transaction BİTTİKTEN Sonra)
+                MessageBox.Show("Kayıt Başarılı!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                formTemizle(); // Artık veritabanı güncellendiği için FisNoOlustur yeni kaydı görebilir ve numarayı artırabilir!
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Yönetilemeyen bir hata ile karşılaşıldı:\n" + ex.Message, "Sistem Hatası", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void formTemizle()
+        {
+            lueCari.EditValue = null;
+            dtSatisTarihi.Text = utcTime.ToString();
+            txtAdSoyad.Clear();
+            txtTelefon.Clear();
+            txtAciklama.Clear();
+            txtSatisTutar.Text = "0.00";
+
+
+            if (gridControlSatisFatura.DataSource is DataTable dt)
+            {
+                dt.Clear();
+            }
+            else
+            {
+                // Eğer grid doğrudan bir tabloya değil de listeye bağlıysa veri kaynağını sıfırlarız.
+                gridControlSatisFatura.DataSource = null;
+            }
+
+            // YENİ FATURA İÇİN HAZIRLIK (Opsiyonel ama tavsiye edilir)
+            // Form temizlendikten sonra sıradaki fatura için yeni bir Fiş/Fatura Numarası oluşturmak isteyebilirsin.
+            FisNoOlustur();
+        }
+
     }
 }
