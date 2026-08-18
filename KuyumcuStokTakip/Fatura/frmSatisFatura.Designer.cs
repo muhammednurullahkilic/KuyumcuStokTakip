@@ -49,6 +49,7 @@
             this.gridIscilik = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridHasMiktar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridHasFiyat = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridEldekiMiktar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnSil = new DevExpress.XtraEditors.SimpleButton();
             this.btnKaydet = new DevExpress.XtraEditors.SimpleButton();
             this.lblAdSoyad = new System.Windows.Forms.Label();
@@ -57,6 +58,7 @@
             this.txtAciklama = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.chkMuhtelif = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.lueCari.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtSatisTarihi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtSatisTarihi.Properties.CalendarTimeProperties)).BeginInit();
@@ -88,7 +90,7 @@
             // lblTutar
             // 
             this.lblTutar.AutoSize = true;
-            this.lblTutar.Location = new System.Drawing.Point(688, 31);
+            this.lblTutar.Location = new System.Drawing.Point(852, 25);
             this.lblTutar.Name = "lblTutar";
             this.lblTutar.Size = new System.Drawing.Size(46, 16);
             this.lblTutar.TabIndex = 4;
@@ -120,7 +122,7 @@
             // 
             // txtSatisTutar
             // 
-            this.txtSatisTutar.Location = new System.Drawing.Point(781, 28);
+            this.txtSatisTutar.Location = new System.Drawing.Point(945, 22);
             this.txtSatisTutar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSatisTutar.Name = "txtSatisTutar";
             this.txtSatisTutar.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
@@ -172,7 +174,8 @@
             this.gridMaliyet,
             this.gridIscilik,
             this.gridHasMiktar,
-            this.gridHasFiyat});
+            this.gridHasFiyat,
+            this.gridEldekiMiktar});
             this.gridSatisFaturasi.GridControl = this.gridControlSatisFatura;
             this.gridSatisFaturasi.GroupPanelText = "Satış Fatura Sepet Listesi";
             this.gridSatisFaturasi.Name = "gridSatisFaturasi";
@@ -218,7 +221,7 @@
             this.gridTutar.Name = "gridTutar";
             this.gridTutar.OptionsColumn.AllowEdit = false;
             this.gridTutar.Visible = true;
-            this.gridTutar.VisibleIndex = 7;
+            this.gridTutar.VisibleIndex = 8;
             this.gridTutar.Width = 93;
             // 
             // gridGramMiktar
@@ -228,7 +231,7 @@
             this.gridGramMiktar.MinWidth = 27;
             this.gridGramMiktar.Name = "gridGramMiktar";
             this.gridGramMiktar.Visible = true;
-            this.gridGramMiktar.VisibleIndex = 2;
+            this.gridGramMiktar.VisibleIndex = 3;
             this.gridGramMiktar.Width = 100;
             // 
             // gridMilyem
@@ -249,7 +252,7 @@
             this.gridMaliyet.MinWidth = 25;
             this.gridMaliyet.Name = "gridMaliyet";
             this.gridMaliyet.Visible = true;
-            this.gridMaliyet.VisibleIndex = 3;
+            this.gridMaliyet.VisibleIndex = 4;
             this.gridMaliyet.Width = 94;
             // 
             // gridIscilik
@@ -259,7 +262,7 @@
             this.gridIscilik.MinWidth = 25;
             this.gridIscilik.Name = "gridIscilik";
             this.gridIscilik.Visible = true;
-            this.gridIscilik.VisibleIndex = 4;
+            this.gridIscilik.VisibleIndex = 5;
             this.gridIscilik.Width = 94;
             // 
             // gridHasMiktar
@@ -270,7 +273,7 @@
             this.gridHasMiktar.Name = "gridHasMiktar";
             this.gridHasMiktar.OptionsColumn.AllowEdit = false;
             this.gridHasMiktar.Visible = true;
-            this.gridHasMiktar.VisibleIndex = 5;
+            this.gridHasMiktar.VisibleIndex = 6;
             this.gridHasMiktar.Width = 94;
             // 
             // gridHasFiyat
@@ -280,8 +283,20 @@
             this.gridHasFiyat.MinWidth = 25;
             this.gridHasFiyat.Name = "gridHasFiyat";
             this.gridHasFiyat.Visible = true;
-            this.gridHasFiyat.VisibleIndex = 6;
+            this.gridHasFiyat.VisibleIndex = 7;
             this.gridHasFiyat.Width = 94;
+            // 
+            // gridEldekiMiktar
+            // 
+            this.gridEldekiMiktar.Caption = "Eldeki Miktar";
+            this.gridEldekiMiktar.FieldName = "UrunTotalGram";
+            this.gridEldekiMiktar.MinWidth = 25;
+            this.gridEldekiMiktar.Name = "gridEldekiMiktar";
+            this.gridEldekiMiktar.OptionsColumn.AllowEdit = false;
+            this.gridEldekiMiktar.OptionsColumn.ReadOnly = true;
+            this.gridEldekiMiktar.Visible = true;
+            this.gridEldekiMiktar.VisibleIndex = 2;
+            this.gridEldekiMiktar.Width = 94;
             // 
             // btnSil
             // 
@@ -309,7 +324,7 @@
             // lblAdSoyad
             // 
             this.lblAdSoyad.AutoSize = true;
-            this.lblAdSoyad.Location = new System.Drawing.Point(375, 30);
+            this.lblAdSoyad.Location = new System.Drawing.Point(539, 24);
             this.lblAdSoyad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAdSoyad.Name = "lblAdSoyad";
             this.lblAdSoyad.Size = new System.Drawing.Size(67, 16);
@@ -318,7 +333,7 @@
             // 
             // txtAdSoyad
             // 
-            this.txtAdSoyad.Location = new System.Drawing.Point(472, 26);
+            this.txtAdSoyad.Location = new System.Drawing.Point(636, 20);
             this.txtAdSoyad.Margin = new System.Windows.Forms.Padding(4);
             this.txtAdSoyad.Name = "txtAdSoyad";
             this.txtAdSoyad.Size = new System.Drawing.Size(175, 22);
@@ -326,7 +341,7 @@
             // 
             // txtTelefon
             // 
-            this.txtTelefon.Location = new System.Drawing.Point(472, 76);
+            this.txtTelefon.Location = new System.Drawing.Point(636, 70);
             this.txtTelefon.Margin = new System.Windows.Forms.Padding(4);
             this.txtTelefon.Name = "txtTelefon";
             this.txtTelefon.Size = new System.Drawing.Size(175, 22);
@@ -334,7 +349,7 @@
             // 
             // txtAciklama
             // 
-            this.txtAciklama.Location = new System.Drawing.Point(472, 118);
+            this.txtAciklama.Location = new System.Drawing.Point(636, 112);
             this.txtAciklama.Margin = new System.Windows.Forms.Padding(4);
             this.txtAciklama.Name = "txtAciklama";
             this.txtAciklama.Size = new System.Drawing.Size(175, 22);
@@ -343,7 +358,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(376, 76);
+            this.label1.Location = new System.Drawing.Point(540, 70);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 16);
@@ -353,18 +368,30 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(380, 126);
+            this.label2.Location = new System.Drawing.Point(544, 120);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 16);
             this.label2.TabIndex = 25;
             this.label2.Text = "Açıklama";
             // 
+            // chkMuhtelif
+            // 
+            this.chkMuhtelif.AutoSize = true;
+            this.chkMuhtelif.Location = new System.Drawing.Point(365, 72);
+            this.chkMuhtelif.Name = "chkMuhtelif";
+            this.chkMuhtelif.Size = new System.Drawing.Size(93, 25);
+            this.chkMuhtelif.TabIndex = 26;
+            this.chkMuhtelif.Text = "Muhtelif";
+            this.chkMuhtelif.UseVisualStyleBackColor = true;
+            this.chkMuhtelif.CheckedChanged += new System.EventHandler(this.chkMuhtelif_CheckedChanged);
+            // 
             // frmSatisFatura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1488, 641);
+            this.Controls.Add(this.chkMuhtelif);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtAciklama);
@@ -429,5 +456,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridIscilik;
         private DevExpress.XtraGrid.Columns.GridColumn gridHasMiktar;
         private DevExpress.XtraGrid.Columns.GridColumn gridHasFiyat;
+        private DevExpress.XtraGrid.Columns.GridColumn gridEldekiMiktar;
+        private System.Windows.Forms.CheckBox chkMuhtelif;
     }
 }

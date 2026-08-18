@@ -59,6 +59,7 @@
             this.gridHasMiktar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridTutar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridHasFiyat = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.chkMuhtelif = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.lueCari.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtAlisTarihi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtAlisTarihi.Properties.CalendarTimeProperties)).BeginInit();
@@ -90,7 +91,7 @@
             // lblTutar
             // 
             this.lblTutar.AutoSize = true;
-            this.lblTutar.Location = new System.Drawing.Point(705, 36);
+            this.lblTutar.Location = new System.Drawing.Point(835, 34);
             this.lblTutar.Name = "lblTutar";
             this.lblTutar.Size = new System.Drawing.Size(46, 16);
             this.lblTutar.TabIndex = 4;
@@ -126,7 +127,7 @@
             // 
             // txtAlisTutar
             // 
-            this.txtAlisTutar.Location = new System.Drawing.Point(792, 32);
+            this.txtAlisTutar.Location = new System.Drawing.Point(922, 30);
             this.txtAlisTutar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAlisTutar.Name = "txtAlisTutar";
             this.txtAlisTutar.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
@@ -176,7 +177,7 @@
             // 
             // lblAciklama
             // 
-            this.lblAciklama.Location = new System.Drawing.Point(391, 118);
+            this.lblAciklama.Location = new System.Drawing.Point(521, 116);
             this.lblAciklama.Margin = new System.Windows.Forms.Padding(4);
             this.lblAciklama.Name = "lblAciklama";
             this.lblAciklama.Size = new System.Drawing.Size(56, 16);
@@ -185,7 +186,7 @@
             // 
             // txtAciklama
             // 
-            this.txtAciklama.Location = new System.Drawing.Point(481, 114);
+            this.txtAciklama.Location = new System.Drawing.Point(611, 112);
             this.txtAciklama.Margin = new System.Windows.Forms.Padding(4);
             this.txtAciklama.Name = "txtAciklama";
             this.txtAciklama.Size = new System.Drawing.Size(185, 22);
@@ -194,7 +195,7 @@
             // lblAdSoyad
             // 
             this.lblAdSoyad.AutoSize = true;
-            this.lblAdSoyad.Location = new System.Drawing.Point(387, 36);
+            this.lblAdSoyad.Location = new System.Drawing.Point(517, 34);
             this.lblAdSoyad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAdSoyad.Name = "lblAdSoyad";
             this.lblAdSoyad.Size = new System.Drawing.Size(67, 16);
@@ -203,7 +204,7 @@
             // 
             // txtAdSoyad
             // 
-            this.txtAdSoyad.Location = new System.Drawing.Point(481, 32);
+            this.txtAdSoyad.Location = new System.Drawing.Point(611, 30);
             this.txtAdSoyad.Margin = new System.Windows.Forms.Padding(4);
             this.txtAdSoyad.Name = "txtAdSoyad";
             this.txtAdSoyad.Size = new System.Drawing.Size(185, 22);
@@ -212,7 +213,7 @@
             // lblTelefon
             // 
             this.lblTelefon.AutoSize = true;
-            this.lblTelefon.Location = new System.Drawing.Point(387, 75);
+            this.lblTelefon.Location = new System.Drawing.Point(517, 73);
             this.lblTelefon.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTelefon.Name = "lblTelefon";
             this.lblTelefon.Size = new System.Drawing.Size(53, 16);
@@ -221,7 +222,7 @@
             // 
             // txtTelefon
             // 
-            this.txtTelefon.Location = new System.Drawing.Point(483, 71);
+            this.txtTelefon.Location = new System.Drawing.Point(613, 69);
             this.txtTelefon.Margin = new System.Windows.Forms.Padding(4);
             this.txtTelefon.Name = "txtTelefon";
             this.txtTelefon.Size = new System.Drawing.Size(184, 22);
@@ -389,11 +390,23 @@
             this.gridHasFiyat.VisibleIndex = 6;
             this.gridHasFiyat.Width = 94;
             // 
+            // chkMuhtelif
+            // 
+            this.chkMuhtelif.AutoSize = true;
+            this.chkMuhtelif.Location = new System.Drawing.Point(379, 74);
+            this.chkMuhtelif.Name = "chkMuhtelif";
+            this.chkMuhtelif.Size = new System.Drawing.Size(93, 25);
+            this.chkMuhtelif.TabIndex = 30;
+            this.chkMuhtelif.Text = "Muhtelif";
+            this.chkMuhtelif.UseVisualStyleBackColor = true;
+            this.chkMuhtelif.CheckedChanged += new System.EventHandler(this.chkMuhtelif_CheckedChanged);
+            // 
             // frmAlisFatura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1366, 624);
+            this.Controls.Add(this.chkMuhtelif);
             this.Controls.Add(this.gridControlAlisFatura);
             this.Controls.Add(this.txtTelefon);
             this.Controls.Add(this.lblTelefon);
@@ -460,5 +473,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridHasFiyat;
+        private System.Windows.Forms.CheckBox chkMuhtelif;
     }
 }

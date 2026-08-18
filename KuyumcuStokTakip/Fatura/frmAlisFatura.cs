@@ -236,14 +236,37 @@ namespace KuyumcuStokTakip.Fatura
         {
             try
             {
-                // 1. KONTROL: ZORUNLU ALANLAR
-                if (string.IsNullOrWhiteSpace(txtAlisFaturaNo.Text) ||
-                    string.IsNullOrWhiteSpace(lueCari.Text) ||
-                    string.IsNullOrWhiteSpace(dtAlisTarihi.Text))
+                //// 1. KONTROL: ZORUNLU ALANLAR
+                //if (!string.IsNullOrWhiteSpace(txtAlisFaturaNo.Text) ||
+                //    !string.IsNullOrWhiteSpace(lueCari.Text) ||
+                //    !string.IsNullOrWhiteSpace(dtAlisTarihi.Text))
+                //{
+                //    MessageBox.Show("Lütfen zorunlu alanları (Fatura No, Cari, Tarih) doldurun!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //    return; // İşlemi burada kes
+                //}
+
+
+                // 1. Fatura No Testi
+                if (string.IsNullOrWhiteSpace(txtAlisFaturaNo.Text))
                 {
-                    MessageBox.Show("Lütfen zorunlu alanları (Fatura No, Cari, Tarih) doldurun!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return; // İşlemi burada kes
+                    MessageBox.Show("SİSTEM DİYOR Kİ: Fatura Numarası alanı boş algılandı!", "Hata Tespiti", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
+
+                // 2. Tarih Testi
+                if (string.IsNullOrWhiteSpace(dtAlisTarihi.Text))
+                {
+                    MessageBox.Show("SİSTEM DİYOR Kİ: Tarih alanı boş algılandı!", "Hata Tespiti", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // 3. Cari Seçimi Testi (DevExpress Null/DBNull/Empty kontrolleri dahil)
+                if (lueCari.EditValue == null || lueCari.EditValue == DBNull.Value || lueCari.EditValue.ToString() == "" || lueCari.Text == "Lütfen Seçiniz...")
+                {
+                    MessageBox.Show("SİSTEM DİYOR Kİ: Cari seçimi arka planda boş görünüyor!\nListedeki bir cariyie gerçekten tıkladığınızdan emin olun.", "Hata Tespiti", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
 
                 // 2. KONTROL: BOŞ FATURA ENGELLENMESİ
                 // DataRowCount 0 ise grid'e hiç satır (stok) girilmemiş demektir.
@@ -299,6 +322,8 @@ namespace KuyumcuStokTakip.Fatura
                             Convert.ToDouble(gridAlisFatura.GetRowCellValue(i, gridMilyem.FieldName)?.ToString() ?? "0"),
                             Convert.ToDouble(gridAlisFatura.GetRowCellValue(i, gridTutar.FieldName)?.ToString() ?? "0"),
                             Convert.ToDouble(gridAlisFatura.GetRowCellValue(i, gridHasFiyat.FieldName)?.ToString() ?? "0")
+                            
+
                         );
                     }
 
@@ -347,6 +372,34 @@ namespace KuyumcuStokTakip.Fatura
             FisNoOlustur();
         }
 
+        private void chkMuhtelif_CheckedChanged(object sender, EventArgs e)
+        {
+            // Eğer Muhtelif kutucuğu İŞARETLENDİYSE
+            if (chkMuhtelif.Checked)
+            {
+                // ÇÖZÜM BURADA: DataSet'te yazdığın "GetDataByCariAd" sorgusuna parametreyi gönderip çağırıyoruz
+                var muhtelifCari = _CariTableAdapter.GetDataByCariKod("M0001").FirstOrDefault();
 
+                if (muhtelifCari != null)
+                {
+                    // Bulduğumuz carinin ID'sini LookUpEdit'e atıyoruz
+                    lueCari.EditValue = muhtelifCari.CariID;
+
+                    // Kullanıcı bu seçimi yanlışlıkla değiştirmesin diye kilitliyoruz
+                    lueCari.Enabled = false;
+                }
+                else
+                {
+                    MessageBox.Show("Sistemde 'Muhtelif Alış Satış' adında bir cari bulunamadı!", "Kayıt Bulunamadı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    chkMuhtelif.Checked = false; // Hataya düştüğü için tiki geri kaldırıyoruz
+                }
+            }
+            // Eğer Muhtelif kutucuğundan TİK KALDIRILDIYSA
+            else
+            {
+                lueCari.EditValue = null; // Seçimi temizle
+                lueCari.Enabled = true;   // Kilidi aç, kullanıcı normal cari seçebilsin
+            }
+        }
     }
 }

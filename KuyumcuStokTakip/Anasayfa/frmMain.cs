@@ -2,6 +2,7 @@
 using DevExpress.XtraTabbedMdi;
 using KuyumcuStokTakip.Cari;
 using KuyumcuStokTakip.Fatura;
+using KuyumcuStokTakip.Kasa;
 using KuyumcuStokTakip.Profil;
 using KuyumcuStokTakip.Rapor;
 using KuyumcuStokTakip.Stok;
@@ -108,6 +109,11 @@ namespace KuyumcuStokTakip
         private void btnIslemGecmisi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             OpenFormShow(new frmIslemGecmisiListele(), e.Item.Caption);
+        }
+
+        private void btnKasa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenFormShow(new frmKasaIslemleri(), e.Item.Caption);
         }
     }
 

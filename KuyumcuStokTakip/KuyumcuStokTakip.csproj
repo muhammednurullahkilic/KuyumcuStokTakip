@@ -114,6 +114,12 @@
     <Compile Include="GirisEkrani\frmGirisYap.Designer.cs">
       <DependentUpon>frmGirisYap.cs</DependentUpon>
     </Compile>
+    <Compile Include="Kasa\frmKasaIslemleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kasa\frmKasaIslemleri.Designer.cs">
+      <DependentUpon>frmKasaIslemleri.cs</DependentUpon>
+    </Compile>
     <Compile Include="Profil\frmKullaniciBilgileri.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GirisEkrani\frmGirisYap.resx">
       <DependentUpon>frmGirisYap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kasa\frmKasaIslemleri.resx">
+      <DependentUpon>frmKasaIslemleri.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Profil\frmKullaniciBilgileri.resx">
       <DependentUpon>frmKullaniciBilgileri.cs</DependentUpon>
