@@ -22,6 +22,10 @@ namespace KuyumcuStokTakip.Fatura
         private readonly CariTableAdapter _CariTableAdapter = new CariTableAdapter();
         private readonly CariHareketTableAdapter _CariHareketTableAdapter = new CariHareketTableAdapter();
 
+        private readonly KasaTableAdapter _KasaTableAdapter = new KasaTableAdapter();
+
+
+        string KasafisNo = " ";
         private TransactionScope _scopeInsertSatisFatura;
         public frmSatisFatura()
         {
@@ -251,9 +255,17 @@ namespace KuyumcuStokTakip.Fatura
 
                     // Cari Hareketi Kaydet
 
-                    _CariHareketTableAdapter.Insert(gercekFaturaId, Convert.ToInt32(lueCari.EditValue), 2, Convert.ToDateTime(dtSatisTarihi.Text), Convert.ToDouble(txtSatisTutar.Text));
+                    _CariHareketTableAdapter.Insert(gercekFaturaId, Convert.ToInt32(lueCari.EditValue), 2, Convert.ToDateTime(dtSatisTarihi.Text), Convert.ToDouble(txtSatisTutar.Text),20);
 
+                    if (chkMuhtelif.Checked)
+                    {
 
+                        KasaFisNoOlustur();
+                        var kasaKayitID = _KasaTableAdapter.InsertQuery(Convert.ToInt32(lueCari.EditValue), DateTime.Now, 1, Convert.ToDouble(txtSatisTutar.Text), " ", KasafisNo);
+
+                        _CariHareketTableAdapter.Insert(Convert.ToInt32(kasaKayitID), Convert.ToInt32(lueCari.EditValue), 1, Convert.ToDateTime(dtSatisTarihi.Text), Convert.ToDouble(txtSatisTutar.Text), 30);
+
+                    }
 
                     // İşlemi onayla
 
@@ -286,6 +298,29 @@ namespace KuyumcuStokTakip.Fatura
             }
 
         }
+
+        private string KasaFisNoOlustur()
+        {
+            string onEk = "KS";
+
+            var maxFis = _KasaTableAdapter.ScalarQueryKasaFisNo(onEk);
+            if (maxFis != null)
+            {
+                string sonKod = maxFis.ToString();
+                string sonDortHane = sonKod.Substring(sonKod.Length - 4);
+                int yeniSira = Convert.ToInt32(sonDortHane) + 1;
+                KasafisNo = onEk + yeniSira.ToString("D4");
+            }
+            else
+            {
+                KasafisNo = "KS0001";
+                KasafisNo = onEk + "0001";
+            }
+
+            txtSatisFaturaNo.Text = KasafisNo;
+            return KasafisNo;
+        }
+
         private void gridSatisFaturasi_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
             if (e.Column.FieldName == gridStokKod.FieldName)

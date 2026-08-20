@@ -115,6 +115,11 @@ namespace KuyumcuStokTakip
         {
             OpenFormShow(new frmKasaIslemleri(), e.Item.Caption);
         }
+
+        private void btnCariBorcAlacak_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenFormShow(new frmCariBorcAlacak(), e.Item.Caption);
+        }
     }
 
 }

@@ -577,6 +577,8 @@ namespace KuyumcuStokTakip.Database {
             
             private global::System.Data.DataColumn columnIsActive;
             
+            private global::System.Data.DataColumn columnCariTipi;
+            
             private global::System.Data.DataColumn columnCariTipAdi;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -686,6 +688,14 @@ namespace KuyumcuStokTakip.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public global::System.Data.DataColumn CariTipiColumn {
+                get {
+                    return this.columnCariTipi;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             public global::System.Data.DataColumn CariTipAdiColumn {
                 get {
                     return this.columnCariTipAdi;
@@ -729,7 +739,7 @@ namespace KuyumcuStokTakip.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public CariRow AddCariRow(int CariID, string CariKod, string CariAd, string CariAdres, string CariNot, string CariTelefon, int CUser, System.DateTime CDate, bool IsActive, string CariTipAdi) {
+            public CariRow AddCariRow(int CariID, string CariKod, string CariAd, string CariAdres, string CariNot, string CariTelefon, int CUser, System.DateTime CDate, bool IsActive, int CariTipi, string CariTipAdi) {
                 CariRow rowCariRow = ((CariRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         CariID,
@@ -741,6 +751,7 @@ namespace KuyumcuStokTakip.Database {
                         CUser,
                         CDate,
                         IsActive,
+                        CariTipi,
                         CariTipAdi};
                 rowCariRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCariRow);
@@ -780,6 +791,7 @@ namespace KuyumcuStokTakip.Database {
                 this.columnCUser = base.Columns["CUser"];
                 this.columnCDate = base.Columns["CDate"];
                 this.columnIsActive = base.Columns["IsActive"];
+                this.columnCariTipi = base.Columns["CariTipi"];
                 this.columnCariTipAdi = base.Columns["CariTipAdi"];
             }
             
@@ -804,12 +816,20 @@ namespace KuyumcuStokTakip.Database {
                 base.Columns.Add(this.columnCDate);
                 this.columnIsActive = new global::System.Data.DataColumn("IsActive", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnIsActive);
+                this.columnCariTipi = new global::System.Data.DataColumn("CariTipi", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCariTipi);
                 this.columnCariTipAdi = new global::System.Data.DataColumn("CariTipAdi", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCariTipAdi);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnCariID}, true));
                 this.columnCariID.AllowDBNull = false;
                 this.columnCariID.Unique = true;
+                this.columnCariKod.AllowDBNull = false;
+                this.columnCariAd.AllowDBNull = false;
+                this.columnCUser.AllowDBNull = false;
+                this.columnCDate.AllowDBNull = false;
+                this.columnCariTipi.AllowDBNull = false;
+                this.columnCariTipAdi.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3254,6 +3274,8 @@ namespace KuyumcuStokTakip.Database {
             
             private global::System.Data.DataColumn columnCH_TUTAR;
             
+            private global::System.Data.DataColumn columnCH_TUR;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             public CariHareketDataTable() {
@@ -3337,6 +3359,14 @@ namespace KuyumcuStokTakip.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public global::System.Data.DataColumn CH_TURColumn {
+                get {
+                    return this.columnCH_TUR;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3372,7 +3402,7 @@ namespace KuyumcuStokTakip.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public CariHareketRow AddCariHareketRow(int FaturaID, int CariID, int CH_TIP, System.DateTime CH_TARIH, double CH_TUTAR) {
+            public CariHareketRow AddCariHareketRow(int FaturaID, int CariID, int CH_TIP, System.DateTime CH_TARIH, double CH_TUTAR, int CH_TUR) {
                 CariHareketRow rowCariHareketRow = ((CariHareketRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -3380,7 +3410,8 @@ namespace KuyumcuStokTakip.Database {
                         CariID,
                         CH_TIP,
                         CH_TARIH,
-                        CH_TUTAR};
+                        CH_TUTAR,
+                        CH_TUR};
                 rowCariHareketRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCariHareketRow);
                 return rowCariHareketRow;
@@ -3416,6 +3447,7 @@ namespace KuyumcuStokTakip.Database {
                 this.columnCH_TIP = base.Columns["CH_TIP"];
                 this.columnCH_TARIH = base.Columns["CH_TARIH"];
                 this.columnCH_TUTAR = base.Columns["CH_TUTAR"];
+                this.columnCH_TUR = base.Columns["CH_TUR"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3433,6 +3465,8 @@ namespace KuyumcuStokTakip.Database {
                 base.Columns.Add(this.columnCH_TARIH);
                 this.columnCH_TUTAR = new global::System.Data.DataColumn("CH_TUTAR", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCH_TUTAR);
+                this.columnCH_TUR = new global::System.Data.DataColumn("CH_TUR", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCH_TUR);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnCH_ID}, true));
                 this.columnCH_ID.AutoIncrement = true;
@@ -3586,6 +3620,8 @@ namespace KuyumcuStokTakip.Database {
             
             private global::System.Data.DataColumn columnAciklama;
             
+            private global::System.Data.DataColumn columnKasaNo;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             public KasaDataTable() {
@@ -3669,6 +3705,14 @@ namespace KuyumcuStokTakip.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public global::System.Data.DataColumn KasaNoColumn {
+                get {
+                    return this.columnKasaNo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3704,7 +3748,7 @@ namespace KuyumcuStokTakip.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public KasaRow AddKasaRow(int CariID, System.DateTime Tarih, int IslemTuru, double Tutar, string Aciklama) {
+            public KasaRow AddKasaRow(int CariID, System.DateTime Tarih, int IslemTuru, double Tutar, string Aciklama, string KasaNo) {
                 KasaRow rowKasaRow = ((KasaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -3712,7 +3756,8 @@ namespace KuyumcuStokTakip.Database {
                         Tarih,
                         IslemTuru,
                         Tutar,
-                        Aciklama};
+                        Aciklama,
+                        KasaNo};
                 rowKasaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowKasaRow);
                 return rowKasaRow;
@@ -3748,6 +3793,7 @@ namespace KuyumcuStokTakip.Database {
                 this.columnIslemTuru = base.Columns["IslemTuru"];
                 this.columnTutar = base.Columns["Tutar"];
                 this.columnAciklama = base.Columns["Aciklama"];
+                this.columnKasaNo = base.Columns["KasaNo"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3765,6 +3811,8 @@ namespace KuyumcuStokTakip.Database {
                 base.Columns.Add(this.columnTutar);
                 this.columnAciklama = new global::System.Data.DataColumn("Aciklama", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAciklama);
+                this.columnKasaNo = new global::System.Data.DataColumn("KasaNo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnKasaNo);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnKasaID}, true));
                 this.columnKasaID.AutoIncrement = true;
@@ -3774,6 +3822,7 @@ namespace KuyumcuStokTakip.Database {
                 this.columnKasaID.ReadOnly = true;
                 this.columnKasaID.Unique = true;
                 this.columnAciklama.MaxLength = 250;
+                this.columnKasaNo.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3929,12 +3978,7 @@ namespace KuyumcuStokTakip.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             public string CariKod {
                 get {
-                    try {
-                        return ((string)(this[this.tableCari.CariKodColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CariKod\' in table \'Cari\' is DBNull.", e);
-                    }
+                    return ((string)(this[this.tableCari.CariKodColumn]));
                 }
                 set {
                     this[this.tableCari.CariKodColumn] = value;
@@ -3945,12 +3989,7 @@ namespace KuyumcuStokTakip.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             public string CariAd {
                 get {
-                    try {
-                        return ((string)(this[this.tableCari.CariAdColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CariAd\' in table \'Cari\' is DBNull.", e);
-                    }
+                    return ((string)(this[this.tableCari.CariAdColumn]));
                 }
                 set {
                     this[this.tableCari.CariAdColumn] = value;
@@ -4009,12 +4048,7 @@ namespace KuyumcuStokTakip.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             public int CUser {
                 get {
-                    try {
-                        return ((int)(this[this.tableCari.CUserColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CUser\' in table \'Cari\' is DBNull.", e);
-                    }
+                    return ((int)(this[this.tableCari.CUserColumn]));
                 }
                 set {
                     this[this.tableCari.CUserColumn] = value;
@@ -4025,12 +4059,7 @@ namespace KuyumcuStokTakip.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             public System.DateTime CDate {
                 get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableCari.CDateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CDate\' in table \'Cari\' is DBNull.", e);
-                    }
+                    return ((global::System.DateTime)(this[this.tableCari.CDateColumn]));
                 }
                 set {
                     this[this.tableCari.CDateColumn] = value;
@@ -4055,6 +4084,17 @@ namespace KuyumcuStokTakip.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public int CariTipi {
+                get {
+                    return ((int)(this[this.tableCari.CariTipiColumn]));
+                }
+                set {
+                    this[this.tableCari.CariTipiColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             public string CariTipAdi {
                 get {
                     try {
@@ -4067,30 +4107,6 @@ namespace KuyumcuStokTakip.Database {
                 set {
                     this[this.tableCari.CariTipAdiColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public bool IsCariKodNull() {
-                return this.IsNull(this.tableCari.CariKodColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public void SetCariKodNull() {
-                this[this.tableCari.CariKodColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public bool IsCariAdNull() {
-                return this.IsNull(this.tableCari.CariAdColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public void SetCariAdNull() {
-                this[this.tableCari.CariAdColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4127,30 +4143,6 @@ namespace KuyumcuStokTakip.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             public void SetCariTelefonNull() {
                 this[this.tableCari.CariTelefonColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public bool IsCUserNull() {
-                return this.IsNull(this.tableCari.CUserColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public void SetCUserNull() {
-                this[this.tableCari.CUserColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public bool IsCDateNull() {
-                return this.IsNull(this.tableCari.CDateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
-            public void SetCDateNull() {
-                this[this.tableCari.CDateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5552,6 +5544,22 @@ namespace KuyumcuStokTakip.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public int CH_TUR {
+                get {
+                    try {
+                        return ((int)(this[this.tableCariHareket.CH_TURColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CH_TUR\' in table \'CariHareket\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCariHareket.CH_TURColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             public bool IsFaturaIDNull() {
                 return this.IsNull(this.tableCariHareket.FaturaIDColumn);
             }
@@ -5608,6 +5616,18 @@ namespace KuyumcuStokTakip.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             public void SetCH_TUTARNull() {
                 this[this.tableCariHareket.CH_TUTARColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public bool IsCH_TURNull() {
+                return this.IsNull(this.tableCariHareket.CH_TURColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public void SetCH_TURNull() {
+                this[this.tableCariHareket.CH_TURColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -5718,6 +5738,22 @@ namespace KuyumcuStokTakip.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public string KasaNo {
+                get {
+                    try {
+                        return ((string)(this[this.tableKasa.KasaNoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'KasaNo\' in table \'Kasa\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableKasa.KasaNoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             public bool IsCariIDNull() {
                 return this.IsNull(this.tableKasa.CariIDColumn);
             }
@@ -5774,6 +5810,18 @@ namespace KuyumcuStokTakip.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
             public void SetAciklamaNull() {
                 this[this.tableKasa.AciklamaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public bool IsKasaNoNull() {
+                return this.IsNull(this.tableKasa.KasaNoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+            public void SetKasaNoNull() {
+                this[this.tableKasa.KasaNoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -6217,6 +6265,7 @@ namespace KuyumcuStokTakip.Database.KuyumcuStokTakipTableAdapters {
             tableMapping.ColumnMappings.Add("CUser", "CUser");
             tableMapping.ColumnMappings.Add("CDate", "CDate");
             tableMapping.ColumnMappings.Add("IsActive", "IsActive");
+            tableMapping.ColumnMappings.Add("CariTipi", "CariTipi");
             tableMapping.ColumnMappings.Add("CariTipAdi", "CariTipAdi");
             this._adapter.TableMappings.Add(tableMapping);
         }
@@ -6231,13 +6280,12 @@ namespace KuyumcuStokTakip.Database.KuyumcuStokTakipTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[6];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Cari.CariID, Cari.CariKod, Cari.CariAd, Cari.CariAdres, Cari.CariNot, Cari" +
-                ".CariTelefon, CariTip.Tip AS CariTipAdi, Cari.CUser, Cari.CDate, Cari.IsActive\r\n" +
-                "FROM     Cari INNER JOIN\r\n                  CariTip ON Cari.CariTipi = CariTip.I" +
-                "D";
+            this._commandCollection[0].CommandText = "SELECT c.CariID, c.CariKod, c.CariAd, c.CariAdres, c.CariNot, c.CariTelefon, c.CU" +
+                "ser, c.CDate, c.IsActive, c.CariTipi, ct.Tip AS CariTipAdi\r\nFROM     Cari AS c L" +
+                "EFT OUTER JOIN\r\n                  CariTip AS ct ON c.CariTipi = ct.ID";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -6246,31 +6294,40 @@ namespace KuyumcuStokTakip.Database.KuyumcuStokTakipTableAdapters {
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CariKod", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "CariKod", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT CariID, CariKod, CariTipi, CariAd, CariAdres, CariNot, CariTelefon, CUser," +
-                " CDate, MUserID, MDate, IsActive\r\nFROM     Cari\r\nWHERE  (CariKod = @CariKod)";
+            this._commandCollection[2].CommandText = @"SELECT c.CariID, c.CariKod, c.CariAd, c.CariAdres, c.CariNot, c.CariTelefon, c.CUser, c.CDate, c.IsActive, c.CariTipi, ct.Tip AS CariTipAdi
+FROM     Cari AS c LEFT OUTER JOIN
+                  CariTip AS ct ON c.CariTipi = ct.ID
+WHERE  (c.CariKod = @CariKod)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CariKod", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "CariKod", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "INSERT INTO [Cari] ([CariKod], [CariTipi], [CariAd], [CariAdres], [CariNot], [Car" +
-                "iTelefon], [CUser], [CDate], [IsActive]) VALUES (@CariKod, @CariTipi, @CariAd, @" +
-                "CariAdres, @CariNot, @CariTelefon, @CUser, @CDate, @IsActive);\r\n";
+            this._commandCollection[3].CommandText = "SELECT Cari.CariID, Cari.CariKod, Cari.CariAd, Cari.CariAdres, Cari.CariNot, Cari" +
+                ".CariTelefon, CariTip.Tip AS CariTipAdi, Cari.CUser, Cari.CDate, Cari.IsActive\r\n" +
+                "FROM     Cari INNER JOIN\r\n                  CariTip ON Cari.CariTipi = CariTip.I" +
+                "D";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CariKod", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "CariKod", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CariTipi", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CariTipi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CariAd", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "CariAd", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CariAdres", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "CariAdres", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CariNot", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "CariNot", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CariTelefon", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "CariTelefon", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CUser", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CUser", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CDate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "CDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsActive", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "IsActive", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT        TOP (1) CariKod\r\nFROM            Cari\r\nWHERE        (CariKod LIKE @" +
-                "Harf + \'%\')\r\nORDER BY CAST(RIGHT(CariKod, 4) AS INT) DESC";
+            this._commandCollection[4].CommandText = "INSERT INTO [Cari] ([CariKod], [CariTipi], [CariAd], [CariAdres], [CariNot], [Car" +
+                "iTelefon], [CUser], [CDate], [IsActive]) VALUES (@CariKod, @CariTipi, @CariAd, @" +
+                "CariAdres, @CariNot, @CariTelefon, @CUser, @CDate, @IsActive);\r\n";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Harf", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "CariKod", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CariKod", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "CariKod", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CariTipi", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CariTipi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CariAd", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "CariAd", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CariAdres", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "CariAdres", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CariNot", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "CariNot", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CariTelefon", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "CariTelefon", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CUser", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CUser", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CDate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "CDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsActive", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "IsActive", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = "SELECT        TOP (1) CariKod\r\nFROM            Cari\r\nWHERE        (CariKod LIKE @" +
+                "Harf + \'%\')\r\nORDER BY CAST(RIGHT(CariKod, 4) AS INT) DESC";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Harf", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "CariKod", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6304,7 +6361,7 @@ namespace KuyumcuStokTakip.Database.KuyumcuStokTakipTableAdapters {
         public virtual KuyumcuStokTakip.CariDataTable GetDataByCariKod(string CariKod) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((CariKod == null)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("CariKod");
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(CariKod));
@@ -6317,10 +6374,21 @@ namespace KuyumcuStokTakip.Database.KuyumcuStokTakipTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual KuyumcuStokTakip.CariDataTable GetDataByList() {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            KuyumcuStokTakip.CariDataTable dataTable = new KuyumcuStokTakip.CariDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual global::System.Nullable<int> CariKodKontrolEt(string CariKod) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
             if ((CariKod == null)) {
-                command.Parameters[0].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("CariKod");
             }
             else {
                 command.Parameters[0].Value = ((string)(CariKod));
@@ -6352,17 +6420,17 @@ namespace KuyumcuStokTakip.Database.KuyumcuStokTakipTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int InsertQuery(string CariKod, int CariTipi, string CariAd, string CariAdres, string CariNot, string CariTelefon, global::System.Nullable<int> CUser, global::System.Nullable<global::System.DateTime> CDate, global::System.Nullable<bool> IsActive) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+        public virtual int InsertQuery(string CariKod, int CariTipi, string CariAd, string CariAdres, string CariNot, string CariTelefon, int CUser, System.DateTime CDate, global::System.Nullable<bool> IsActive) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
             if ((CariKod == null)) {
-                command.Parameters[0].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("CariKod");
             }
             else {
                 command.Parameters[0].Value = ((string)(CariKod));
             }
             command.Parameters[1].Value = ((int)(CariTipi));
             if ((CariAd == null)) {
-                command.Parameters[2].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("CariAd");
             }
             else {
                 command.Parameters[2].Value = ((string)(CariAd));
@@ -6385,18 +6453,8 @@ namespace KuyumcuStokTakip.Database.KuyumcuStokTakipTableAdapters {
             else {
                 command.Parameters[5].Value = ((string)(CariTelefon));
             }
-            if ((CUser.HasValue == true)) {
-                command.Parameters[6].Value = ((int)(CUser.Value));
-            }
-            else {
-                command.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((CDate.HasValue == true)) {
-                command.Parameters[7].Value = ((System.DateTime)(CDate.Value));
-            }
-            else {
-                command.Parameters[7].Value = global::System.DBNull.Value;
-            }
+            command.Parameters[6].Value = ((int)(CUser));
+            command.Parameters[7].Value = ((System.DateTime)(CDate));
             if ((IsActive.HasValue == true)) {
                 command.Parameters[8].Value = ((bool)(IsActive.Value));
             }
@@ -6424,9 +6482,9 @@ namespace KuyumcuStokTakip.Database.KuyumcuStokTakipTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual object ScalarQueryCariKod(string Harf) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
             if ((Harf == null)) {
-                command.Parameters[0].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("Harf");
             }
             else {
                 command.Parameters[0].Value = ((string)(Harf));
@@ -8671,7 +8729,7 @@ SELECT SH_ID, FaturaID, SH_TARIH, SH_TUR, StokID, SH_GRAMMIKTAR, SH_ISCILIK, SH_
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[6];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT SH_ID, FaturaID, SH_TARIH, SH_TUR, StokID, SH_GRAMMIKTAR, SH_ISCILIK, SH_M" +
@@ -8679,46 +8737,55 @@ SELECT SH_ID, FaturaID, SH_TARIH, SH_TUR, StokID, SH_GRAMMIKTAR, SH_ISCILIK, SH_
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT f.FT_FISNO AS FaturaNo, s.StokNo AS StokKod, c.CariAd, sh.SH_GRAMMIKTAR AS GramMiktar, sh.SH_MALIYET AS Maliyet, sh.SH_ISCILIK AS Iscilik, sh.SH_HASMIKTAR AS HasMiktar, sh.SH_HASFIYAT AS HasFiyat, 
+            this._commandCollection[1].CommandText = @"SELECT sh.SH_TARIH, c.CariID, c.CariAd, f.FT_FISNO, sh.SH_HASMIKTAR, sh.SH_HASFIYAT, sh.SH_TUTARTL, sh.SH_TUR
+FROM     StokHareket AS sh INNER JOIN
+                  Fatura AS f ON sh.FaturaID = f.FaturaID INNER JOIN
+                  Cari AS c ON f.FT_CARI = c.CariID
+WHERE  (c.CariID = @CariID)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CariID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CariID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"SELECT f.FT_FISNO AS FaturaNo, s.StokNo AS StokKod, c.CariAd, sh.SH_GRAMMIKTAR AS GramMiktar, sh.SH_MALIYET AS Maliyet, sh.SH_ISCILIK AS Iscilik, sh.SH_HASMIKTAR AS HasMiktar, sh.SH_HASFIYAT AS HasFiyat, 
                   sh.SH_TUTARTL AS Tutar, f.CUserID AS OlusturanPersonel, f.CDate AS OlusturulmaTarihi, f.MUserID AS GuncelleyenPersonel, f.MDate AS GuncellenmeTarihi
 FROM     StokHareket AS sh LEFT OUTER JOIN
                   Fatura AS f ON sh.FaturaID = f.FaturaID LEFT OUTER JOIN
                   Cari AS c ON f.FT_CARI = c.CariID LEFT OUTER JOIN
                   Stok AS s ON sh.StokID = s.StokID
 WHERE  (f.FT_TIP = @FaturaTipi)";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FaturaTipi", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "FT_TIP", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT FaturaID, SH_GRAMMIKTAR, SH_HASFIYAT, SH_HASMIKTAR, SH_ID, SH_ISCILIK, SH_" +
-                "MALIYET, SH_MILYEM, SH_TARIH, SH_TUR, SH_TUTARTL, StokID FROM StokHareket WHERE " +
-                "(FaturaID = @FaturaID)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FaturaID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "FaturaID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FaturaTipi", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "FT_TIP", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = @"SELECT SH.SH_ID, SH.FaturaID, SH.SH_TARIH, SH.SH_TUR, S.UrunTotalGram, SH.StokID, SH.SH_GRAMMIKTAR, SH.SH_ISCILIK, SH.SH_MALIYET, SH.SH_HASMIKTAR, SH.SH_MILYEM, SH.SH_TUTARTL, SH.SH_HASFIYAT
-FROM     StokHareket AS SH LEFT OUTER JOIN
-                  Stok AS S ON SH.StokID = S.StokID";
+            this._commandCollection[3].CommandText = "SELECT FaturaID, SH_GRAMMIKTAR, SH_HASFIYAT, SH_HASMIKTAR, SH_ID, SH_ISCILIK, SH_" +
+                "MALIYET, SH_MILYEM, SH_TARIH, SH_TUR, SH_TUTARTL, StokID FROM StokHareket WHERE " +
+                "(FaturaID = @FaturaID)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FaturaID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "FaturaID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = @"INSERT INTO StokHareket
+            this._commandCollection[4].CommandText = @"SELECT SH.SH_ID, SH.FaturaID, SH.SH_TARIH, SH.SH_TUR, S.UrunTotalGram, SH.StokID, SH.SH_GRAMMIKTAR, SH.SH_ISCILIK, SH.SH_MALIYET, SH.SH_HASMIKTAR, SH.SH_MILYEM, SH.SH_TUTARTL, SH.SH_HASFIYAT
+FROM     StokHareket AS SH LEFT OUTER JOIN
+                  Stok AS S ON SH.StokID = S.StokID";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = @"INSERT INTO StokHareket
                   (FaturaID, SH_TARIH, SH_TUR, StokID, SH_GRAMMIKTAR, SH_ISCILIK, SH_MALIYET, SH_HASMIKTAR, SH_MILYEM, SH_TUTARTL, SH_HASFIYAT)
 VALUES (@FaturaID,@SH_TARIH,@SH_TUR,@StokID,@SH_GRAMMIKTAR,@SH_ISCILIK,@SH_MALIYET,@SH_HASMIKTAR,@SH_MILYEM,@SH_TUTARTL,@SH_HASFIYAT);   
 SELECT SH_ID, FaturaID, SH_TARIH, SH_TUR, StokID, SH_GRAMMIKTAR, SH_ISCILIK, SH_MALIYET, SH_HASMIKTAR, SH_MILYEM, SH_TUTARTL, SH_HASFIYAT FROM StokHareket WHERE (SH_ID = SCOPE_IDENTITY())";
-            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FaturaID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "FaturaID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SH_TARIH", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "SH_TARIH", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SH_TUR", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SH_TUR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StokID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "StokID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SH_GRAMMIKTAR", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "SH_GRAMMIKTAR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SH_ISCILIK", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "SH_ISCILIK", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SH_MALIYET", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "SH_MALIYET", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SH_HASMIKTAR", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "SH_HASMIKTAR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SH_MILYEM", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "SH_MILYEM", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SH_TUTARTL", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "SH_TUTARTL", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SH_HASFIYAT", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "SH_HASFIYAT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FaturaID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "FaturaID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SH_TARIH", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "SH_TARIH", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SH_TUR", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SH_TUR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StokID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "StokID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SH_GRAMMIKTAR", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "SH_GRAMMIKTAR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SH_ISCILIK", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "SH_ISCILIK", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SH_MALIYET", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "SH_MALIYET", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SH_HASMIKTAR", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "SH_HASMIKTAR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SH_MILYEM", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "SH_MILYEM", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SH_TUTARTL", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "SH_TUTARTL", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SH_HASFIYAT", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "SH_HASFIYAT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8749,8 +8816,20 @@ SELECT SH_ID, FaturaID, SH_TARIH, SH_TUR, StokID, SH_GRAMMIKTAR, SH_ISCILIK, SH_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual KuyumcuStokTakip.StokHareketDataTable GetDataByIslemGecmisi(global::System.Nullable<int> FaturaTipi) {
+        public virtual KuyumcuStokTakip.StokHareketDataTable GetDataByCariRapor(int CariID) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(CariID));
+            KuyumcuStokTakip.StokHareketDataTable dataTable = new KuyumcuStokTakip.StokHareketDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual KuyumcuStokTakip.StokHareketDataTable GetDataByIslemGecmisi(global::System.Nullable<int> FaturaTipi) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((FaturaTipi.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((int)(FaturaTipi.Value));
             }
@@ -8767,7 +8846,7 @@ SELECT SH_ID, FaturaID, SH_TARIH, SH_TUR, StokID, SH_GRAMMIKTAR, SH_ISCILIK, SH_
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual KuyumcuStokTakip.StokHareketDataTable GetDataByStokHareketList(global::System.Nullable<int> FaturaID) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             if ((FaturaID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((int)(FaturaID.Value));
             }
@@ -8784,7 +8863,7 @@ SELECT SH_ID, FaturaID, SH_TARIH, SH_TUR, StokID, SH_GRAMMIKTAR, SH_ISCILIK, SH_
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual KuyumcuStokTakip.StokHareketDataTable GetDataList() {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             KuyumcuStokTakip.StokHareketDataTable dataTable = new KuyumcuStokTakip.StokHareketDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -9253,7 +9332,7 @@ SELECT SH_ID, FaturaID, SH_TARIH, SH_TUR, StokID, SH_GRAMMIKTAR, SH_ISCILIK, SH_
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int InsertQuery(global::System.Nullable<int> FaturaID, global::System.Nullable<global::System.DateTime> SH_TARIH, global::System.Nullable<int> SH_TUR, global::System.Nullable<int> StokID, global::System.Nullable<double> SH_GRAMMIKTAR, global::System.Nullable<double> SH_ISCILIK, global::System.Nullable<double> SH_MALIYET, global::System.Nullable<double> SH_HASMIKTAR, global::System.Nullable<double> SH_MILYEM, global::System.Nullable<double> SH_TUTARTL, global::System.Nullable<double> SH_HASFIYAT) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
             if ((FaturaID.HasValue == true)) {
                 command.Parameters[0].Value = ((int)(FaturaID.Value));
             }
@@ -10457,10 +10536,11 @@ SELECT FaturaID, FT_TARIH, FT_FISNO, FT_CARI, FT_SOFORBILGI, FT_SOFORTELEFON, FT
             tableMapping.ColumnMappings.Add("CH_TIP", "CH_TIP");
             tableMapping.ColumnMappings.Add("CH_TARIH", "CH_TARIH");
             tableMapping.ColumnMappings.Add("CH_TUTAR", "CH_TUTAR");
+            tableMapping.ColumnMappings.Add("CH_TUR", "CH_TUR");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [CariHareket] WHERE (([CH_ID] = @Original_CH_ID) AND ((@IsNull_FaturaID = 1 AND [FaturaID] IS NULL) OR ([FaturaID] = @Original_FaturaID)) AND ((@IsNull_CariID = 1 AND [CariID] IS NULL) OR ([CariID] = @Original_CariID)) AND ((@IsNull_CH_TIP = 1 AND [CH_TIP] IS NULL) OR ([CH_TIP] = @Original_CH_TIP)) AND ((@IsNull_CH_TARIH = 1 AND [CH_TARIH] IS NULL) OR ([CH_TARIH] = @Original_CH_TARIH)) AND ((@IsNull_CH_TUTAR = 1 AND [CH_TUTAR] IS NULL) OR ([CH_TUTAR] = @Original_CH_TUTAR)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [CariHareket] WHERE (([CH_ID] = @Original_CH_ID) AND ((@IsNull_FaturaID = 1 AND [FaturaID] IS NULL) OR ([FaturaID] = @Original_FaturaID)) AND ((@IsNull_CariID = 1 AND [CariID] IS NULL) OR ([CariID] = @Original_CariID)) AND ((@IsNull_CH_TIP = 1 AND [CH_TIP] IS NULL) OR ([CH_TIP] = @Original_CH_TIP)) AND ((@IsNull_CH_TARIH = 1 AND [CH_TARIH] IS NULL) OR ([CH_TARIH] = @Original_CH_TARIH)) AND ((@IsNull_CH_TUTAR = 1 AND [CH_TUTAR] IS NULL) OR ([CH_TUTAR] = @Original_CH_TUTAR)) AND ((@IsNull_CH_TUR = 1 AND [CH_TUR] IS NULL) OR ([CH_TUR] = @Original_CH_TUR)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CH_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CH_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FaturaID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FaturaID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -10473,28 +10553,30 @@ SELECT FaturaID, FT_TARIH, FT_FISNO, FT_CARI, FT_SOFORBILGI, FT_SOFORTELEFON, FT
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CH_TARIH", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CH_TARIH", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CH_TUTAR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CH_TUTAR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CH_TUTAR", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CH_TUTAR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CH_TUR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CH_TUR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CH_TUR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CH_TUR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [CariHareket] ([FaturaID], [CariID], [CH_TIP], [CH_TARIH], [CH_TUTAR]" +
-                ") VALUES (@FaturaID, @CariID, @CH_TIP, @CH_TARIH, @CH_TUTAR);\r\nSELECT CH_ID, Fat" +
-                "uraID, CariID, CH_TIP, CH_TARIH, CH_TUTAR FROM CariHareket WHERE (CH_ID = SCOPE_" +
-                "IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [CariHareket] ([FaturaID], [CariID], [CH_TIP], [CH_TARIH], [CH_TUTAR], [CH_TUR]) VALUES (@FaturaID, @CariID, @CH_TIP, @CH_TARIH, @CH_TUTAR, @CH_TUR);
+SELECT CH_ID, FaturaID, CariID, CH_TIP, CH_TARIH, CH_TUTAR, CH_TUR FROM CariHareket WHERE (CH_ID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FaturaID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FaturaID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CariID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CariID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CH_TIP", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CH_TIP", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CH_TARIH", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CH_TARIH", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CH_TUTAR", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CH_TUTAR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CH_TUR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CH_TUR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [CariHareket] SET [FaturaID] = @FaturaID, [CariID] = @CariID, [CH_TIP] = @CH_TIP, [CH_TARIH] = @CH_TARIH, [CH_TUTAR] = @CH_TUTAR WHERE (([CH_ID] = @Original_CH_ID) AND ((@IsNull_FaturaID = 1 AND [FaturaID] IS NULL) OR ([FaturaID] = @Original_FaturaID)) AND ((@IsNull_CariID = 1 AND [CariID] IS NULL) OR ([CariID] = @Original_CariID)) AND ((@IsNull_CH_TIP = 1 AND [CH_TIP] IS NULL) OR ([CH_TIP] = @Original_CH_TIP)) AND ((@IsNull_CH_TARIH = 1 AND [CH_TARIH] IS NULL) OR ([CH_TARIH] = @Original_CH_TARIH)) AND ((@IsNull_CH_TUTAR = 1 AND [CH_TUTAR] IS NULL) OR ([CH_TUTAR] = @Original_CH_TUTAR)));
-SELECT CH_ID, FaturaID, CariID, CH_TIP, CH_TARIH, CH_TUTAR FROM CariHareket WHERE (CH_ID = @CH_ID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [CariHareket] SET [FaturaID] = @FaturaID, [CariID] = @CariID, [CH_TIP] = @CH_TIP, [CH_TARIH] = @CH_TARIH, [CH_TUTAR] = @CH_TUTAR, [CH_TUR] = @CH_TUR WHERE (([CH_ID] = @Original_CH_ID) AND ((@IsNull_FaturaID = 1 AND [FaturaID] IS NULL) OR ([FaturaID] = @Original_FaturaID)) AND ((@IsNull_CariID = 1 AND [CariID] IS NULL) OR ([CariID] = @Original_CariID)) AND ((@IsNull_CH_TIP = 1 AND [CH_TIP] IS NULL) OR ([CH_TIP] = @Original_CH_TIP)) AND ((@IsNull_CH_TARIH = 1 AND [CH_TARIH] IS NULL) OR ([CH_TARIH] = @Original_CH_TARIH)) AND ((@IsNull_CH_TUTAR = 1 AND [CH_TUTAR] IS NULL) OR ([CH_TUTAR] = @Original_CH_TUTAR)) AND ((@IsNull_CH_TUR = 1 AND [CH_TUR] IS NULL) OR ([CH_TUR] = @Original_CH_TUR)));
+SELECT CH_ID, FaturaID, CariID, CH_TIP, CH_TARIH, CH_TUTAR, CH_TUR FROM CariHareket WHERE (CH_ID = @CH_ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FaturaID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FaturaID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CariID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CariID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CH_TIP", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CH_TIP", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CH_TARIH", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CH_TARIH", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CH_TUTAR", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CH_TUTAR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CH_TUR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CH_TUR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CH_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CH_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_FaturaID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FaturaID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FaturaID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FaturaID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -10506,6 +10588,8 @@ SELECT CH_ID, FaturaID, CariID, CH_TIP, CH_TARIH, CH_TUTAR FROM CariHareket WHER
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CH_TARIH", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CH_TARIH", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CH_TUTAR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CH_TUTAR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CH_TUTAR", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CH_TUTAR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CH_TUR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CH_TUR", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CH_TUR", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CH_TUR", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CH_ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CH_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -10519,23 +10603,41 @@ SELECT CH_ID, FaturaID, CariID, CH_TIP, CH_TARIH, CH_TUTAR FROM CariHareket WHER
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT CH_ID, FaturaID, CariID, CH_TIP, CH_TARIH, CH_TUTAR\r\nFROM     CariHareket";
+            this._commandCollection[0].CommandText = "SELECT CH_ID, FaturaID, CariID, CH_TIP, CH_TARIH, CH_TUTAR, CH_TUR\r\nFROM     Cari" +
+                "Hareket";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"INSERT INTO CariHareket
-                  (FaturaID, CariID, CH_TIP, CH_TARIH, CH_TUTAR)
-VALUES (@FaturaID,@CariID,@CH_TIP,@CH_TARIH,@CH_TUTAR); 
-SELECT CH_ID, FaturaID, CariID, CH_TIP, CH_TARIH, CH_TUTAR FROM CariHareket WHERE (CH_ID = SCOPE_IDENTITY())";
+            this._commandCollection[1].CommandText = @"SELECT ch.CH_TARIH, ch.CariID, c.CariAd, ISNULL(f.FT_FISNO, 'Kasa İşlemi') AS FT_FISNO, ch.CH_TIP, ch.CH_TUR, ch.CH_TUTAR, ISNULL
+                      ((SELECT SUM(SH_HASMIKTAR) AS Expr1
+                        FROM      StokHareket AS sh
+                        WHERE   (FaturaID = ch.FaturaID)), 0) AS SH_HASMIKTAR, ISNULL
+                      ((SELECT TOP (1) SH_HASFIYAT
+                        FROM      StokHareket AS sh
+                        WHERE   (FaturaID = ch.FaturaID)), 0) AS SH_HASFIYAT
+FROM     CariHareket AS ch INNER JOIN
+                  Cari AS c ON ch.CariID = c.CariID LEFT OUTER JOIN
+                  Fatura AS f ON ch.FaturaID = f.FaturaID
+WHERE  (ch.CariID = @CariID)
+ORDER BY ch.CH_TARIH";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FaturaID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "FaturaID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CariID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CariID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CH_TIP", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CH_TIP", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CH_TARIH", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "CH_TARIH", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CH_TUTAR", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "CH_TUTAR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"INSERT INTO CariHareket
+                  (FaturaID, CariID, CH_TIP, CH_TARIH, CH_TUTAR, CH_TUR)
+VALUES (@FaturaID,@CariID,@CH_TIP,@CH_TARIH,@CH_TUTAR,@CH_TUR);   
+SELECT CH_ID, FaturaID, CariID, CH_TIP, CH_TARIH, CH_TUTAR, CH_TUR FROM CariHareket WHERE (CH_ID = SCOPE_IDENTITY())";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FaturaID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "FaturaID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CariID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CariID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CH_TIP", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CH_TIP", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CH_TARIH", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "CH_TARIH", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CH_TUTAR", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "CH_TUTAR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CH_TUR", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CH_TUR", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10557,6 +10659,23 @@ SELECT CH_ID, FaturaID, CariID, CH_TIP, CH_TARIH, CH_TUTAR FROM CariHareket WHER
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual KuyumcuStokTakip.CariHareketDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            KuyumcuStokTakip.CariHareketDataTable dataTable = new KuyumcuStokTakip.CariHareketDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual KuyumcuStokTakip.CariHareketDataTable GetDataByCariEkstre(global::System.Nullable<int> CariID) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((CariID.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(CariID.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             KuyumcuStokTakip.CariHareketDataTable dataTable = new KuyumcuStokTakip.CariHareketDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -10595,7 +10714,7 @@ SELECT CH_ID, FaturaID, CariID, CH_TIP, CH_TARIH, CH_TUTAR FROM CariHareket WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_CH_ID, global::System.Nullable<int> Original_FaturaID, global::System.Nullable<int> Original_CariID, global::System.Nullable<int> Original_CH_TIP, global::System.Nullable<global::System.DateTime> Original_CH_TARIH, global::System.Nullable<double> Original_CH_TUTAR) {
+        public virtual int Delete(int Original_CH_ID, global::System.Nullable<int> Original_FaturaID, global::System.Nullable<int> Original_CariID, global::System.Nullable<int> Original_CH_TIP, global::System.Nullable<global::System.DateTime> Original_CH_TARIH, global::System.Nullable<double> Original_CH_TUTAR, global::System.Nullable<int> Original_CH_TUR) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_CH_ID));
             if ((Original_FaturaID.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -10637,6 +10756,14 @@ SELECT CH_ID, FaturaID, CariID, CH_TIP, CH_TARIH, CH_TUTAR FROM CariHareket WHER
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
+            if ((Original_CH_TUR.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((int)(Original_CH_TUR.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -10657,7 +10784,7 @@ SELECT CH_ID, FaturaID, CariID, CH_TIP, CH_TARIH, CH_TUTAR FROM CariHareket WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<int> FaturaID, global::System.Nullable<int> CariID, global::System.Nullable<int> CH_TIP, global::System.Nullable<global::System.DateTime> CH_TARIH, global::System.Nullable<double> CH_TUTAR) {
+        public virtual int Insert(global::System.Nullable<int> FaturaID, global::System.Nullable<int> CariID, global::System.Nullable<int> CH_TIP, global::System.Nullable<global::System.DateTime> CH_TARIH, global::System.Nullable<double> CH_TUTAR, global::System.Nullable<int> CH_TUR) {
             if ((FaturaID.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((int)(FaturaID.Value));
             }
@@ -10688,6 +10815,12 @@ SELECT CH_ID, FaturaID, CariID, CH_TIP, CH_TARIH, CH_TUTAR FROM CariHareket WHER
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
+            if ((CH_TUR.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(CH_TUR.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -10708,7 +10841,7 @@ SELECT CH_ID, FaturaID, CariID, CH_TIP, CH_TARIH, CH_TUTAR FROM CariHareket WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> FaturaID, global::System.Nullable<int> CariID, global::System.Nullable<int> CH_TIP, global::System.Nullable<global::System.DateTime> CH_TARIH, global::System.Nullable<double> CH_TUTAR, int Original_CH_ID, global::System.Nullable<int> Original_FaturaID, global::System.Nullable<int> Original_CariID, global::System.Nullable<int> Original_CH_TIP, global::System.Nullable<global::System.DateTime> Original_CH_TARIH, global::System.Nullable<double> Original_CH_TUTAR, int CH_ID) {
+        public virtual int Update(global::System.Nullable<int> FaturaID, global::System.Nullable<int> CariID, global::System.Nullable<int> CH_TIP, global::System.Nullable<global::System.DateTime> CH_TARIH, global::System.Nullable<double> CH_TUTAR, global::System.Nullable<int> CH_TUR, int Original_CH_ID, global::System.Nullable<int> Original_FaturaID, global::System.Nullable<int> Original_CariID, global::System.Nullable<int> Original_CH_TIP, global::System.Nullable<global::System.DateTime> Original_CH_TARIH, global::System.Nullable<double> Original_CH_TUTAR, global::System.Nullable<int> Original_CH_TUR, int CH_ID) {
             if ((FaturaID.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(FaturaID.Value));
             }
@@ -10739,48 +10872,62 @@ SELECT CH_ID, FaturaID, CariID, CH_TIP, CH_TARIH, CH_TUTAR FROM CariHareket WHER
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_CH_ID));
-            if ((Original_FaturaID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_FaturaID.Value));
+            if ((CH_TUR.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(CH_TUR.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_CH_ID));
+            if ((Original_FaturaID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_FaturaID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             if ((Original_CariID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_CariID.Value));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_CariID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             if ((Original_CH_TIP.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_CH_TIP.Value));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_CH_TIP.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             if ((Original_CH_TARIH.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((System.DateTime)(Original_CH_TARIH.Value));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((System.DateTime)(Original_CH_TARIH.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             if ((Original_CH_TUTAR.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((double)(Original_CH_TUTAR.Value));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((double)(Original_CH_TUTAR.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(CH_ID));
+            if ((Original_CH_TUR.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_CH_TUR.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(CH_ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -10801,16 +10948,16 @@ SELECT CH_ID, FaturaID, CariID, CH_TIP, CH_TARIH, CH_TUTAR FROM CariHareket WHER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> FaturaID, global::System.Nullable<int> CariID, global::System.Nullable<int> CH_TIP, global::System.Nullable<global::System.DateTime> CH_TARIH, global::System.Nullable<double> CH_TUTAR, int Original_CH_ID, global::System.Nullable<int> Original_FaturaID, global::System.Nullable<int> Original_CariID, global::System.Nullable<int> Original_CH_TIP, global::System.Nullable<global::System.DateTime> Original_CH_TARIH, global::System.Nullable<double> Original_CH_TUTAR) {
-            return this.Update(FaturaID, CariID, CH_TIP, CH_TARIH, CH_TUTAR, Original_CH_ID, Original_FaturaID, Original_CariID, Original_CH_TIP, Original_CH_TARIH, Original_CH_TUTAR, Original_CH_ID);
+        public virtual int Update(global::System.Nullable<int> FaturaID, global::System.Nullable<int> CariID, global::System.Nullable<int> CH_TIP, global::System.Nullable<global::System.DateTime> CH_TARIH, global::System.Nullable<double> CH_TUTAR, global::System.Nullable<int> CH_TUR, int Original_CH_ID, global::System.Nullable<int> Original_FaturaID, global::System.Nullable<int> Original_CariID, global::System.Nullable<int> Original_CH_TIP, global::System.Nullable<global::System.DateTime> Original_CH_TARIH, global::System.Nullable<double> Original_CH_TUTAR, global::System.Nullable<int> Original_CH_TUR) {
+            return this.Update(FaturaID, CariID, CH_TIP, CH_TARIH, CH_TUTAR, CH_TUR, Original_CH_ID, Original_FaturaID, Original_CariID, Original_CH_TIP, Original_CH_TARIH, Original_CH_TUTAR, Original_CH_TUR, Original_CH_ID);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int InsertQuery(global::System.Nullable<int> FaturaID, global::System.Nullable<int> CariID, global::System.Nullable<int> CH_TIP, global::System.Nullable<global::System.DateTime> CH_TARIH, global::System.Nullable<double> CH_TUTAR) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+        public virtual int InsertQuery(global::System.Nullable<int> FaturaID, global::System.Nullable<int> CariID, global::System.Nullable<int> CH_TIP, global::System.Nullable<global::System.DateTime> CH_TARIH, global::System.Nullable<double> CH_TUTAR, global::System.Nullable<int> CH_TUR) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             if ((FaturaID.HasValue == true)) {
                 command.Parameters[0].Value = ((int)(FaturaID.Value));
             }
@@ -10840,6 +10987,12 @@ SELECT CH_ID, FaturaID, CariID, CH_TIP, CH_TARIH, CH_TUTAR FROM CariHareket WHER
             }
             else {
                 command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((CH_TUR.HasValue == true)) {
+                command.Parameters[5].Value = ((int)(CH_TUR.Value));
+            }
+            else {
+                command.Parameters[5].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -10986,10 +11139,11 @@ SELECT CH_ID, FaturaID, CariID, CH_TIP, CH_TARIH, CH_TUTAR FROM CariHareket WHER
             tableMapping.ColumnMappings.Add("IslemTuru", "IslemTuru");
             tableMapping.ColumnMappings.Add("Tutar", "Tutar");
             tableMapping.ColumnMappings.Add("Aciklama", "Aciklama");
+            tableMapping.ColumnMappings.Add("KasaNo", "KasaNo");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Kasa] WHERE (([KasaID] = @Original_KasaID) AND ((@IsNull_CariID = 1 AND [CariID] IS NULL) OR ([CariID] = @Original_CariID)) AND ((@IsNull_Tarih = 1 AND [Tarih] IS NULL) OR ([Tarih] = @Original_Tarih)) AND ((@IsNull_IslemTuru = 1 AND [IslemTuru] IS NULL) OR ([IslemTuru] = @Original_IslemTuru)) AND ((@IsNull_Tutar = 1 AND [Tutar] IS NULL) OR ([Tutar] = @Original_Tutar)) AND ((@IsNull_Aciklama = 1 AND [Aciklama] IS NULL) OR ([Aciklama] = @Original_Aciklama)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Kasa] WHERE (([KasaID] = @Original_KasaID) AND ((@IsNull_CariID = 1 AND [CariID] IS NULL) OR ([CariID] = @Original_CariID)) AND ((@IsNull_Tarih = 1 AND [Tarih] IS NULL) OR ([Tarih] = @Original_Tarih)) AND ((@IsNull_IslemTuru = 1 AND [IslemTuru] IS NULL) OR ([IslemTuru] = @Original_IslemTuru)) AND ((@IsNull_Tutar = 1 AND [Tutar] IS NULL) OR ([Tutar] = @Original_Tutar)) AND ((@IsNull_Aciklama = 1 AND [Aciklama] IS NULL) OR ([Aciklama] = @Original_Aciklama)) AND ((@IsNull_KasaNo = 1 AND [KasaNo] IS NULL) OR ([KasaNo] = @Original_KasaNo)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_KasaID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KasaID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CariID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CariID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -11002,27 +11156,30 @@ SELECT CH_ID, FaturaID, CariID, CH_TIP, CH_TARIH, CH_TUTAR FROM CariHareket WHER
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Tutar", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tutar", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Aciklama", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Aciklama", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Aciklama", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Aciklama", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_KasaNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KasaNo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_KasaNo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KasaNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [Kasa] ([CariID], [Tarih], [IslemTuru], [Tutar], [Aciklama]) VALUES (" +
-                "@CariID, @Tarih, @IslemTuru, @Tutar, @Aciklama);\r\nSELECT KasaID, CariID, Tarih, " +
-                "IslemTuru, Tutar, Aciklama FROM Kasa WHERE (KasaID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Kasa] ([CariID], [Tarih], [IslemTuru], [Tutar], [Aciklama], [KasaNo]) VALUES (@CariID, @Tarih, @IslemTuru, @Tutar, @Aciklama, @KasaNo);
+SELECT KasaID, CariID, Tarih, IslemTuru, Tutar, Aciklama, KasaNo FROM Kasa WHERE (KasaID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CariID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CariID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tarih", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tarih", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IslemTuru", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IslemTuru", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tutar", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tutar", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Aciklama", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Aciklama", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@KasaNo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KasaNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [Kasa] SET [CariID] = @CariID, [Tarih] = @Tarih, [IslemTuru] = @IslemTuru, [Tutar] = @Tutar, [Aciklama] = @Aciklama WHERE (([KasaID] = @Original_KasaID) AND ((@IsNull_CariID = 1 AND [CariID] IS NULL) OR ([CariID] = @Original_CariID)) AND ((@IsNull_Tarih = 1 AND [Tarih] IS NULL) OR ([Tarih] = @Original_Tarih)) AND ((@IsNull_IslemTuru = 1 AND [IslemTuru] IS NULL) OR ([IslemTuru] = @Original_IslemTuru)) AND ((@IsNull_Tutar = 1 AND [Tutar] IS NULL) OR ([Tutar] = @Original_Tutar)) AND ((@IsNull_Aciklama = 1 AND [Aciklama] IS NULL) OR ([Aciklama] = @Original_Aciklama)));
-SELECT KasaID, CariID, Tarih, IslemTuru, Tutar, Aciklama FROM Kasa WHERE (KasaID = @KasaID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Kasa] SET [CariID] = @CariID, [Tarih] = @Tarih, [IslemTuru] = @IslemTuru, [Tutar] = @Tutar, [Aciklama] = @Aciklama, [KasaNo] = @KasaNo WHERE (([KasaID] = @Original_KasaID) AND ((@IsNull_CariID = 1 AND [CariID] IS NULL) OR ([CariID] = @Original_CariID)) AND ((@IsNull_Tarih = 1 AND [Tarih] IS NULL) OR ([Tarih] = @Original_Tarih)) AND ((@IsNull_IslemTuru = 1 AND [IslemTuru] IS NULL) OR ([IslemTuru] = @Original_IslemTuru)) AND ((@IsNull_Tutar = 1 AND [Tutar] IS NULL) OR ([Tutar] = @Original_Tutar)) AND ((@IsNull_Aciklama = 1 AND [Aciklama] IS NULL) OR ([Aciklama] = @Original_Aciklama)) AND ((@IsNull_KasaNo = 1 AND [KasaNo] IS NULL) OR ([KasaNo] = @Original_KasaNo)));
+SELECT KasaID, CariID, Tarih, IslemTuru, Tutar, Aciklama, KasaNo FROM Kasa WHERE (KasaID = @KasaID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CariID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CariID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tarih", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tarih", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IslemTuru", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IslemTuru", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tutar", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tutar", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Aciklama", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Aciklama", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@KasaNo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KasaNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_KasaID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KasaID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_CariID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CariID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CariID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CariID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -11034,6 +11191,8 @@ SELECT KasaID, CariID, Tarih, IslemTuru, Tutar, Aciklama FROM Kasa WHERE (KasaID
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Tutar", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tutar", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Aciklama", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Aciklama", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Aciklama", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Aciklama", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_KasaNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KasaNo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_KasaNo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KasaNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@KasaID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "KasaID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -11047,11 +11206,28 @@ SELECT KasaID, CariID, Tarih, IslemTuru, Tutar, Aciklama FROM Kasa WHERE (KasaID
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Kasa.*\r\nFROM     Kasa";
+            this._commandCollection[0].CommandText = "SELECT KasaID, CariID, Tarih, IslemTuru, Tutar, Aciklama, KasaNo\r\nFROM     Kasa";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"INSERT INTO [Kasa] ([CariID], [Tarih], [IslemTuru], [Tutar], [Aciklama], [KasaNo]) VALUES (@CariID, @Tarih, @IslemTuru, @Tutar, @Aciklama, @KasaNo);
+SELECT KasaID, CariID, Tarih, IslemTuru, Tutar, Aciklama, KasaNo FROM Kasa WHERE (KasaID = SCOPE_IDENTITY())";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CariID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CariID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tarih", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Tarih", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IslemTuru", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IslemTuru", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tutar", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Tutar", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Aciklama", global::System.Data.SqlDbType.NVarChar, 250, global::System.Data.ParameterDirection.Input, 0, 0, "Aciklama", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@KasaNo", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "KasaNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT TOP (1) KasaNo\r\nFROM     Kasa\r\nWHERE  (KasaNo LIKE @Harf + \'%\')\r\nORDER BY " +
+                "CAST(RIGHT(KasaNo, 4) AS INT) DESC";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Harf", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "KasaNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11111,7 +11287,7 @@ SELECT KasaID, CariID, Tarih, IslemTuru, Tutar, Aciklama FROM Kasa WHERE (KasaID
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_KasaID, global::System.Nullable<int> Original_CariID, global::System.Nullable<global::System.DateTime> Original_Tarih, global::System.Nullable<int> Original_IslemTuru, global::System.Nullable<double> Original_Tutar, string Original_Aciklama) {
+        public virtual int Delete(int Original_KasaID, global::System.Nullable<int> Original_CariID, global::System.Nullable<global::System.DateTime> Original_Tarih, global::System.Nullable<int> Original_IslemTuru, global::System.Nullable<double> Original_Tutar, string Original_Aciklama, string Original_KasaNo) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_KasaID));
             if ((Original_CariID.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -11153,6 +11329,14 @@ SELECT KasaID, CariID, Tarih, IslemTuru, Tutar, Aciklama FROM Kasa WHERE (KasaID
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_Aciklama));
             }
+            if ((Original_KasaNo == null)) {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_KasaNo));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -11173,7 +11357,7 @@ SELECT KasaID, CariID, Tarih, IslemTuru, Tutar, Aciklama FROM Kasa WHERE (KasaID
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<int> CariID, global::System.Nullable<global::System.DateTime> Tarih, global::System.Nullable<int> IslemTuru, global::System.Nullable<double> Tutar, string Aciklama) {
+        public virtual int Insert(global::System.Nullable<int> CariID, global::System.Nullable<global::System.DateTime> Tarih, global::System.Nullable<int> IslemTuru, global::System.Nullable<double> Tutar, string Aciklama, string KasaNo) {
             if ((CariID.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((int)(CariID.Value));
             }
@@ -11204,6 +11388,12 @@ SELECT KasaID, CariID, Tarih, IslemTuru, Tutar, Aciklama FROM Kasa WHERE (KasaID
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Aciklama));
             }
+            if ((KasaNo == null)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(KasaNo));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -11224,7 +11414,7 @@ SELECT KasaID, CariID, Tarih, IslemTuru, Tutar, Aciklama FROM Kasa WHERE (KasaID
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> CariID, global::System.Nullable<global::System.DateTime> Tarih, global::System.Nullable<int> IslemTuru, global::System.Nullable<double> Tutar, string Aciklama, int Original_KasaID, global::System.Nullable<int> Original_CariID, global::System.Nullable<global::System.DateTime> Original_Tarih, global::System.Nullable<int> Original_IslemTuru, global::System.Nullable<double> Original_Tutar, string Original_Aciklama, int KasaID) {
+        public virtual int Update(global::System.Nullable<int> CariID, global::System.Nullable<global::System.DateTime> Tarih, global::System.Nullable<int> IslemTuru, global::System.Nullable<double> Tutar, string Aciklama, string KasaNo, int Original_KasaID, global::System.Nullable<int> Original_CariID, global::System.Nullable<global::System.DateTime> Original_Tarih, global::System.Nullable<int> Original_IslemTuru, global::System.Nullable<double> Original_Tutar, string Original_Aciklama, string Original_KasaNo, int KasaID) {
             if ((CariID.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(CariID.Value));
             }
@@ -11255,48 +11445,62 @@ SELECT KasaID, CariID, Tarih, IslemTuru, Tutar, Aciklama FROM Kasa WHERE (KasaID
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Aciklama));
             }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_KasaID));
-            if ((Original_CariID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_CariID.Value));
+            if ((KasaNo == null)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(KasaNo));
+            }
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_KasaID));
+            if ((Original_CariID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_CariID.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             if ((Original_Tarih.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_Tarih.Value));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_Tarih.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             if ((Original_IslemTuru.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_IslemTuru.Value));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_IslemTuru.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             if ((Original_Tutar.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((double)(Original_Tutar.Value));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((double)(Original_Tutar.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             if ((Original_Aciklama == null)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_Aciklama));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_Aciklama));
             }
-            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(KasaID));
+            if ((Original_KasaNo == null)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_KasaNo));
+            }
+            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(KasaID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -11317,8 +11521,107 @@ SELECT KasaID, CariID, Tarih, IslemTuru, Tutar, Aciklama FROM Kasa WHERE (KasaID
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> CariID, global::System.Nullable<global::System.DateTime> Tarih, global::System.Nullable<int> IslemTuru, global::System.Nullable<double> Tutar, string Aciklama, int Original_KasaID, global::System.Nullable<int> Original_CariID, global::System.Nullable<global::System.DateTime> Original_Tarih, global::System.Nullable<int> Original_IslemTuru, global::System.Nullable<double> Original_Tutar, string Original_Aciklama) {
-            return this.Update(CariID, Tarih, IslemTuru, Tutar, Aciklama, Original_KasaID, Original_CariID, Original_Tarih, Original_IslemTuru, Original_Tutar, Original_Aciklama, Original_KasaID);
+        public virtual int Update(global::System.Nullable<int> CariID, global::System.Nullable<global::System.DateTime> Tarih, global::System.Nullable<int> IslemTuru, global::System.Nullable<double> Tutar, string Aciklama, string KasaNo, int Original_KasaID, global::System.Nullable<int> Original_CariID, global::System.Nullable<global::System.DateTime> Original_Tarih, global::System.Nullable<int> Original_IslemTuru, global::System.Nullable<double> Original_Tutar, string Original_Aciklama, string Original_KasaNo) {
+            return this.Update(CariID, Tarih, IslemTuru, Tutar, Aciklama, KasaNo, Original_KasaID, Original_CariID, Original_Tarih, Original_IslemTuru, Original_Tutar, Original_Aciklama, Original_KasaNo, Original_KasaID);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual object InsertQuery(global::System.Nullable<int> CariID, global::System.Nullable<global::System.DateTime> Tarih, global::System.Nullable<int> IslemTuru, global::System.Nullable<double> Tutar, string Aciklama, string KasaNo) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            if ((CariID.HasValue == true)) {
+                command.Parameters[0].Value = ((int)(CariID.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((Tarih.HasValue == true)) {
+                command.Parameters[1].Value = ((System.DateTime)(Tarih.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((IslemTuru.HasValue == true)) {
+                command.Parameters[2].Value = ((int)(IslemTuru.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Tutar.HasValue == true)) {
+                command.Parameters[3].Value = ((double)(Tutar.Value));
+            }
+            else {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((Aciklama == null)) {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[4].Value = ((string)(Aciklama));
+            }
+            if ((KasaNo == null)) {
+                command.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[5].Value = ((string)(KasaNo));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((object)(returnValue));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual string ScalarQueryKasaFisNo(string Harf) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            if ((Harf == null)) {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[0].Value = ((string)(Harf));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((string)(returnValue));
+            }
         }
     }
     

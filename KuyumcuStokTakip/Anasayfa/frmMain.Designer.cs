@@ -43,7 +43,7 @@
             this.btnRaporIstatistik = new DevExpress.XtraBars.BarButtonItem();
             this.btnSatisIstatistik = new DevExpress.XtraBars.BarButtonItem();
             this.btnIslemGecmisi = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnCariBorcAlacak = new DevExpress.XtraBars.BarButtonItem();
             this.grpProfil = new DevExpress.XtraBars.BarSubItem();
             this.btnKullaniciBilgileri = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
@@ -85,7 +85,7 @@
             this.btnSatisIstatistik,
             this.btnIslemGecmisi,
             this.btnFaturaSayfasi,
-            this.barButtonItem2,
+            this.btnCariBorcAlacak,
             this.btnKasa});
             this.rbnKuyumcuStokTakip.Location = new System.Drawing.Point(0, 0);
             this.rbnKuyumcuStokTakip.Margin = new System.Windows.Forms.Padding(4);
@@ -173,7 +173,7 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.btnRaporIstatistik),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnSatisIstatistik),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnIslemGecmisi),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnCariBorcAlacak)});
             this.grpRapor.Name = "grpRapor";
             // 
             // btnRaporIstatistik
@@ -197,11 +197,12 @@
             this.btnIslemGecmisi.Name = "btnIslemGecmisi";
             this.btnIslemGecmisi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnIslemGecmisi_ItemClick);
             // 
-            // barButtonItem2
+            // btnCariBorcAlacak
             // 
-            this.barButtonItem2.Caption = "Cari Borç/Alacak";
-            this.barButtonItem2.Id = 28;
-            this.barButtonItem2.Name = "barButtonItem2";
+            this.btnCariBorcAlacak.Caption = "Cari Borç/Alacak";
+            this.btnCariBorcAlacak.Id = 28;
+            this.btnCariBorcAlacak.Name = "btnCariBorcAlacak";
+            this.btnCariBorcAlacak.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCariBorcAlacak_ItemClick);
             // 
             // grpProfil
             // 
@@ -344,7 +345,7 @@
         private DevExpress.XtraBars.BarButtonItem btnSatisIstatistik;
         private DevExpress.XtraBars.BarButtonItem btnIslemGecmisi;
         private DevExpress.XtraBars.BarButtonItem btnFaturaSayfasi;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem btnCariBorcAlacak;
         private DevExpress.XtraBars.BarButtonItem btnKasa;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rbnKasa;
     }

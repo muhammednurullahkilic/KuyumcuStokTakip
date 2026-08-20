@@ -128,6 +128,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rapor\frmCariBorcAlacak.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rapor\frmCariBorcAlacak.Designer.cs">
+      <DependentUpon>frmCariBorcAlacak.cs</DependentUpon>
+    </Compile>
     <Compile Include="Rapor\frmIslemGecmisiListele.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,6 +215,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Rapor\frmCariBorcAlacak.resx">
+      <DependentUpon>frmCariBorcAlacak.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Rapor\frmIslemGecmisiListele.resx">
       <DependentUpon>frmIslemGecmisiListele.cs</DependentUpon>
     </EmbeddedResource>
