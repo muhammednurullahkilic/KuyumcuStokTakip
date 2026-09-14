@@ -140,12 +140,6 @@
     <Compile Include="Rapor\frmIslemGecmisiListele.Designer.cs">
       <DependentUpon>frmIslemGecmisiListele.cs</DependentUpon>
     </Compile>
-    <Compile Include="Rapor\frmRaporIstatistik.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Rapor\frmRaporIstatistik.Designer.cs">
-      <DependentUpon>frmRaporIstatistik.cs</DependentUpon>
-    </Compile>
     <Compile Include="Rapor\frmSatisIstatistikler.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,9 +214,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Rapor\frmIslemGecmisiListele.resx">
       <DependentUpon>frmIslemGecmisiListele.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Rapor\frmRaporIstatistik.resx">
-      <DependentUpon>frmRaporIstatistik.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Rapor\frmSatisIstatistikler.resx">
       <DependentUpon>frmSatisIstatistikler.cs</DependentUpon>

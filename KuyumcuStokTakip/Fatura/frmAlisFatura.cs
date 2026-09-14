@@ -1,6 +1,7 @@
 ﻿using DevExpress.XtraEditors;
 using DevExpress.XtraExport.Helpers;
 using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraLayout.Converter;
 using KuyumcuStokTakip.Database.KuyumcuStokTakipTableAdapters;
 using KuyumcuStokTakip.Properties;
 using System;
@@ -238,16 +239,6 @@ namespace KuyumcuStokTakip.Fatura
         {
             try
             {
-                //// 1. KONTROL: ZORUNLU ALANLAR
-                //if (!string.IsNullOrWhiteSpace(txtAlisFaturaNo.Text) ||
-                //    !string.IsNullOrWhiteSpace(lueCari.Text) ||
-                //    !string.IsNullOrWhiteSpace(dtAlisTarihi.Text))
-                //{
-                //    MessageBox.Show("Lütfen zorunlu alanları (Fatura No, Cari, Tarih) doldurun!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                //    return; // İşlemi burada kes
-                //}
-
-
                 // 1. Fatura No Testi
                 if (string.IsNullOrWhiteSpace(txtAlisFaturaNo.Text))
                 {
@@ -335,8 +326,19 @@ namespace KuyumcuStokTakip.Fatura
                     if(chkMuhtelif.Checked)
                     {
 
+                        //double kasadakiMevcutPara = Convert.ToDouble(_KasaTableAdapter.ScalarQueryKasaBakiyeGetir());
+                        //double faturadakiTutar = Convert.ToDouble(txtAlisTutar.Text);
+
+
+                        //if(faturadakiTutar>kasadakiMevcutPara)
+                        //{
+                        //    MessageBox.Show($"Bu fatura bedelini peşin ödemek için kasanızda yeterli bakiye yok ! \n\nGüncel Kasanız: { kasadakiMevcutPara: N2} ₺\nFatura Tutarı: { faturadakiTutar: N2} ₺\n\nLütfen Muhtelif seçeneğini kaldırıp Açık Hesap(Veresiye) olarak kaydedin veya kasaya para girişi yapın.", 
+                        //"Yetersiz Kasa Bakiyesi", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        //    return; 
+                        //}
+
                         KasaFisNoOlustur();
-                       var kasaKayitID= _KasaTableAdapter.InsertQuery(Convert.ToInt32(lueCari.EditValue), DateTime.Now,2, Convert.ToDouble(txtAlisTutar.Text)," ",KasafisNo);
+                        var kasaKayitID= _KasaTableAdapter.InsertQuery(Convert.ToInt32(lueCari.EditValue), DateTime.Now,2, Convert.ToDouble(txtAlisTutar.Text)," ",KasafisNo);
 
                         _CariHareketTableAdapter.Insert(Convert.ToInt32(kasaKayitID), Convert.ToInt32(lueCari.EditValue), 2, Convert.ToDateTime(dtAlisTarihi.Text), Convert.ToDouble(txtAlisTutar.Text),40);
 
@@ -434,5 +436,7 @@ namespace KuyumcuStokTakip.Fatura
                 lueCari.Enabled = true;   // Kilidi aç, kullanıcı normal cari seçebilsin
             }
         }
+
+
     }
 }

@@ -44,7 +44,8 @@
             this.gridHasMiktar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridHasFiyat = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridTarih = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridTutar = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridBorc = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridAlacak = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lueCariArama.Properties)).BeginInit();
@@ -64,7 +65,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1301, 338);
+            this.panelControl1.Size = new System.Drawing.Size(1459, 338);
             this.panelControl1.TabIndex = 0;
             // 
             // lblBakiyeDurum
@@ -136,7 +137,7 @@
             this.gridControlCariBorcAlacak.Location = new System.Drawing.Point(0, 338);
             this.gridControlCariBorcAlacak.MainView = this.gridCariBorcAlacak;
             this.gridControlCariBorcAlacak.Name = "gridControlCariBorcAlacak";
-            this.gridControlCariBorcAlacak.Size = new System.Drawing.Size(1301, 231);
+            this.gridControlCariBorcAlacak.Size = new System.Drawing.Size(1459, 390);
             this.gridControlCariBorcAlacak.TabIndex = 1;
             this.gridControlCariBorcAlacak.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridCariBorcAlacak});
@@ -150,9 +151,11 @@
             this.gridHasMiktar,
             this.gridHasFiyat,
             this.gridTarih,
-            this.gridTutar});
+            this.gridBorc,
+            this.gridAlacak});
             this.gridCariBorcAlacak.GridControl = this.gridControlCariBorcAlacak;
             this.gridCariBorcAlacak.Name = "gridCariBorcAlacak";
+            this.gridCariBorcAlacak.OptionsView.ShowFooter = true;
             // 
             // gridCariID
             // 
@@ -214,21 +217,39 @@
             this.gridTarih.VisibleIndex = 0;
             this.gridTarih.Width = 94;
             // 
-            // gridTutar
+            // gridBorc
             // 
-            this.gridTutar.Caption = "Tutar";
-            this.gridTutar.FieldName = "CH_TUTAR";
-            this.gridTutar.MinWidth = 25;
-            this.gridTutar.Name = "gridTutar";
-            this.gridTutar.Visible = true;
-            this.gridTutar.VisibleIndex = 6;
-            this.gridTutar.Width = 94;
+            this.gridBorc.Caption = "Borç";
+            this.gridBorc.DisplayFormat.FormatString = "N2";
+            this.gridBorc.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridBorc.FieldName = "Borc";
+            this.gridBorc.MinWidth = 25;
+            this.gridBorc.Name = "gridBorc";
+            this.gridBorc.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Borc", "{0:N2}")});
+            this.gridBorc.Visible = true;
+            this.gridBorc.VisibleIndex = 6;
+            this.gridBorc.Width = 94;
+            // 
+            // gridAlacak
+            // 
+            this.gridAlacak.Caption = "Alacak";
+            this.gridAlacak.DisplayFormat.FormatString = "N2";
+            this.gridAlacak.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridAlacak.FieldName = "Alacak";
+            this.gridAlacak.MinWidth = 25;
+            this.gridAlacak.Name = "gridAlacak";
+            this.gridAlacak.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Alacak", "{0:N2}")});
+            this.gridAlacak.Visible = true;
+            this.gridAlacak.VisibleIndex = 7;
+            this.gridAlacak.Width = 94;
             // 
             // frmCariBorcAlacak
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1301, 569);
+            this.ClientSize = new System.Drawing.Size(1459, 728);
             this.Controls.Add(this.gridControlCariBorcAlacak);
             this.Controls.Add(this.panelControl1);
             this.Name = "frmCariBorcAlacak";
@@ -262,6 +283,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridHasMiktar;
         private DevExpress.XtraGrid.Columns.GridColumn gridHasFiyat;
         private DevExpress.XtraGrid.Columns.GridColumn gridTarih;
-        private DevExpress.XtraGrid.Columns.GridColumn gridTutar;
+        private DevExpress.XtraGrid.Columns.GridColumn gridBorc;
+        private DevExpress.XtraGrid.Columns.GridColumn gridAlacak;
     }
 }

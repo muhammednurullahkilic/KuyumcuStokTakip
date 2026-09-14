@@ -261,6 +261,7 @@
             this.gridAlisFatura.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
             this.gridAlisFatura.OptionsView.RowAutoHeight = true;
             this.gridAlisFatura.OptionsView.ShowAutoFilterRow = true;
+            this.gridAlisFatura.OptionsView.ShowFooter = true;
             this.gridAlisFatura.OptionsView.ShowGroupPanel = false;
             this.gridAlisFatura.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridAlisFatura_CellValueChanged);
             this.gridAlisFatura.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gridAlisFatura_RowUpdated);
@@ -363,6 +364,8 @@
             this.gridHasMiktar.MinWidth = 25;
             this.gridHasMiktar.Name = "gridHasMiktar";
             this.gridHasMiktar.OptionsColumn.AllowEdit = false;
+            this.gridHasMiktar.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SH_HASMIKTAR", "{0:0.##}")});
             this.gridHasMiktar.Visible = true;
             this.gridHasMiktar.VisibleIndex = 5;
             this.gridHasMiktar.Width = 93;
@@ -370,11 +373,14 @@
             // gridTutar
             // 
             this.gridTutar.Caption = "Tutar";
+            this.gridTutar.DisplayFormat.FormatString = "N2";
             this.gridTutar.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridTutar.FieldName = "SH_TUTARTL";
             this.gridTutar.MinWidth = 25;
             this.gridTutar.Name = "gridTutar";
             this.gridTutar.OptionsColumn.AllowEdit = false;
+            this.gridTutar.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SH_TUTARTL", "{0:N2}")});
             this.gridTutar.Visible = true;
             this.gridTutar.VisibleIndex = 7;
             this.gridTutar.Width = 93;
@@ -395,7 +401,7 @@
             this.chkMuhtelif.AutoSize = true;
             this.chkMuhtelif.Location = new System.Drawing.Point(379, 74);
             this.chkMuhtelif.Name = "chkMuhtelif";
-            this.chkMuhtelif.Size = new System.Drawing.Size(93, 25);
+            this.chkMuhtelif.Size = new System.Drawing.Size(74, 20);
             this.chkMuhtelif.TabIndex = 30;
             this.chkMuhtelif.Text = "Muhtelif";
             this.chkMuhtelif.UseVisualStyleBackColor = true;

@@ -73,11 +73,12 @@
             // 
             // xtraTabControl1
             // 
-            this.xtraTabControl1.Location = new System.Drawing.Point(11, 6);
+            this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.xtraTabControl1.Location = new System.Drawing.Point(0, 0);
             this.xtraTabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(1603, 549);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1620, 558);
             this.xtraTabControl1.TabIndex = 0;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -88,7 +89,7 @@
             this.xtraTabPage1.Controls.Add(this.gridControlSatisFaturaListesi);
             this.xtraTabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(1601, 519);
+            this.xtraTabPage1.Size = new System.Drawing.Size(1618, 528);
             this.xtraTabPage1.Text = "Satış Fatura Liste";
             // 
             // gridControlSatisFaturaListesi
@@ -99,7 +100,7 @@
             this.gridControlSatisFaturaListesi.MainView = this.gridSatisFaturaListesi;
             this.gridControlSatisFaturaListesi.Margin = new System.Windows.Forms.Padding(4);
             this.gridControlSatisFaturaListesi.Name = "gridControlSatisFaturaListesi";
-            this.gridControlSatisFaturaListesi.Size = new System.Drawing.Size(2001, 649);
+            this.gridControlSatisFaturaListesi.Size = new System.Drawing.Size(1618, 528);
             this.gridControlSatisFaturaListesi.TabIndex = 0;
             this.gridControlSatisFaturaListesi.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridSatisFaturaListesi});
@@ -126,6 +127,7 @@
             this.gridSatisFaturaListesi.Name = "gridSatisFaturaListesi";
             this.gridSatisFaturaListesi.OptionsBehavior.Editable = false;
             this.gridSatisFaturaListesi.OptionsEditForm.PopupEditFormWidth = 1067;
+            this.gridSatisFaturaListesi.OptionsView.ShowFooter = true;
             // 
             // gridSatisFaturaNo
             // 
@@ -163,10 +165,14 @@
             // gridSatisTutar
             // 
             this.gridSatisTutar.Caption = "Tutar";
+            this.gridSatisTutar.DisplayFormat.FormatString = "N2";
+            this.gridSatisTutar.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridSatisTutar.FieldName = "Tutar";
             this.gridSatisTutar.MinWidth = 27;
             this.gridSatisTutar.Name = "gridSatisTutar";
             this.gridSatisTutar.OptionsColumn.AllowEdit = false;
+            this.gridSatisTutar.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Tutar", "{0:N2}")});
             this.gridSatisTutar.Visible = true;
             this.gridSatisTutar.VisibleIndex = 8;
             this.gridSatisTutar.Width = 100;
@@ -266,6 +272,8 @@
             this.gridSatisHasMiktar.MinWidth = 25;
             this.gridSatisHasMiktar.Name = "gridSatisHasMiktar";
             this.gridSatisHasMiktar.OptionsColumn.AllowEdit = false;
+            this.gridSatisHasMiktar.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "HasMiktar", "{0:0.##}")});
             this.gridSatisHasMiktar.Visible = true;
             this.gridSatisHasMiktar.VisibleIndex = 6;
             this.gridSatisHasMiktar.Width = 94;
@@ -275,7 +283,7 @@
             this.xtraTabPage2.Controls.Add(this.gridControlAlisFaturaListesi);
             this.xtraTabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(1601, 519);
+            this.xtraTabPage2.Size = new System.Drawing.Size(1618, 528);
             this.xtraTabPage2.Text = "Alış Fatura Listesi";
             // 
             // gridControlAlisFaturaListesi
@@ -286,7 +294,7 @@
             this.gridControlAlisFaturaListesi.MainView = this.gridAlisFaturaListesi;
             this.gridControlAlisFaturaListesi.Margin = new System.Windows.Forms.Padding(4);
             this.gridControlAlisFaturaListesi.Name = "gridControlAlisFaturaListesi";
-            this.gridControlAlisFaturaListesi.Size = new System.Drawing.Size(2001, 649);
+            this.gridControlAlisFaturaListesi.Size = new System.Drawing.Size(1618, 528);
             this.gridControlAlisFaturaListesi.TabIndex = 0;
             this.gridControlAlisFaturaListesi.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridAlisFaturaListesi});
@@ -313,6 +321,7 @@
             this.gridAlisFaturaListesi.Name = "gridAlisFaturaListesi";
             this.gridAlisFaturaListesi.OptionsBehavior.Editable = false;
             this.gridAlisFaturaListesi.OptionsEditForm.PopupEditFormWidth = 1067;
+            this.gridAlisFaturaListesi.OptionsView.ShowFooter = true;
             // 
             // gridAlisFaturaNo
             // 
@@ -350,10 +359,14 @@
             // gridAlisTutar
             // 
             this.gridAlisTutar.Caption = "Tutar";
+            this.gridAlisTutar.DisplayFormat.FormatString = "N2";
+            this.gridAlisTutar.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridAlisTutar.FieldName = "Tutar";
             this.gridAlisTutar.MinWidth = 27;
             this.gridAlisTutar.Name = "gridAlisTutar";
             this.gridAlisTutar.OptionsColumn.AllowEdit = false;
+            this.gridAlisTutar.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Tutar", "{0:N2}")});
             this.gridAlisTutar.Visible = true;
             this.gridAlisTutar.VisibleIndex = 8;
             this.gridAlisTutar.Width = 100;
@@ -453,6 +466,8 @@
             this.gridAlisHasMiktar.MinWidth = 25;
             this.gridAlisHasMiktar.Name = "gridAlisHasMiktar";
             this.gridAlisHasMiktar.OptionsColumn.AllowEdit = false;
+            this.gridAlisHasMiktar.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "HasMiktar", "{0:0.##}")});
             this.gridAlisHasMiktar.Visible = true;
             this.gridAlisHasMiktar.VisibleIndex = 6;
             this.gridAlisHasMiktar.Width = 94;

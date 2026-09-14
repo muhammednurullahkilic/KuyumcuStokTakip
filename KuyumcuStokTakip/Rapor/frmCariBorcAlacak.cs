@@ -18,6 +18,8 @@ namespace KuyumcuStokTakip.Rapor
         private readonly StokHareketTableAdapter _StokHareketTableAdapter = new StokHareketTableAdapter();
         private readonly FaturaTableAdapter _FaturaTableAdapter = new FaturaTableAdapter();
 
+        private readonly CariTableAdapter _CariTableAdapter = new CariTableAdapter();
+
         public frmCariBorcAlacak()
         {
             InitializeComponent();
@@ -28,8 +30,7 @@ namespace KuyumcuStokTakip.Rapor
         private void CariGetir()
         {
             // 1. Veritabanından tüm carileri çekiyoruz
-            KuyumcuStokTakip.Database.KuyumcuStokTakipTableAdapters.CariTableAdapter _CariTablo = new KuyumcuStokTakip.Database.KuyumcuStokTakipTableAdapters.CariTableAdapter();
-            var cariListesi = _CariTablo.GetData();
+            var cariListesi = _CariTableAdapter.GetData();
 
             // 2. Araca (SearchLookUpEdit) veriyi bağlıyoruz
             lueCariArama.Properties.DataSource = cariListesi;
@@ -56,8 +57,7 @@ namespace KuyumcuStokTakip.Rapor
             }
 
             // 1. DataSet'teki CariHareketTableAdapter üzerinden yeni sorgumuzu çağırıyoruz
-            KuyumcuStokTakip.Database.KuyumcuStokTakipTableAdapters.CariHareketTableAdapter _CariHareketTablo = new KuyumcuStokTakip.Database.KuyumcuStokTakipTableAdapters.CariHareketTableAdapter();
-            var cariHareketleri = _CariHareketTablo.GetDataByCariEkstre(Convert.ToInt32(secilenCariId));
+            var cariHareketleri = _CariHareketTableAdapter.GetDataByCariEkstre(Convert.ToInt32(secilenCariId));
 
             // 2. Tabloyu Grid'e bağlıyoruz (Grid sütun isimlerini bu yeni sorguya göre ayarlamalısın)
             gridControlCariBorcAlacak.DataSource = cariHareketleri;
