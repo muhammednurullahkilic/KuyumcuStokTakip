@@ -96,11 +96,6 @@ namespace KuyumcuStokTakip
             OpenFormShow(new frmKullaniciBilgileri(), e.Item.Caption);
         }
 
-        private void btnRaporIstatistik_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            OpenFormShow(new frmRaporIstatistik(), e.Item.Caption);
-        }
-
         private void btnSatisIstatistik_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             OpenFormShow(new frmSatisIstatistikler(), e.Item.Caption);

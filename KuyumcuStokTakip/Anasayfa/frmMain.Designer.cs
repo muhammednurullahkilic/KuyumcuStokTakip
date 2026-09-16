@@ -64,7 +64,6 @@
             // 
             // rbnKuyumcuStokTakip
             // 
-            this.rbnKuyumcuStokTakip.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(35, 37, 35, 37);
             this.rbnKuyumcuStokTakip.ExpandCollapseItem.Id = 0;
             this.rbnKuyumcuStokTakip.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.rbnKuyumcuStokTakip.ExpandCollapseItem,
@@ -88,13 +87,11 @@
             this.btnCariBorcAlacak,
             this.btnKasa});
             this.rbnKuyumcuStokTakip.Location = new System.Drawing.Point(0, 0);
-            this.rbnKuyumcuStokTakip.Margin = new System.Windows.Forms.Padding(4);
-            this.rbnKuyumcuStokTakip.MaxItemId = 36;
+            this.rbnKuyumcuStokTakip.MaxItemId = 37;
             this.rbnKuyumcuStokTakip.Name = "rbnKuyumcuStokTakip";
-            this.rbnKuyumcuStokTakip.OptionsMenuMinWidth = 385;
             this.rbnKuyumcuStokTakip.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rbnERP});
-            this.rbnKuyumcuStokTakip.Size = new System.Drawing.Size(884, 193);
+            this.rbnKuyumcuStokTakip.Size = new System.Drawing.Size(758, 158);
             // 
             // grpCari
             // 
@@ -170,7 +167,6 @@
             this.grpRapor.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("grpRapor.ImageOptions.Image")));
             this.grpRapor.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("grpRapor.ImageOptions.LargeImage")));
             this.grpRapor.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnRaporIstatistik),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnSatisIstatistik),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnIslemGecmisi),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnCariBorcAlacak)});
@@ -178,10 +174,8 @@
             // 
             // btnRaporIstatistik
             // 
-            this.btnRaporIstatistik.Caption = "Rapor İstatistik";
-            this.btnRaporIstatistik.Id = 19;
+            this.btnRaporIstatistik.Id = 36;
             this.btnRaporIstatistik.Name = "btnRaporIstatistik";
-            this.btnRaporIstatistik.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRaporIstatistik_ItemClick);
             // 
             // btnSatisIstatistik
             // 
@@ -285,13 +279,13 @@
             // 
             // rbnProfilIslemler
             // 
-            this.rbnProfilIslemler.ItemLinks.Add(this.grpProfil);
+            this.rbnProfilIslemler.ItemLinks.Add(this.btnKasa);
             this.rbnProfilIslemler.Name = "rbnProfilIslemler";
             this.rbnProfilIslemler.Text = "Profil İşlemleri";
             // 
             // rbnKasa
             // 
-            this.rbnKasa.ItemLinks.Add(this.btnKasa);
+            this.rbnKasa.ItemLinks.Add(this.grpProfil);
             this.rbnKasa.Name = "rbnKasa";
             this.rbnKasa.Text = "Kasa İşlemleri";
             // 
@@ -301,12 +295,11 @@
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 443);
+            this.ClientSize = new System.Drawing.Size(758, 360);
             this.Controls.Add(this.rbnKuyumcuStokTakip);
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmMain";
             this.Ribbon = this.rbnKuyumcuStokTakip;
             this.Text = "Kuyumcu Stok Takip";
